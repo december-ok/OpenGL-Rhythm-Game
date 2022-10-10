@@ -22,7 +22,7 @@ void Window::windowInit(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1280, 720);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(50, 50);
 	glutCreateWindow("Rhythm Game");
 
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

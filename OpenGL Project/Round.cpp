@@ -25,13 +25,13 @@ void Round::init() {
 		this->notes[line] = vector<bool>(10000, false);
 		for (int i = 0; i < 500; i++) {
 			this->notes[line][rand()%10000] = true;
-			//this->notes[line][100 * i] = true;
+			//this->notes[line][i] = true;
 		}
 	}
 }
 
 void Round::renderGrid() {
-	glLineWidth(1.f);
+	glLineWidth(1);
 	glColor3f(1, 1, 1);
 
 	//glBegin(GL_LINE_LOOP);
@@ -56,9 +56,9 @@ void Round::renderGrid() {
 }
 
 void Round::render() {
+	this->renderNotes();
 	this->renderGrid();
 	this->renderInputEffect(0);
-	this->renderNotes();
 	this->addTime();
 }
 
@@ -85,7 +85,7 @@ void Round::renderNotes() {
 				}
 
 				int height = ROWS - ((this->frame) - (scope - ROWS));
-				glRectd(20 + (line * 4), height, 23.9 + (line * 4), height + 0.5f);
+				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
 			}
 		}
 	}
