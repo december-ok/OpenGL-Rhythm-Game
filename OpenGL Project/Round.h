@@ -11,6 +11,9 @@ class Round
 	unsigned int frame = 0;
 	unsigned int score = 0;
 	vector<bool> notes[5];
+
+	bool key[LINES] = { false, false, false, false };
+	bool renderKey[LINES] = { false, false, false, false };
 public:
 	Round(string);
 	~Round();
@@ -19,9 +22,11 @@ public:
 	
 	void render();
 	void addTime();
+
+	void setInput(unsigned char);
+	void unsetInput(unsigned char);
 private:
-	
 	void renderGrid();
 	void renderNotes();
-	void renderInputEffect(int);
+	void renderInputEffect();
 };

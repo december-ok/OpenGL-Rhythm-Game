@@ -28,9 +28,13 @@ void Window::windowInit(int argc, char** argv)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	glShadeModel(GL_SMOOTH);
+	glutSetKeyRepeat(GLUT_KEY_REPEAT_OFF);
+
 
 	glutDisplayFunc(display_callback);
 	glutReshapeFunc(reshapeFunction);
+	glutKeyboardFunc(set_keyboard_callback);
+	glutKeyboardUpFunc(unset_keyboard_callback);
 	glutTimerFunc(0, timer_callback, 0);
 	init();
 	glutMainLoop();
@@ -52,12 +56,8 @@ void reshapeFunction(int w, int h) {
 void display_callback() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	// 1. 렌더링
 	window->round->render();
-
-	// 2. 입력 받음
-
-	// 3. 기타 계산
+	
 	glutSwapBuffers();
 }
 
@@ -67,17 +67,34 @@ void timer_callback(int)
 	glutTimerFunc(1000 / FPS, timer_callback, 0);
 }
 
-void Window::keyboard_callback(int key, int x, int y)
+void set_keyboard_callback(unsigned char key, int x, int y)
 {
-	switch (key)
-	{
-	case GLUT_KEY_UP:
-		break;
-	case GLUT_KEY_DOWN:
-		break;
-	case GLUT_KEY_LEFT:
-		break;
-	case GLUT_KEY_RIGHT:
-		break;
+	if (key == 'd' || key == 'D') {
+		window->round->setInput('d');
+	}
+	else if (key == 'f' || key == 'F') {
+		window->round->setInput('f');
+	}
+	else if (key == 'j' || key == 'J') {
+		window->round->setInput('j');
+	}
+	else if (key == 'k' || key == 'K') {
+		window->round->setInput('k');
+	}
+}
+
+void unset_keyboard_callback(unsigned char key, int x, int y)
+{
+	if (key == 'd' || key == 'D') {
+		window->round->unsetInput('d');
+	}
+	else if (key == 'f' || key == 'F') {
+		window->round->unsetInput('f');
+	}
+	else if (key == 'j' || key == 'J') {
+		window->round->unsetInput('j');
+	}
+	else if (key == 'k' || key == 'K') {
+		window->round->unsetInput('k');
 	}
 }

@@ -15,10 +15,10 @@ public:
 	void windowInit(int, char**);
 
 	void init();
-	void keyboard_callback(int, int, int);
-	
 };
 
 void reshapeFunction(int, int);
 void display_callback();
 void timer_callback(int);
+void set_keyboard_callback(unsigned char, int, int);
+void unset_keyboard_callback(unsigned char, int, int);
