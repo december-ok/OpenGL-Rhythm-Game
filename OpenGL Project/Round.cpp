@@ -23,7 +23,7 @@ Round::~Round()
 void Round::init() {
 	for (int line = 0; line < LINES; ++line) {
 		this->notes[line] = vector<bool>(10000, false);
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 50; i++) {
 			this->notes[line][rand()%10000] = true;
 			//this->notes[line][i] = true;
 		}
@@ -48,7 +48,7 @@ void Round::renderGrid() {
 		glEnd();
 	}
 
-	glLineWidth(5);
+	glLineWidth(6);
 	glBegin(GL_LINE_LOOP);
 	glVertex2f(20, 5);
 	glVertex2f(20 + (LINES * 4), 5);
@@ -67,6 +67,7 @@ void Round::renderNotes() {
 	for (int line = 0; line < LINES; ++line) {
 		for (int scope = this->frame; scope < this->frame + ROWS+1; ++scope) {
 			if (this->notes[line][scope]) {
+				// 노트의 색 지정
 				switch (line)
 				{
 				case 0:
