@@ -33,21 +33,26 @@ Round::~Round()
 }
 
 void Round::init() {
-	this->playSound();
+	this->loadSound();
 	for (int line = 0; line < LINES; ++line) {
 		this->notes[line] = vector<bool>(10000, false);
 		for (int i = 100; i < 150; i++) {
-			this->notes[line][rand()%10000] = true;
+			this->notes[line][rand()%9000 + START_FRAME] = true;
 			//this->notes[line][i] = true;
 		}
 	}
 }
 
+void Round::loadSound() {
+	BASS_Init(-1, 44100, 0, 0, NULL);
+	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
+	BASS_ChannelPlay(this->stream, FALSE);
+	BASS_ChannelPause(this->stream);
+}
+
 void Round::playSound() {
-	{
-		BASS_Init(-1, 44100, 0, 0, NULL);
-		HSTREAM stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
-		BASS_ChannelPlay(stream, FALSE);
+	if (this->stream){
+		BASS_ChannelPlay(this->stream, FALSE);
 	}
 }
 
@@ -90,6 +95,9 @@ void Round::unsetInput(unsigned char key) {
 
 void Round::update() {
 	this->addTime();
+	if (this->frame == START_FRAME) {
+		this->playSound();
+	}
 }
 
 void Round::render() {
@@ -97,6 +105,51 @@ void Round::render() {
 	this->renderGrid();
 	this->renderInputEffect();
 
+	
+	//tr->renderText("Hello!", 0, 0, 10, 10);
+
+	char* c;
+	string ss = to_string(this->frame / 60);
+	glPushMatrix();
+	glTranslatef(100, 100, 0);
+	glScalef(0.04, 0.06, 1);
+	glColor4f(1, 0.8f, 0,0.5f);
+	glLineWidth(5);
+	for (auto c:ss)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.15f, 100, 0);
+	glColor4f(0, 0.65f, 1,0.5f);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : ss)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.3f, 100, 0);
+	glColor4f(0.19f, 0.65f, 0.32f,0.5f);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : ss)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(100.45f, 100, 0);
+	glColor4f(0.9f, 1, 0.15f,0.5f);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : ss)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
 }
 
 void Round::renderGrid() {

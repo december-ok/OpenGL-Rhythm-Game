@@ -48,7 +48,7 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="BebasNeue-Regular.ttf">
+    <Font Include="font.ttf">
       <Filter>Resource Files</Filter>
     </Font>
   </ItemGroup>

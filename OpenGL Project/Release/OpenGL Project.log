@@ -1,0 +1,15 @@
+﻿  main.cpp
+  Round.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(123,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(124,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(136,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(172,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(174,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(176,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(178,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  TextRenderer.cpp
+  Window.cpp
+TextRenderer.obj : error LNK2001: unresolved external symbol _FT_New_Face
+TextRenderer.obj : error LNK2001: unresolved external symbol _FT_Init_FreeType
+TextRenderer.obj : error LNK2001: unresolved external symbol _FT_Set_Pixel_Sizes
+C:\Users\test\source\repos\OpenGL Project\Release\OpenGL Project.exe : fatal error LNK1120: 3 unresolved externals

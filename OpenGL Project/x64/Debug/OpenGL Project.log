@@ -1,2 +1,17 @@
-﻿  Window.cpp
-  OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Debug\OpenGL Project.exe
+﻿  main.cpp
+  Round.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(123,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(124,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(136,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(172,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(174,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(176,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(178,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  TextRenderer.cpp
+C:\Users\test\source\repos\OpenGL Project\packages\freetype.2.6.5.1\build\native\include\freetype\freetype.h(2670,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+  Window.cpp
+  Generating Code...
+TextRenderer.obj : error LNK2019: unresolved external symbol FT_Init_FreeType referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
+TextRenderer.obj : error LNK2019: unresolved external symbol FT_New_Face referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
+TextRenderer.obj : error LNK2019: unresolved external symbol FT_Set_Pixel_Sizes referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
+C:\Users\test\source\repos\OpenGL Project\x64\Debug\OpenGL Project.exe : fatal error LNK1120: 3 unresolved externals

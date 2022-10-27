@@ -2,8 +2,10 @@
 #include<vector>
 #include<string>
 #include "Global.h"
+#include <bass.h>
 
 using namespace std;
+
 
 class Round
 {
@@ -11,6 +13,7 @@ class Round
 	string name = "";
 	string artist = "";
 	string musicFile = "";
+	HSTREAM stream = NULL;
 
 	unsigned int frame = 0;
 	unsigned int score = 0;
@@ -37,5 +40,6 @@ private:
 	void renderNotes();
 	void renderInputEffect();
 
+	void loadSound();
 	void playSound();
 };

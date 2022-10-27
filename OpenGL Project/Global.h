@@ -12,3 +12,5 @@
 enum MUSIC {
 	WE_WERE_YONG
 };
+
+#define START_FRAME 5*FPS
