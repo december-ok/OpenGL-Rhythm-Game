@@ -55,7 +55,6 @@ void reshapeFunction(int w, int h) {
 
 void display_callback() {
 	glClear(GL_COLOR_BUFFER_BIT);
-	
 	window->round->render();
 	
 	glutSwapBuffers();

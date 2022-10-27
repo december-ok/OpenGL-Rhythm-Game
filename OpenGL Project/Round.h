@@ -10,10 +10,11 @@ class Round
 	string id;
 	unsigned int frame = 0;
 	unsigned int score = 0;
-	vector<bool> notes[5];
+	vector<bool> notes[LINES];
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
+
 public:
 	Round(string);
 	~Round();

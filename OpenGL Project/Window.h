@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Round.h"
 #include "Global.h"
 

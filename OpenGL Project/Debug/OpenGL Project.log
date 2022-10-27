@@ -1,0 +1,9 @@
+﻿  Round.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(90,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(91,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(103,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(139,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(141,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(143,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(145,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\Debug\OpenGL Project.exe

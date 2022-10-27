@@ -2,7 +2,7 @@
 #include "Round.h"
 #include<vector>
 #include<iostream>
-#include <random>
+#include<random>
 
 using namespace std;
 
@@ -67,6 +67,13 @@ void Round::unsetInput(unsigned char key) {
 	}
 }
 
+void Round::render() {
+	this->renderNotes();
+	this->renderGrid();
+	this->renderInputEffect();
+	this->addTime();
+}
+
 void Round::renderGrid() {
 	glLineWidth(1);
 	glColor3f(1, 1, 1);
@@ -89,12 +96,6 @@ void Round::renderGrid() {
 	glRectd(20, 5, 36, 6);
 }
 
-void Round::render() {
-	this->renderNotes();
-	this->renderGrid();
-	this->renderInputEffect();
-	this->addTime();
-}
 
 void Round::renderNotes() {
 	if (this->frame + 120> 10000) return;
