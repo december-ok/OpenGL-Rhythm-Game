@@ -1,15 +1,27 @@
-#include "include/GL/glut.h"
+#include "Render.h"
 #include "Round.h"
-#include<vector>
-#include<iostream>
-#include<random>
+#include <vector>
+#include <iostream>
+#include <random>
+#include <bass.h>
 
 using namespace std;
 
 
-Round::Round(string id)
+Round::Round(MUSIC id)
 {
 	this->id = id;
+	
+	switch (this->id)
+	{
+	case WE_WERE_YONG:
+		this->name = "We Were Young";
+		this->artist = "Sad Puppy";
+		this->musicFile = "./WE_WERE_YOUNG.mp3";
+		break;
+	default:
+		break;
+	}
 
 	this->init();
 	// id를 통해 노래 정보등을 가져오기
@@ -21,12 +33,21 @@ Round::~Round()
 }
 
 void Round::init() {
+	this->playSound();
 	for (int line = 0; line < LINES; ++line) {
 		this->notes[line] = vector<bool>(10000, false);
 		for (int i = 100; i < 150; i++) {
 			this->notes[line][rand()%10000] = true;
 			//this->notes[line][i] = true;
 		}
+	}
+}
+
+void Round::playSound() {
+	{
+		BASS_Init(-1, 44100, 0, 0, NULL);
+		HSTREAM stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
+		BASS_ChannelPlay(stream, FALSE);
 	}
 }
 
@@ -67,11 +88,15 @@ void Round::unsetInput(unsigned char key) {
 	}
 }
 
+void Round::update() {
+	this->addTime();
+}
+
 void Round::render() {
 	this->renderNotes();
 	this->renderGrid();
 	this->renderInputEffect();
-	this->addTime();
+
 }
 
 void Round::renderGrid() {

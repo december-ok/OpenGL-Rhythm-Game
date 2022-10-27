@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "include/GL/glut.h"
+#include "Render.h"
 #include <iostream>
 
 Window* window;
@@ -7,7 +7,7 @@ Window* window;
 Window::Window()
 {
 	window = this;
-	this->round = new Round("TEST");
+	this->round = new Round(WE_WERE_YONG);
 	
 	this->windowInit(0,NULL);
 }
@@ -18,7 +18,7 @@ Window::~Window()
 }
 
 void Window::windowInit(int argc, char** argv)
-{
+{	
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowSize(1280, 720);
@@ -54,6 +54,8 @@ void reshapeFunction(int w, int h) {
 }
 
 void display_callback() {
+	window->round->update();
+	
 	glClear(GL_COLOR_BUFFER_BIT);
 	window->round->render();
 	

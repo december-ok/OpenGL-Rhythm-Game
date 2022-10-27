@@ -8,3 +8,7 @@
 #define FPS 60
 
 #define LINES 4
+
+enum MUSIC {
+	WE_WERE_YONG
+};
