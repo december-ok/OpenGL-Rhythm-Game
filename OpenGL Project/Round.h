@@ -15,7 +15,7 @@ class Round
 	string musicFile = "";
 	HSTREAM stream = NULL;
 
-	unsigned int frame = 0;
+	// unsigned int frame = 0;
 	unsigned int score = 0;
 	vector<bool> notes[LINES];
 
@@ -24,6 +24,7 @@ class Round
 	
 
 public:
+	static unsigned int frame;
 	Round(MUSIC);
 	~Round();
 	
