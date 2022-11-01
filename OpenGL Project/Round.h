@@ -6,7 +6,7 @@
 #include <bass.h>
 
 using namespace std;
-
+static unsigned int frame = 0;
 
 class Round
 {

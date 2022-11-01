@@ -2,22 +2,22 @@
 #include "Round.h"
 #include <iostream>
 
-float Note::GetHeight()
+float Note::GetHeight(unsigned int _frame)
 {
-	if (!IsActive()) return -0.0f; // Non-active 상태일 경우
-	return frame - this->createTime; // 1 ~ ROWS 반환
+	if (!IsActive(_frame)) return -0.0f; // Non-active 상태일 경우
+	return _frame - this->createTime; // 1 ~ ROWS 반환
 }
 
-bool Note::IsCheckCreate()
+bool Note::IsCheckCreate(unsigned int _frame)
 {
-	return this->createTime == frame;
+	return this->createTime == _frame;
 	
 }
 
-bool Note::IsActive()
+bool Note::IsActive(unsigned int _frame)
 {
-	cout << frame << " | " << this->createTime << endl;
-	return (this->createTime < frame && this->createTime + ROWS >= frame);
+	cout << _frame << " | " << this->createTime << endl;
+	return (this->createTime < _frame && this->createTime + ROWS >= _frame);
 }
 
 void ItemNote::UseItem()

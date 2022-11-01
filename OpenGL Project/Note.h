@@ -6,9 +6,9 @@ public:
 	unsigned char type; // 노트의 종류 (0 = Normal, 1 = Section, 2 = Lie, 3 = Item)
 
 	~Note() {};
-	virtual float GetHeight(); // 현재 fps에서 위치 값을 반환하는 함수 (만약 Active된 상태가 아니라면 0을 반환)
-	bool IsCheckCreate(); // 생성 되어야 하는지 체크하고 반환하는 함수
-	bool IsActive(); // 현재 월드에 Active한 상태인지 체크하고 반환하는 함수
+	virtual float GetHeight(unsigned int _frame); // 현재 fps에서 위치 값을 반환하는 함수 (만약 Active된 상태가 아니라면 0을 반환)
+	bool IsCheckCreate(unsigned int _frame); // 생성 되어야 하는지 체크하고 반환하는 함수
+	bool IsActive(unsigned int _frame); // 현재 월드에 Active한 상태인지 체크하고 반환하는 함수
 };
 
 class NoramlNote : public Note 

@@ -187,7 +187,7 @@ void Round::renderNotes() {
 		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
 			if (this->notes[line][scope] == nullptr) break;
 			cout << "fps: " << frame << " | ";
-			if (this->notes[line][scope]->IsActive()) {
+			if (this->notes[line][scope]->IsActive(frame)) {
 				// 노트의 색 지정
 				switch (line)
 				{
@@ -206,7 +206,7 @@ void Round::renderNotes() {
 					break;
 				}
 
-				int height = this->notes[line][scope]->GetHeight();
+				int height = this->notes[line][scope]->GetHeight(frame);
 				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
 				cout << frame << " | " << line << ":" << height << "\n";
 
