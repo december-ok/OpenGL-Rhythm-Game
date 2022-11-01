@@ -35,11 +35,17 @@ Round::~Round()
 void Round::init() {
 	this->loadSound();
 	for (int line = 0; line < LINES; ++line) {
-		this->notes[line] = vector<bool>(10000, false);
-		for (int i = 100; i < 150; i++) {
-			this->notes[line][rand()%9000 + START_FRAME] = true;
-			//this->notes[line][i] = true;
-		}
+		this->notes[line] = vector<Note*>();
+	}
+
+	switch (this->id)
+	{
+	case WE_WERE_YONG:
+		// 노드 수작업 부분
+		this->notes[0].push_back((Note*)new NoramlNote(300));
+		break;
+	default:
+		break;
 	}
 }
 
@@ -95,7 +101,7 @@ void Round::unsetInput(unsigned char key) {
 
 void Round::update() {
 	this->addTime();
-	if (this->frame == START_FRAME) {
+	if (frame == START_FRAME) {
 		this->playSound();
 	}
 }
@@ -109,7 +115,7 @@ void Round::render() {
 	//tr->renderText("Hello!", 0, 0, 10, 10);
 
 	char* c;
-	string ss = to_string(this->frame / 60);
+	string ss = to_string(frame / 60);
 	glPushMatrix();
 	glTranslatef(100, 100, 0);
 	glScalef(0.04, 0.06, 1);
@@ -176,10 +182,12 @@ void Round::renderGrid() {
 
 
 void Round::renderNotes() {
-	if (this->frame + 120> 10000) return;
+	if (frame + 120 > 10000) return;
 	for (int line = 0; line < LINES; ++line) {
-		for (int scope = this->frame; scope < this->frame + ROWS+1; ++scope) {
-			if (this->notes[line][scope]) {
+		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
+			if (this->notes[line][scope] == nullptr) break;
+			cout << "fps: " << frame << " | ";
+			if (this->notes[line][scope]->IsActive()) {
 				// 노트의 색 지정
 				switch (line)
 				{
@@ -198,9 +206,10 @@ void Round::renderNotes() {
 					break;
 				}
 
-				int height = ROWS - ((this->frame) - (scope - ROWS));
+				int height = this->notes[line][scope]->GetHeight();
 				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
-				
+				cout << frame << " | " << line << ":" << height << "\n";
+
 				if (line == 0 && (0<=height && height<=10 ) ) {
 					cout << line << ":" << height << "\n";
 				}
@@ -226,5 +235,5 @@ void Round::renderInputEffect() {
 }
 
 void Round::addTime() {
-	this->frame += 1;
+	frame += 1;
 }

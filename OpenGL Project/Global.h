@@ -14,3 +14,4 @@ enum MUSIC {
 };
 
 #define START_FRAME 5*FPS
+static unsigned int frame = 0;

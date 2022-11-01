@@ -1,17 +1,21 @@
-﻿  main.cpp
+﻿  Note.cpp
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.cpp(9,15): warning C4244: 'return': 'unsigned int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.cpp(21,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.cpp(21,62): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
   Round.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(123,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(124,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(136,39): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(172,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(174,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(176,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(178,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  TextRenderer.cpp
-C:\Users\test\source\repos\OpenGL Project\packages\freetype.2.6.5.1\build\native\include\freetype\freetype.h(2670,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(121,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(132,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(142,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(152,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(117,8): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(174,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(175,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(209,16): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(226,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(228,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(230,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Round.cpp(232,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Window.cpp
-  Generating Code...
-TextRenderer.obj : error LNK2019: unresolved external symbol FT_Init_FreeType referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
-TextRenderer.obj : error LNK2019: unresolved external symbol FT_New_Face referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
-TextRenderer.obj : error LNK2019: unresolved external symbol FT_Set_Pixel_Sizes referenced in function "public: __cdecl TextRenderer::TextRenderer(void)" (??0TextRenderer@@QEAA@XZ)
-C:\Users\test\source\repos\OpenGL Project\x64\Debug\OpenGL Project.exe : fatal error LNK1120: 3 unresolved externals
+  main.cpp
+  코드를 생성하고 있습니다...
+  OpenGL Project.vcxproj -> C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\x64\Debug\OpenGL Project.exe
