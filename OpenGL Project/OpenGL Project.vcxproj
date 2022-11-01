@@ -109,6 +109,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,11 +133,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Note.cpp" />
     <ClCompile Include="Round.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.h" />
+    <ClInclude Include="Note.h" />
     <ClInclude Include="Render.h" />
     <ClInclude Include="Round.h" />
     <ClInclude Include="Window.h" />

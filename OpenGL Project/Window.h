@@ -2,7 +2,6 @@
 #include "Round.h"
 #include "Global.h"
 
-
 class Window
 {
 public:
