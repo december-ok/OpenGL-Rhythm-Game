@@ -113,7 +113,7 @@ void Round::render() {
 
 	
 	//tr->renderText("Hello!", 0, 0, 10, 10);
-
+	// 글자렌더링하는부분입니다 수정예정
 	char* c;
 	string ss = to_string(frame / 60);
 	glPushMatrix();
