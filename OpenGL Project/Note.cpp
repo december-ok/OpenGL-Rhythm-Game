@@ -16,7 +16,7 @@ bool Note::IsCheckCreate(unsigned int _frame)
 
 bool Note::IsActive(unsigned int _frame)
 {
-	cout << _frame << " | " << this->createFrame << endl;
+	//cout << _frame << " | " << this->createFrame << endl;
 	return (this->createFrame < _frame&& this->createFrame + ROWS >= _frame);
 }
 

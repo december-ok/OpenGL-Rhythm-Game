@@ -3,6 +3,7 @@
 #include <iostream>
 
 Window* window;
+using namespace std;
 
 Window::Window()
 {
@@ -54,12 +55,12 @@ void reshapeFunction(int w, int h) {
 }
 
 void display_callback() {
-	window->round->update();
-	
-	glClear(GL_COLOR_BUFFER_BIT);
-	window->round->render();
-	
-	glutSwapBuffers();
+	if (!(window->round->pause)) {
+		window->round->update();
+		glClear(GL_COLOR_BUFFER_BIT);
+		window->round->render();
+		glutSwapBuffers();
+	}
 }
 
 void timer_callback(int)
@@ -83,6 +84,9 @@ void set_keyboard_callback(unsigned char key, int x, int y)
 	}
 	else if (key == 'k' || key == 'K') {
 		window->round->setInput('k');
+	}
+	else if (key == 'p' || key == 'P') {
+		window->round->setInput('p');
 	}
 }
 

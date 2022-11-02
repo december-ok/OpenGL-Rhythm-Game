@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <bass.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -36,11 +37,15 @@ Round::Round(MUSIC id)
 
 Round::~Round()
 {
-	
+	BASS_Free();
 }
 
 void Round::init() {
+
+	this->gameInfo = GameInfo();
+
 	this->loadSound();
+
 	for (int line = 0; line < LINES; ++line) {
 		this->notes[line] = vector<Note*>();
 	}
@@ -50,12 +55,20 @@ void Round::init() {
 	case WE_WERE_YONG:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
-		this->notes[0].push_back((Note*)new NoramlNote(300));
+		this->notes[0].push_back((Note*)new ItemNote(300,2));
 		this->notes[0].push_back((Note*)new NoramlNote(400));
-		this->notes[0].push_back((Note*)new NoramlNote(500));
+		this->notes[0].push_back((Note*)new LieNote(500));
 		this->notes[0].push_back((Note*)new NoramlNote(600));
 		this->notes[0].push_back((Note*)new NoramlNote(700));
 		this->notes[0].push_back((Note*)new NoramlNote(800));
+		this->notes[0].push_back((Note*)new NoramlNote(900));
+		this->notes[0].push_back((Note*)new ItemNote(1000,1));
+		this->notes[0].push_back((Note*)new NoramlNote(1100));
+		this->notes[0].push_back((Note*)new NoramlNote(1200));
+		this->notes[0].push_back((Note*)new NoramlNote(1300));
+		this->notes[0].push_back((Note*)new NoramlNote(1400));
+		this->notes[0].push_back((Note*)new NoramlNote(1500));
+
 		break;
 	default:
 		break;
@@ -67,12 +80,131 @@ void Round::loadSound() {
 	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
 	BASS_ChannelPlay(this->stream, FALSE);
 	BASS_ChannelPause(this->stream);
+
+	//끝나는 시점 계산
+	QWORD len = BASS_ChannelGetLength(stream, BASS_POS_BYTE);
+	double time = BASS_ChannelBytes2Seconds(stream, len);
+	endFrame = START_FRAME + (time * FPS);
 }
 
 void Round::playSound() {
 	if (this->stream){
 		BASS_ChannelPlay(this->stream, FALSE);
 	}
+}
+
+void Round::pauseSound(bool pause)
+{
+
+	if (pause) BASS_ChannelPause(this->stream);
+	else {
+		if (frame >= START_FRAME) {
+			this->playSound();
+		}
+	}
+}
+
+void Round::receiveJudgement(int judge,Note* nott)
+{
+	//판정 ( 1:perfect, 2:great, 3:good? 4:bad 5:miss(침))
+	// 안치면 타입정보 안줌
+
+	
+	int type = 0;
+	if(nott != NULL) type = nott->type;
+
+	if (type == 3) {
+		printf("Item\n");
+		ItemNote* tmpNott = (ItemNote*)nott;
+		unsigned char itemType = tmpNott->itemType;
+
+		if (itemType == 1) {
+			printf("1111111\n");
+			gameInfo.HP += 30;
+			if (gameInfo.HP > 100)
+				gameInfo.HP = 100;
+		}
+		else if (itemType == 2) {
+			printf("222222\n");
+			reinforce += 1000;
+		}
+	}
+
+	//판정 up 아이템 적용
+	//miss 와 퍼펙트 아닌 부분에서 판정을 하나씩 올림
+	if (reinforce > 0 && judge > 1 && judge <5){
+		judge--;
+	}
+
+
+	//lie노드면 처리, 못치면 타입 중요한거 없음
+	if (type == 2) {
+		printf("lie\n");
+		gameInfo.HP -= 30;
+	}
+	else if (judge == 1) {
+		gameInfo.HP += 2;
+		gameInfo.combo++;
+		gameInfo.perfect++;
+		calcScore(judge);
+	}
+	else if (judge == 2) {
+		gameInfo.HP += 1;
+		gameInfo.combo++;
+		gameInfo.great++;
+		calcScore(judge);
+	}
+	else if (judge == 3) {
+		gameInfo.combo++;
+		gameInfo.normal++;
+		calcScore(judge);
+	}
+	else if (judge == 4) {
+		gameInfo.HP -= 5;
+		gameInfo.combo = 0;
+		gameInfo.bad++;
+		calcScore(judge);
+	}
+	else if (judge == 5) {
+		gameInfo.HP -= 10;
+		gameInfo.combo = 0;
+		gameInfo.miss++;
+	}
+
+	if (gameInfo.HP > 100)
+		gameInfo.HP = 100;
+	if (gameInfo.HP <= 0) {
+		//gameover()
+		printf("사망\n");
+		exit(0);
+	}
+}
+
+void Round::calcScore(int judge)
+{
+	//perfect 1 great 2 normal 3 bad 4 miss : 점수 계산 없음
+	//노트 점수 : 기본점수 * 콤보 보너스(100combo당 10% 증가) * 판정 점수(1.3 1.1 1.0 0.5 0)
+	int base = 100;
+	int interval = gameInfo.combo / 100;
+	float calc = 0;
+
+	switch (judge) {
+	case 1:
+		calc = base * (1 + (interval * 0.1)) * 1.3;
+		break;
+	case 2:
+		calc = base * (1 + (interval * 0.1)) * 1.1;
+		break;
+	case 3:
+		calc = base * (1 + (interval * 0.1)) * 1;
+		break;
+	case 4:
+		calc = base * 0.5;
+		break;
+	}
+
+	int tmp = calc;
+	gameInfo.score += tmp;
 }
 
 void Round::setInput(unsigned char key) {
@@ -91,6 +223,10 @@ void Round::setInput(unsigned char key) {
 	else if (key == 'k') {
 		this->key[3] = true;
 		this->renderKey[3] = true;
+	}
+	else if (key == 'p') {
+		pause = !(pause);
+		pauseSound(pause);
 	}
 }
 void Round::unsetInput(unsigned char key) {
@@ -118,6 +254,7 @@ void Round::update() {
 	if (frame == START_FRAME) {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
+	if (reinforce > 0) reinforce--;
 }
 
 void Round::render() {
@@ -203,7 +340,7 @@ void Round::renderNotes() {
 	for (int line = 0; line < LINES; ++line) {
 		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
 			if (this->notes[line][scope] == nullptr) break;
-			cout << "fps: " << frame << " | ";
+			//cout << "fps: " << frame << " | ";
 			if (this->notes[line][scope]->IsActive(frame) && this->notes[line][scope]->isAlive) {
 				// 노트의 색 지정
 				switch (line)
@@ -225,10 +362,10 @@ void Round::renderNotes() {
 
 				int height = this->notes[line][scope]->GetHeight(frame);
 				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
-				cout << frame << " | " << line << ":" << height << "\n";
+				//cout << frame << " | " << line << ":" << height << "\n";
 
 				if (line == 0 && (0 <= height && height <= 10)) {
-					cout << line << ":" << height << "\n";
+				//	cout << line << ":" << height << "\n";
 				}
 			}
 			else if(this->notes[line][scope]->IsMissNote(frame)) {
@@ -257,6 +394,10 @@ void Round::renderInputEffect() {
 
 void Round::addTime() {
 	frame += 1;
+	if (frame == endFrame) {
+		//gameclear()
+		exit(0);
+	}
 }
 
 ///*입력 당시의 프레임을 줌. START_FRAME때문에 코드가 조금 더러움*/
@@ -278,6 +419,9 @@ int Round::getNoteDelay(int line)
 
 	// 입력과 노트 프레임 사이의 차이
 	int n_delay = this->notes[line][n_frame]->GetHeight(frame);
+	int noteType = this->notes[line][n_frame]->type;
+
+	Note* nott = this->notes[line][n_frame];
 
 	// 일정 범위 내에 노트가 존재함
 	if (n_delay <= 50) {
@@ -286,28 +430,26 @@ int Round::getNoteDelay(int line)
 		this->setLineInput(line);
 		printf("%d: Delay\n", n_delay);
 		if (abs(n_delay) <= 10) {
-			printf("Perfect!!\n");
+			receiveJudgement(1,nott);
 			return 1;
 		}
 		else if (abs(n_delay) <= 20) {
-			printf("Great!\n");
+			receiveJudgement(2, nott);
 			return 2;
 		}
 		else if (abs(n_delay) <= 30) {
-			printf("Good!\n");
+			receiveJudgement(3, nott);
 			return 3;
 		}
 		else if (abs(n_delay) <= 40) {
-			printf("Bad\n");
+			receiveJudgement(4, nott);
 			return 4;
 		}
 		else {
-			printf("Miss\n");
-			return 5;
+			receiveJudgement(5, nott);
 		}
 	}
 	else {
-		return -1;
 	}
 }
 
@@ -334,6 +476,7 @@ void Round::deleteMissNode() {
 	for (int i = 0; i < 1; i++) {
 		// 입력 못한 노트 제거
 		if (this->notes[i][line_input[i]]->IsMissNote(frame)) {
+			receiveJudgement(5, NULL);
 			printf("%d Miss Note 제거\n", line_input[i]);
 			this->notes[i][line_input[i]]->killNote();
 			this->setLineInput(i);

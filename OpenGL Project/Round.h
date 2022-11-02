@@ -4,6 +4,7 @@
 #include "Global.h"
 #include "Note.h"
 #include <bass.h>
+#include"GameInfo.h"
 
 using namespace std;
 static unsigned int frame = 0;
@@ -25,7 +26,9 @@ class Round
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
 	
-
+	GameInfo gameInfo;
+	unsigned int reinforce = 0;
+	int endFrame = 0;
 public:
 	
 	Round(MUSIC);
@@ -47,6 +50,13 @@ public:
 
 	void setInput(unsigned char);
 	void unsetInput(unsigned char);
+
+	//okt
+	bool pause = false;
+	void receiveJudgement(int judge,Note* nott);
+	void calcScore(int judge);
+	void pauseSound(bool pause);
+
 private:
 	void renderGrid();
 	void renderNotes();
