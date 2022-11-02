@@ -19,9 +19,9 @@ Round::Round(MUSIC id)
 	switch (this->id)
 	{
 	case WE_WERE_YONG:
-		this->name = "We Were Young";
-		this->artist = "Sad Puppy";
-		this->musicFile = "./WE_WERE_YOUNG.mp3";
+		this->name = "Cannon Variation";
+		this->artist = "Johan Pachelbel";
+		this->musicFile = "./Canon.mp3";
 		break;
 	default:
 		break;
@@ -45,17 +45,147 @@ void Round::init() {
 		this->notes[line] = vector<Note*>();
 	}
 
+	int s;
+	float t;
+
 	switch (this->id)
 	{
 	case WE_WERE_YONG:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
-		this->notes[0].push_back((Note*)new NoramlNote(300));
-		this->notes[0].push_back((Note*)new NoramlNote(400));
-		this->notes[0].push_back((Note*)new NoramlNote(500));
-		this->notes[0].push_back((Note*)new NoramlNote(600));
-		this->notes[0].push_back((Note*)new NoramlNote(700));
-		this->notes[0].push_back((Note*)new NoramlNote(800));
+		s = 1020;
+		t = 11.25f;
+
+		this->notes[1].push_back((Note*)new NoramlNote(300));
+		this->notes[3].push_back((Note*)new NoramlNote(390));
+		this->notes[2].push_back((Note*)new NoramlNote(435));
+		this->notes[1].push_back((Note*)new NoramlNote(480));
+		this->notes[3].push_back((Note*)new NoramlNote(570));
+		this->notes[2].push_back((Note*)new NoramlNote(615));
+		this->notes[1].push_back((Note*)new NoramlNote(660));
+		this->notes[0].push_back((Note*)new NoramlNote(750));
+		this->notes[2].push_back((Note*)new NoramlNote(795));
+		this->notes[1].push_back((Note*)new NoramlNote(840));
+
+		this->notes[0].push_back((Note*)new NoramlNote(930));
+		this->notes[1].push_back((Note*)new NoramlNote(935));
+		this->notes[0].push_back((Note*)new NoramlNote(940));
+		this->notes[1].push_back((Note*)new NoramlNote(945));
+		this->notes[0].push_back((Note*)new NoramlNote(950));
+		this->notes[1].push_back((Note*)new NoramlNote(955));
+		this->notes[0].push_back((Note*)new NoramlNote(960));
+		this->notes[1].push_back((Note*)new NoramlNote(965));
+		this->notes[2].push_back((Note*)new NoramlNote(970));
+		this->notes[3].push_back((Note*)new NoramlNote(975));
+		this->notes[2].push_back((Note*)new NoramlNote(980));
+		this->notes[3].push_back((Note*)new NoramlNote(985));
+		this->notes[1].push_back((Note*)new NoramlNote(990));
+		this->notes[3].push_back((Note*)new NoramlNote(995));
+		this->notes[1].push_back((Note*)new NoramlNote(1000));
+		this->notes[3].push_back((Note*)new NoramlNote(1005));
+
+		this->notes[1].push_back((Note*)new NoramlNote(s));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+		this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+		this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+		this->notes[2].push_back((Note*)new NoramlNote(s + 6 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+		for (int i = 0; i < 8; i++)
+		{
+			s += 90;
+			this->notes[0].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[2].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[3].push_back((Note*)new NoramlNote(s));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+		}
+
 		break;
 	default:
 		break;
@@ -203,7 +333,6 @@ void Round::renderNotes() {
 	for (int line = 0; line < LINES; ++line) {
 		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
 			if (this->notes[line][scope] == nullptr) break;
-			cout << "fps: " << frame << " | ";
 			if (this->notes[line][scope]->IsActive(frame) && this->notes[line][scope]->isAlive) {
 				// 노트의 색 지정
 				switch (line)
@@ -225,7 +354,6 @@ void Round::renderNotes() {
 
 				int height = this->notes[line][scope]->GetHeight(frame);
 				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
-				cout << frame << " | " << line << ":" << height << "\n";
 
 				if (line == 0 && (0 <= height && height <= 10)) {
 					cout << line << ":" << height << "\n";
