@@ -3,10 +3,14 @@
 #include <iostream>
 
 Window* window;
+unsigned int Round::frame;
 
 Window::Window()
 {
 	window = this;
+	for (int i = 0; i < LINES; i++) {
+		line_input[i] = 0;
+	}
 	this->round = new Round(WE_WERE_YONG);
 	
 	this->windowInit(0,NULL);
@@ -68,10 +72,39 @@ void timer_callback(int)
 	glutTimerFunc(1000 / FPS, timer_callback, 0);
 }
 
+/*수정한 부분: D 입력*/
 void set_keyboard_callback(unsigned char key, int x, int y)
 {
 	if (key == 'd' || key == 'D') {
 		window->round->setInput('d');
+		int d_frame = window->round->getFrame();
+		int d_delay = window->round->getNoteDelay(0, d_frame);
+		if (d_delay != 200) {
+			// 입력이 존재함
+			d_delay -= 5;
+			printf("%d\n", d_delay);
+
+			// 판정 출력 - 전달해주어야 함
+			if (abs(d_delay) <= 10) {
+				printf("Perfect!!\n");
+			}
+			else if (abs(d_delay) <= 20) {
+				printf("Great!\n");
+			}
+			else if (abs(d_delay) <= 30) {
+				printf("Good\n");
+			}
+			else if (abs(d_delay <= 40)) {
+				printf("Bad\n");
+			}
+			else {
+				printf("Miss\n");
+			}
+
+			// 판정 입력한 노트 제거
+			window->round->deleteNote(0, (d_delay + 5) + d_frame);
+
+		}
 	}
 	else if (key == 'f' || key == 'F') {
 		window->round->setInput('f');
