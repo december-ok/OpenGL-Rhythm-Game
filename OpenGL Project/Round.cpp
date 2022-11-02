@@ -12,6 +12,9 @@ Round::Round(MUSIC id)
 {
 	this->id = id;
 	/*노트 판정에 따른 값 수정 필요!!*/
+	for (int i = 0; i < LINES; i++) {
+		line_input[i] = 0;
+	}
 	
 	switch (this->id)
 	{
@@ -23,6 +26,9 @@ Round::Round(MUSIC id)
 	default:
 		break;
 	}
+
+
+
 
 	this->init();
 	// id를 통해 노래 정보등을 가져오기
@@ -36,13 +42,23 @@ Round::~Round()
 void Round::init() {
 	this->loadSound();
 	for (int line = 0; line < LINES; ++line) {
-		this->notes[line] = vector<bool>(10000, false);
-		for (int i = 100; i < 150; i++) {
-			// 최대 9000 FPS까지
-			this->notes[line][START_FRAME] = true;
-			this->notes[line][rand()%9000 + START_FRAME] = true;
-			//this->notes[line][i] = true;
-		}
+		this->notes[line] = vector<Note*>();
+	}
+
+	switch (this->id)
+	{
+	case WE_WERE_YONG:
+		// 노드 수작업 부분
+		// 오류 확인용 여러 케이스
+		this->notes[0].push_back((Note*)new NoramlNote(300));
+		this->notes[0].push_back((Note*)new NoramlNote(400));
+		this->notes[0].push_back((Note*)new NoramlNote(500));
+		this->notes[0].push_back((Note*)new NoramlNote(600));
+		this->notes[0].push_back((Note*)new NoramlNote(700));
+		this->notes[0].push_back((Note*)new NoramlNote(800));
+		break;
+	default:
+		break;
 	}
 }
 
@@ -98,7 +114,8 @@ void Round::unsetInput(unsigned char key) {
 
 void Round::update() {
 	this->addTime();
-	if (this->frame == START_FRAME) {
+	this->deleteMissNode();	// 여기가 맞나..?
+	if (frame == START_FRAME) {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
 }
@@ -107,12 +124,13 @@ void Round::render() {
 	this->renderNotes();
 	this->renderGrid();
 	this->renderInputEffect();
+	
 
 	
 	//tr->renderText("Hello!", 0, 0, 10, 10);
 
 	char* c;
-	string ss = to_string(this->frame);	// 노래 시작과 프레임 맞추기. 근데 왜 글자 깨짐...?
+	string ss = to_string(frame);	// 노래 시작과 프레임 맞추기. 근데 왜 글자 깨짐...?
 
 	glPushMatrix();
 	glTranslatef(100, 100, 0);
@@ -180,10 +198,13 @@ void Round::renderGrid() {
 
 
 void Round::renderNotes() {
-	if (this->frame + 120> 10000) return;
+	if (frame + 120 > 10000) return;
+	int input_count = 0;
 	for (int line = 0; line < LINES; ++line) {
-		for (int scope = this->frame; scope < this->frame + ROWS+1; ++scope) {
-			if (this->notes[line][scope]) {
+		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
+			if (this->notes[line][scope] == nullptr) break;
+			cout << "fps: " << frame << " | ";
+			if (this->notes[line][scope]->IsActive(frame) && this->notes[line][scope]->isAlive) {
 				// 노트의 색 지정
 				switch (line)
 				{
@@ -202,21 +223,22 @@ void Round::renderNotes() {
 					break;
 				}
 
-				int height = ROWS - ((this->frame) - (scope - ROWS));
+				int height = this->notes[line][scope]->GetHeight(frame);
 				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
-				
-				if (line == 0 && (0<=height && height<=10 ) ) {
+				cout << frame << " | " << line << ":" << height << "\n";
+
+				if (line == 0 && (0 <= height && height <= 10)) {
 					cout << line << ":" << height << "\n";
 				}
 			}
+			else if(this->notes[line][scope]->IsMissNote(frame)) {
+				this->deleteNote(line, scope);
+				
+			}
 
-			// 우선 계속 돌아가는 부분에 넣음
-			
 		}
 	}
-	deleteMissNote();
 }
-
 void Round::renderInputEffect() {
 	for (int i = 0;i < LINES;i++) {
 		if (!this->renderKey[i]) continue;
@@ -234,57 +256,99 @@ void Round::renderInputEffect() {
 }
 
 void Round::addTime() {
-	this->frame += 1;
+	frame += 1;
 }
 
-/*입력 당시의 프레임을 줌. START_FRAME때문에 코드가 조금 더러움*/
-int Round::getFrame()
-{
-	if (this->frame - START_FRAME < 0) {	// 노래 시작 전 Frame
-		return -100;	// 우선 임시로 음수값을 줌. 왜냐하면, 노래 시작할 때 출력되는 노트와 '충돌'하면 안됨
-	}
-	else {
-		return this->frame - START_FRAME;
-	}
-}
+///*입력 당시의 프레임을 줌. START_FRAME때문에 코드가 조금 더러움*/
+//int Round::getFrame()
+//{
+//	if (frame - START_FRAME < 0) {	// 노래 시작 전 Frame
+//		return -100;	// 우선 임시로 음수값을 줌. 왜냐하면, 노래 시작할 때 출력되는 노트와 '충돌'하면 안됨
+//	}
+//	else {
+//		return frame - START_FRAME;
+//	}
+//}
 
 /*사용자의 입력과 노트 프레임 간의 차이를 계산하는 함수*/
-int Round::getNoteDelay(int line, int n_frame)
+int Round::getNoteDelay(int line)
 {
-	// 50: 임싯값
-	for (int i = n_frame - 50; i <= n_frame + 50; i++) {
-		if (i >= 0) {
-			if (this->notes[line][i + START_FRAME]) {
-				return i - n_frame;	// 빠르면 양수, 느리면 음수
-			}
-		}
-		else if(i >= -50) {
-			if (this->notes[line][START_FRAME]) {
-				return -n_frame;	
-			}
-		}
+	// 가장 가까운 노트
+	int n_frame = this->line_input[line];
 
+	// 입력과 노트 프레임 사이의 차이
+	int n_delay = this->notes[line][n_frame]->GetHeight(frame);
+
+	// 일정 범위 내에 노트가 존재함
+	if (n_delay <= 50) {
+		// 노트 지움
+		this->deleteNote(line, n_frame);
+		this->setLineInput(line);
+		printf("%d: Delay\n", n_delay);
+		if (abs(n_delay) <= 10) {
+			printf("Perfect!!\n");
+			return 1;
+		}
+		else if (abs(n_delay) <= 20) {
+			printf("Great!\n");
+			return 2;
+		}
+		else if (abs(n_delay) <= 30) {
+			printf("Good!\n");
+			return 3;
+		}
+		else if (abs(n_delay) <= 40) {
+			printf("Bad\n");
+			return 4;
+		}
+		else {
+			printf("Miss\n");
+			return 5;
+		}
 	}
-	
-	return 200;	// 입력 초과
+	else {
+		return -1;
+	}
 }
 
-/*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함
-또한, 노트의 구조가 바뀌면 이 또한 바뀌어야 함*/
+/*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함*/
 void Round::deleteNote(int line, int n_frame)
 {
-	this->notes[line][n_frame + START_FRAME] = false;
+	if (this->notes[line][n_frame] != nullptr) {
+		this->notes[line][n_frame]->killNote();
+		printf("%d번 note 삭제\n", n_frame);
+	}
 
 }
 
-/*놓치는 노트들을 Miss 처리하는 함수 - 판정을 다른 곳으로 보내주어야 함.*/
-void Round::deleteMissNote() 
-{
-	if (frame >= 50) {
-		if (this->notes[0][frame - 50]) {
-			printf("miss\n");
-			deleteNote(0, frame - 50);
-		}
+int Round::getLineInput(int line) {
+	return this->line_input[line];
+}
 
+void Round::setLineInput(int line) {
+	this->line_input[line]++;
+}
+
+void Round::deleteMissNode() {
+	// 1 -> LINES로 바꿔야 함.
+	for (int i = 0; i < 1; i++) {
+		// 입력 못한 노트 제거
+		if (this->notes[i][line_input[i]]->IsMissNote(frame)) {
+			printf("%d Miss Note 제거\n", line_input[i]);
+			this->notes[i][line_input[i]]->killNote();
+			this->setLineInput(i);
+		}
 	}
 }
+
+///*놓치는 노트들을 Miss 처리하는 함수 - 판정을 다른 곳으로 보내주어야 함.*/
+//void Round::deleteMissNote() 
+//{
+//	if (frame >= 50) {
+//		if (this->notes[0][frame - 50]) {
+//			printf("miss\n");
+//			deleteNote(0, frame - 50);
+//		}
+//
+//	}
+//}
