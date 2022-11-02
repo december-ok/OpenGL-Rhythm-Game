@@ -10,7 +10,6 @@ public:
 	~Window();
 	
 	Round* round;
-	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
 	
 	void windowInit(int, char**);
 
