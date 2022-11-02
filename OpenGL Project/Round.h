@@ -2,11 +2,10 @@
 #include<vector>
 #include<string>
 #include "Global.h"
-#include "Note.h"
 #include <bass.h>
 
 using namespace std;
-static unsigned int frame = 0;
+
 
 class Round
 {
@@ -18,13 +17,14 @@ class Round
 
 	// unsigned int frame = 0;
 	unsigned int score = 0;
-	vector<Note*> notes[LINES];
+	vector<bool> notes[LINES];
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
 	
 
 public:
+	static unsigned int frame;
 	Round(MUSIC);
 	~Round();
 	
