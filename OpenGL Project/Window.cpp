@@ -68,10 +68,12 @@ void timer_callback(int)
 	glutTimerFunc(1000 / FPS, timer_callback, 0);
 }
 
+/*수정한 부분: D 입력*/
 void set_keyboard_callback(unsigned char key, int x, int y)
 {
 	if (key == 'd' || key == 'D') {
 		window->round->setInput('d');
+		window->round->getNoteDelay(0);
 	}
 	else if (key == 'f' || key == 'F') {
 		window->round->setInput('f');
