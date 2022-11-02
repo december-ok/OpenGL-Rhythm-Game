@@ -11,6 +11,7 @@ using namespace std;
 Round::Round(MUSIC id)
 {
 	this->id = id;
+	/*노트 판정에 따른 값 수정 필요!!*/
 	
 	switch (this->id)
 	{
@@ -37,6 +38,8 @@ void Round::init() {
 	for (int line = 0; line < LINES; ++line) {
 		this->notes[line] = vector<bool>(10000, false);
 		for (int i = 100; i < 150; i++) {
+			// 최대 9000 FPS까지
+			this->notes[line][START_FRAME] = true;
 			this->notes[line][rand()%9000 + START_FRAME] = true;
 			//this->notes[line][i] = true;
 		}
@@ -96,7 +99,7 @@ void Round::unsetInput(unsigned char key) {
 void Round::update() {
 	this->addTime();
 	if (this->frame == START_FRAME) {
-		this->playSound();
+		this->playSound();	// 5초 뒤 음악 실행
 	}
 }
 
@@ -109,7 +112,8 @@ void Round::render() {
 	//tr->renderText("Hello!", 0, 0, 10, 10);
 
 	char* c;
-	string ss = to_string(this->frame / 60);
+	string ss = to_string(this->frame);	// 노래 시작과 프레임 맞추기. 근데 왜 글자 깨짐...?
+
 	glPushMatrix();
 	glTranslatef(100, 100, 0);
 	glScalef(0.04, 0.06, 1);
@@ -205,8 +209,12 @@ void Round::renderNotes() {
 					cout << line << ":" << height << "\n";
 				}
 			}
+
+			// 우선 계속 돌아가는 부분에 넣음
+			
 		}
 	}
+	deleteMissNote();
 }
 
 void Round::renderInputEffect() {
@@ -227,4 +235,56 @@ void Round::renderInputEffect() {
 
 void Round::addTime() {
 	this->frame += 1;
+}
+
+/*입력 당시의 프레임을 줌. START_FRAME때문에 코드가 조금 더러움*/
+int Round::getFrame()
+{
+	if (this->frame - START_FRAME < 0) {	// 노래 시작 전 Frame
+		return -100;	// 우선 임시로 음수값을 줌. 왜냐하면, 노래 시작할 때 출력되는 노트와 '충돌'하면 안됨
+	}
+	else {
+		return this->frame - START_FRAME;
+	}
+}
+
+/*사용자의 입력과 노트 프레임 간의 차이를 계산하는 함수*/
+int Round::getNoteDelay(int line, int n_frame)
+{
+	// 50: 임싯값
+	for (int i = n_frame - 50; i <= n_frame + 50; i++) {
+		if (i >= 0) {
+			if (this->notes[line][i + START_FRAME]) {
+				return i - n_frame;	// 빠르면 양수, 느리면 음수
+			}
+		}
+		else if(i >= -50) {
+			if (this->notes[line][START_FRAME]) {
+				return -n_frame;	
+			}
+		}
+
+	}
+	
+	return 200;	// 입력 초과
+}
+
+/*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함
+또한, 노트의 구조가 바뀌면 이 또한 바뀌어야 함*/
+void Round::deleteNote(int line, int n_frame)
+{
+	this->notes[line][n_frame + START_FRAME] = false;
+
+}
+
+/*놓치는 노트들을 Miss 처리하는 함수 - 판정을 다른 곳으로 보내주어야 함.*/
+void Round::deleteMissNote() 
+{
+	if (frame >= 50) {
+		if (this->notes[0][frame - 50]) {
+			printf("miss\n");
+			deleteNote(0, frame - 50);
+		}
+
+	}
 }

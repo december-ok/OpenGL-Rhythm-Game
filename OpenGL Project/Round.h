@@ -15,7 +15,7 @@ class Round
 	string musicFile = "";
 	HSTREAM stream = NULL;
 
-	// unsigned int frame = 0;
+	//unsigned int frame = 0;
 	unsigned int score = 0;
 	vector<bool> notes[LINES];
 
@@ -33,6 +33,11 @@ public:
 	void render();
 	void update();
 	void addTime();
+
+	int getFrame();	
+	int getNoteDelay(int line, int n_frame);	// 노트의 딜레이 반환
+	void deleteNote(int line, int n_frame);
+	void deleteMissNote();
 
 	void setInput(unsigned char);
 	void unsetInput(unsigned char);
