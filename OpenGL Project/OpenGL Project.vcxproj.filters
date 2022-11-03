@@ -55,6 +55,12 @@
     <Media Include="WE_WERE_YOUNG.mp3">
       <Filter>Resource Files</Filter>
     </Media>
+    <Media Include="Canon.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="hit_sound.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Font Include="font.ttf">

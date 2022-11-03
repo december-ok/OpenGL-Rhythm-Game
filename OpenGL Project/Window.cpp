@@ -8,7 +8,7 @@ using namespace std;
 Window::Window()
 {
 	window = this;
-	this->round = new Round(WE_WERE_YONG);
+	this->round = new Round(CANON);
 	
 	this->windowInit(0,NULL);
 }
@@ -78,12 +78,15 @@ void set_keyboard_callback(unsigned char key, int x, int y)
 	}
 	else if (key == 'f' || key == 'F') {
 		window->round->setInput('f');
+		window->round->getNoteDelay(1);
 	}
 	else if (key == 'j' || key == 'J') {
 		window->round->setInput('j');
+		window->round->getNoteDelay(2);
 	}
 	else if (key == 'k' || key == 'K') {
 		window->round->setInput('k');
+		window->round->getNoteDelay(3);
 	}
 	else if (key == 'p' || key == 'P') {
 		window->round->setInput('p');

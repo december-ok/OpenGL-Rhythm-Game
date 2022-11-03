@@ -7,11 +7,12 @@ public:
 	int score = 0;
 	int combo = 0;
 
+	JUDGEMENT recentJudgement = NONE;
+
 	//결과 출력용
 	int perfect = 0;
 	int great = 0;
 	int normal = 0;
 	int bad = 0;
 	int miss = 0;
-
 };
