@@ -10,7 +10,16 @@
 #define LINES 4
 
 enum MUSIC {
-	WE_WERE_YONG
+	CANON
+};
+
+enum JUDGEMENT {
+	NONE,
+	PERFECT,
+	GREAT,
+	NORMAL,
+	BAD,
+	MISS
 };
 
 #define START_FRAME 5*FPS

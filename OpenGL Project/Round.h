@@ -26,7 +26,7 @@ class Round
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
 	
-	GameInfo gameInfo;
+	GameInfo* gameInfo;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
 public:
@@ -61,7 +61,12 @@ private:
 	void renderGrid();
 	void renderNotes();
 	void renderInputEffect();
+	void renderCombo();
+	void renderJudgement();
+	void renderScoreAndInfo();
 
-	void loadSound();
+	void loadMusic();
 	void playSound();
+
+	void playEffectSound();
 };

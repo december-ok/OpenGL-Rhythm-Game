@@ -19,7 +19,7 @@ Round::Round(MUSIC id)
 	
 	switch (this->id)
 	{
-	case WE_WERE_YONG:
+	case CANON:
 		this->name = "Cannon Variation";
 		this->artist = "Johan Pachelbel";
 		this->musicFile = "./Canon.mp3";
@@ -27,8 +27,6 @@ Round::Round(MUSIC id)
 	default:
 		break;
 	}
-
-
 
 
 	this->init();
@@ -42,16 +40,17 @@ Round::~Round()
 
 void Round::init() {
 
-	this->gameInfo = GameInfo();
+	this->gameInfo = new GameInfo();
+	BASS_Init(-1, 44100, 0, 0, NULL);
 
-	this->loadSound();
+	this->loadMusic();
 
 	int s;
 	float t;
 
 	switch (this->id)
 	{
-	case WE_WERE_YONG:
+	case CANON:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
 		s = 1020;
@@ -193,8 +192,7 @@ void Round::init() {
 	}
 }
 
-void Round::loadSound() {
-	BASS_Init(-1, 44100, 0, 0, NULL);
+void Round::loadMusic() {
 	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
 	BASS_ChannelPlay(this->stream, FALSE);
 	BASS_ChannelPause(this->stream);
@@ -205,6 +203,11 @@ void Round::loadSound() {
 	endFrame = START_FRAME + (time * FPS);
 }
 
+void Round::playEffectSound() {
+	HSTREAM effect = BASS_StreamCreateFile(FALSE, "./hit_sound.mp3", 0, 0, 0);
+	BASS_ChannelPlay(effect, FALSE);
+}
+
 void Round::playSound() {
 	if (this->stream){
 		BASS_ChannelPlay(this->stream, FALSE);
@@ -213,7 +216,6 @@ void Round::playSound() {
 
 void Round::pauseSound(bool pause)
 {
-
 	if (pause) BASS_ChannelPause(this->stream);
 	else {
 		if (frame >= START_FRAME) {
@@ -226,8 +228,6 @@ void Round::receiveJudgement(int judge,Note* nott)
 {
 	//판정 ( 1:perfect, 2:great, 3:good? 4:bad 5:miss(침))
 	// 안치면 타입정보 안줌
-
-	
 	int type = 0;
 	if(nott != NULL) type = nott->type;
 
@@ -237,13 +237,11 @@ void Round::receiveJudgement(int judge,Note* nott)
 		unsigned char itemType = tmpNott->itemType;
 
 		if (itemType == 1) {
-			printf("1111111\n");
-			gameInfo.HP += 30;
-			if (gameInfo.HP > 100)
-				gameInfo.HP = 100;
+			gameInfo->HP += 30;
+			if (gameInfo->HP > 100)
+				gameInfo->HP = 100;
 		}
 		else if (itemType == 2) {
-			printf("222222\n");
 			reinforce += 1000;
 		}
 	}
@@ -258,41 +256,45 @@ void Round::receiveJudgement(int judge,Note* nott)
 	//lie노드면 처리, 못치면 타입 중요한거 없음
 	if (type == 2) {
 		printf("lie\n");
-		gameInfo.HP -= 30;
+		gameInfo->HP -= 30;
 	}
 	else if (judge == 1) {
-		gameInfo.HP += 2;
-		gameInfo.combo++;
-		gameInfo.perfect++;
+		gameInfo->HP += 2;
+		gameInfo->combo++;
+		gameInfo->perfect++;
+		gameInfo->recentJudgement = PERFECT;
 		calcScore(judge);
 	}
 	else if (judge == 2) {
-		gameInfo.HP += 1;
-		gameInfo.combo++;
-		gameInfo.great++;
+		gameInfo->HP += 1;
+		gameInfo->combo++;
+		gameInfo->great++;
+		gameInfo->recentJudgement = GREAT;
 		calcScore(judge);
 	}
 	else if (judge == 3) {
-		gameInfo.combo++;
-		gameInfo.normal++;
+		gameInfo->combo++;
+		gameInfo->normal++;
+		gameInfo->recentJudgement = NORMAL;
 		calcScore(judge);
 	}
 	else if (judge == 4) {
-		gameInfo.HP -= 5;
-		gameInfo.combo = 0;
-		gameInfo.bad++;
+		gameInfo->HP -= 5;
+		gameInfo->combo = 0;
+		gameInfo->bad++;
+		gameInfo->recentJudgement = BAD;
 		calcScore(judge);
 	}
 	else if (judge == 5) {
-		gameInfo.HP -= 10;
-		gameInfo.combo = 0;
-		gameInfo.miss++;
+		gameInfo->HP -= 10;
+		gameInfo->combo = 0;
+		gameInfo->miss++;
+		gameInfo->recentJudgement = MISS;
 	}
 
-	if (gameInfo.HP > 100)
-		gameInfo.HP = 100;
-	if (gameInfo.HP <= 0) {
-		//gameover()
+	if (gameInfo->HP > 100)
+		gameInfo->HP = 100;
+	if (gameInfo->HP <= 0) {
 		printf("사망\n");
 		exit(0);
 	}
@@ -303,7 +305,7 @@ void Round::calcScore(int judge)
 	//perfect 1 great 2 normal 3 bad 4 miss : 점수 계산 없음
 	//노트 점수 : 기본점수 * 콤보 보너스(100combo당 10% 증가) * 판정 점수(1.3 1.1 1.0 0.5 0)
 	int base = 100;
-	int interval = gameInfo.combo / 100;
+	int interval = gameInfo->combo / 100;
 	float calc = 0;
 
 	switch (judge) {
@@ -322,25 +324,29 @@ void Round::calcScore(int judge)
 	}
 
 	int tmp = calc;
-	gameInfo.score += tmp;
+	gameInfo->score += tmp;
 }
 
 void Round::setInput(unsigned char key) {
 	if (key == 'd') {
 		this->key[0] = true;
 		this->renderKey[0] = true;
+		this->playEffectSound();
 	}
 	else if (key == 'f') {
 		this->key[1] = true;
 		this->renderKey[1] = true;
+		this->playEffectSound();
 	}
 	else if (key == 'j') {
 		this->key[2] = true;
 		this->renderKey[2] = true;
+		this->playEffectSound();
 	}
 	else if (key == 'k') {
 		this->key[3] = true;
 		this->renderKey[3] = true;
+		this->playEffectSound();
 	}
 	else if (key == 'p') {
 		pause = !(pause);
@@ -380,55 +386,162 @@ void Round::render() {
 	this->renderGrid();
 	this->renderInputEffect();
 	
+	this->renderCombo();
+	this->renderJudgement();
+	this->renderScoreAndInfo();
+}
 
+void Round::renderCombo() {
+	if (this->gameInfo->combo == 0) {
+		return;
+	}
 	
-	//tr->renderText("Hello!", 0, 0, 10, 10);
-
-	char* c;
-	string ss = to_string(frame);	// 노래 시작과 프레임 맞추기. 근데 왜 글자 깨짐...?
-
+	float x = 50;
+	float y = 50;
+	
+	string content = to_string(this->gameInfo->combo) + " COMBO";
+	
 	glPushMatrix();
-	glTranslatef(100, 100, 0);
+	glTranslatef(x, y, 0);
 	glScalef(0.04, 0.06, 1);
-	glColor4f(1, 0.8f, 0,0.5f);
+	glColor4f(1, 0.8f, 0, 0.5f);
 	glLineWidth(5);
-	for (auto c:ss)
+	for (auto c : content)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
 	}
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(100.15f, 100, 0);
-	glColor4f(0, 0.65f, 1,0.5f);
+	glTranslatef(x + 0.15f, y, 0);
+	glColor4f(0, 0.65f, 1, 0.5f);
 	glScalef(0.04, 0.06, 1);
 	glLineWidth(5);
-	for (auto c : ss)
+	for (auto c : content)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
 	}
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(100.3f, 100, 0);
-	glColor4f(0.19f, 0.65f, 0.32f,0.5f);
+	glTranslatef(x + 0.3f, y, 0);
+	glColor4f(0.19f, 0.65f, 0.32f, 0.5f);
 	glScalef(0.04, 0.06, 1);
 	glLineWidth(5);
-	for (auto c : ss)
+	for (auto c : content)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
 	}
 	glPopMatrix();
 	glPushMatrix();
-	glTranslatef(100.45f, 100, 0);
-	glColor4f(0.9f, 1, 0.15f,0.5f);
+	glTranslatef(x + 0.45f, y, 0);
+	glColor4f(0.9f, 1, 0.15f, 0.5f);
 	glScalef(0.04, 0.06, 1);
 	glLineWidth(5);
-	for (auto c : ss)
+	for (auto c : content)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
 	}
 	glPopMatrix();
 }
+void Round::renderJudgement() {
+	if (this->gameInfo->recentJudgement == NONE) {
+		return;
+	}
 
+	float x = 50;
+	float y = 36;
+
+	string content = "";
+	switch (this->gameInfo->recentJudgement) {
+	case PERFECT:
+		glColor4f(0.64f, 0.05f, 0.6f, 0.5f);
+		content = "PERFECT";
+		break;
+	case GREAT:
+		glColor4f(0.9f, 0.55f, 0.15f, 0.5f);
+		content = " GREAT ";
+		break;
+	case NORMAL:
+		glColor4f(0.1f, 0.75f, 0.15f, 0.5f);
+		content = " NORMAL";
+		break;
+	case BAD:
+		glColor4f(0.3f, 0.75f, 0.74f, 0.5f);
+		content = "  BAD  ";
+		break;
+	case MISS:
+		glColor4f(0.4f, 0.4f, 0.4f, 0.5f);
+		content = "  MISS  ";
+		break;
+	}
+	
+
+	glPushMatrix();
+	glTranslatef(x, y, 0);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : content)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(x + 0.15f, y, 0);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : content)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(x + 0.3f, y, 0);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : content)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(x + 0.45f, y, 0);
+	glScalef(0.04, 0.06, 1);
+	glLineWidth(5);
+	for (auto c : content)
+	{
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+	}
+	glPopMatrix();
+}
+void Round::renderScoreAndInfo() {
+	float x = 0;
+	float y = 105;
+	
+	string content ="Score: " + to_string(this->gameInfo->score);
+	glColor4f(1, 1, 1, 1);
+	glRasterPos2f(x, y);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+
+	y = 101;
+	content = "Life: " + to_string(this->gameInfo->HP);
+	glColor4f(1, 1, 1, 1);
+	glRasterPos2f(x, y);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+
+	x = 50;
+	y = 0;
+	content = "Music: " + this->artist + " - " + this->name;
+	glRasterPos2f(x, y);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+}
 void Round::renderGrid() {
 	glLineWidth(1);
 	glColor3f(1, 1, 1);
@@ -513,7 +626,6 @@ void Round::renderInputEffect() {
 void Round::addTime() {
 	frame += 1;
 	if (frame == endFrame) {
-		//gameclear()
 		exit(0);
 	}
 }
@@ -591,7 +703,7 @@ void Round::setLineInput(int line) {
 
 void Round::deleteMissNode() {
 	// 1 -> LINES로 바꿔야 함.
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < LINES; i++) {
 		// 입력 못한 노트 제거
 		if (this->notes[i][line_input[i]]->IsMissNote(frame)) {
 			receiveJudgement(5, NULL);
