@@ -46,28 +46,146 @@ void Round::init() {
 
 	this->loadSound();
 
-	for (int line = 0; line < LINES; ++line) {
-		this->notes[line] = vector<Note*>();
-	}
+	int s;
+	float t;
 
 	switch (this->id)
 	{
 	case WE_WERE_YONG:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
-		this->notes[0].push_back((Note*)new ItemNote(300,2));
-		this->notes[0].push_back((Note*)new NoramlNote(400));
-		this->notes[0].push_back((Note*)new LieNote(500));
-		this->notes[0].push_back((Note*)new NoramlNote(600));
-		this->notes[0].push_back((Note*)new NoramlNote(700));
-		this->notes[0].push_back((Note*)new NoramlNote(800));
-		this->notes[0].push_back((Note*)new NoramlNote(900));
-		this->notes[0].push_back((Note*)new ItemNote(1000,1));
-		this->notes[0].push_back((Note*)new NoramlNote(1100));
-		this->notes[0].push_back((Note*)new NoramlNote(1200));
-		this->notes[0].push_back((Note*)new NoramlNote(1300));
-		this->notes[0].push_back((Note*)new NoramlNote(1400));
-		this->notes[0].push_back((Note*)new NoramlNote(1500));
+		s = 1020;
+		t = 11.25f;
+
+		this->notes[1].push_back((Note*)new NoramlNote(300));
+		this->notes[3].push_back((Note*)new NoramlNote(390));
+		this->notes[2].push_back((Note*)new NoramlNote(435));
+		this->notes[1].push_back((Note*)new NoramlNote(480));
+		this->notes[3].push_back((Note*)new NoramlNote(570));
+		this->notes[2].push_back((Note*)new NoramlNote(615));
+		this->notes[1].push_back((Note*)new NoramlNote(660));
+		this->notes[0].push_back((Note*)new NoramlNote(750));
+		this->notes[2].push_back((Note*)new NoramlNote(795));
+		this->notes[1].push_back((Note*)new NoramlNote(840));
+
+		this->notes[0].push_back((Note*)new NoramlNote(930));
+		this->notes[1].push_back((Note*)new NoramlNote(935));
+		this->notes[0].push_back((Note*)new NoramlNote(940));
+		this->notes[1].push_back((Note*)new NoramlNote(945));
+		this->notes[0].push_back((Note*)new NoramlNote(950));
+		this->notes[1].push_back((Note*)new NoramlNote(955));
+		this->notes[0].push_back((Note*)new NoramlNote(960));
+		this->notes[1].push_back((Note*)new NoramlNote(965));
+		this->notes[2].push_back((Note*)new NoramlNote(970));
+		this->notes[3].push_back((Note*)new NoramlNote(975));
+		this->notes[2].push_back((Note*)new NoramlNote(980));
+		this->notes[3].push_back((Note*)new NoramlNote(985));
+		this->notes[1].push_back((Note*)new NoramlNote(990));
+		this->notes[3].push_back((Note*)new NoramlNote(995));
+		this->notes[1].push_back((Note*)new NoramlNote(1000));
+		this->notes[3].push_back((Note*)new NoramlNote(1005));
+
+		this->notes[1].push_back((Note*)new NoramlNote(s));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+		this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+		this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+		this->notes[2].push_back((Note*)new NoramlNote(s + 6 * t));
+		this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+		for (int i = 0; i < 8; i++)
+		{
+			s += 90;
+			this->notes[0].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[2].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[3].push_back((Note*)new NoramlNote(s));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[1].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+
+			s += 90;
+			this->notes[1].push_back((Note*)new NoramlNote(s));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 1 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 2 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 3 * t));
+			this->notes[0].push_back((Note*)new NoramlNote(s + 4 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 5 * t));
+			this->notes[3].push_back((Note*)new NoramlNote(s + 6 * t));
+			this->notes[2].push_back((Note*)new NoramlNote(s + 7 * t));
+		}
 
 		break;
 	default:
