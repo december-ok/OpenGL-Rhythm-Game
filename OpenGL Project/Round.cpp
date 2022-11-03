@@ -20,9 +20,9 @@ Round::Round(MUSIC id)
 	switch (this->id)
 	{
 	case WE_WERE_YONG:
-		this->name = "We Were Young";
-		this->artist = "Sad Puppy";
-		this->musicFile = "./WE_WERE_YOUNG.mp3";
+		this->name = "Cannon Variation";
+		this->artist = "Johan Pachelbel";
+		this->musicFile = "./Canon.mp3";
 		break;
 	default:
 		break;
