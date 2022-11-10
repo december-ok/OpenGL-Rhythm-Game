@@ -1,6 +1,7 @@
 #pragma once
 #include "Round.h"
 #include "Global.h"
+#include "Input.h"
 
 
 class Window

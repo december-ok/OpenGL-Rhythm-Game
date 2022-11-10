@@ -69,24 +69,23 @@ void timer_callback(int)
 	glutTimerFunc(1000 / FPS, timer_callback, 0);
 }
 
-/*수정한 부분: D 입력*/
 void set_keyboard_callback(unsigned char key, int x, int y)
 {
-	if (key == 'd' || key == 'D') {
+	if (key == 'd' || key == 'D') {	//D
 		window->round->setInput('d');
-		window->round->getNoteDelay(0);
+		window->round->addInputQueue(0);
 	}
-	else if (key == 'f' || key == 'F') {
+	else if (key == 'f' || key == 'F') {	//F
 		window->round->setInput('f');
-		window->round->getNoteDelay(1);
+		window->round->addInputQueue(1);
 	}
-	else if (key == 'j' || key == 'J') {
+	else if (key == 'j' || key == 'J') {	// j
 		window->round->setInput('j');
-		window->round->getNoteDelay(2);
+		window->round->addInputQueue(2);
 	}
-	else if (key == 'k' || key == 'K') {
+	else if (key == 'k' || key == 'K') {	//k
 		window->round->setInput('k');
-		window->round->getNoteDelay(3);
+		window->round->addInputQueue(3);
 	}
 	else if (key == 'p' || key == 'P') {
 		window->round->setInput('p');
@@ -102,7 +101,7 @@ void unset_keyboard_callback(unsigned char key, int x, int y)
 		window->round->unsetInput('f');
 	}
 	else if (key == 'j' || key == 'J') {
-		window->round->unsetInput('j');
+		window->round->unsetInput('j');	
 	}
 	else if (key == 'k' || key == 'K') {
 		window->round->unsetInput('k');
