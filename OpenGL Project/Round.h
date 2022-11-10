@@ -1,8 +1,10 @@
 #pragma once
 #include<vector>
 #include<string>
+#include<queue>
 #include "Global.h"
 #include "Note.h"
+#include "Input.h"
 #include <bass.h>
 #include"GameInfo.h"
 
@@ -25,6 +27,7 @@ class Round
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
+	queue<Input*> InputQueue;
 	
 	GameInfo* gameInfo;
 	unsigned int reinforce = 0;
@@ -40,16 +43,19 @@ public:
 	void update();
 	void addTime();
 
-	//int getFrame();	
-	int getNoteDelay(int line);	// 노트의 딜레이 반환
+	//int getNoteDelay(int line);	// 노트의 딜레이 반환
+	int getNoteDelay(int line, unsigned int i_frame);	// 노트의 딜레이 반환
 	void deleteNote(int line, int n_frame);
-	void deleteMissNode();
+	void deleteMissNote();		// 입력 못한 노트 제거
 	int getLineInput(int line);
 	void setLineInput(int line);
-	//void deleteMissNote();
 
 	void setInput(unsigned char);
 	void unsetInput(unsigned char);
+
+	// InputQueue 확인
+	void checkInputQueue();
+	void addInputQueue(int line);
 
 	//okt
 	bool pause = false;
