@@ -10,8 +10,10 @@
 using namespace std;
 
 
-RoundScene::RoundScene(MUSIC id)
+RoundScene::RoundScene(GameWindow* window, MUSIC id)
 {
+	this->window;
+	
 	this->id = id;
 	/*노트 판정에 따른 값 수정 필요!!*/
 	for (int i = 0; i < LINES; i++) {

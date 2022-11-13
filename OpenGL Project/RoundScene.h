@@ -30,10 +30,11 @@ class RoundScene:public Scene
 	bool renderKey[LINES] = { false, false, false, false };
 	
 	GameInfo* gameInfo;
+	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
 public:
-	RoundScene(MUSIC);
+	RoundScene(GameWindow*, MUSIC);
 	~RoundScene();
 	
 	void init();

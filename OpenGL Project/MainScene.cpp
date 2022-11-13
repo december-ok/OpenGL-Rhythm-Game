@@ -108,7 +108,7 @@ void MainScene::render_ui(void)
 
 void MainScene::move_scene(void) {
 	if (this->selection == SINGLE_PLAY) {
-		this->window->scene = new RoundScene(CANON);
+		this->window->scene = new RoundScene(this->window, CANON);
 		free(this);
 	}
 	else if (this->selection == ONLINE_PLAY)
