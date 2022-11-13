@@ -7,4 +7,7 @@ public:
 
 	virtual void setInput(unsigned char) = 0;
 	virtual void unsetInput(unsigned char) = 0;
+
+	virtual void checkInput() = 0;
+	virtual void addInput(int) = 0;
 };
