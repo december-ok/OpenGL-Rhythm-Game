@@ -71,20 +71,23 @@ void timer_callback(int)
 	glutTimerFunc(1000 / FPS, timer_callback, 0);
 }
 
-/*수정한 부분: D 입력*/
 void set_keyboard_callback(unsigned char key, int x, int y)
 {
 	if (key == 'd' || key == 'D') {
 		window->scene->setInput('d');
+		window->scene->addInput(0);
 	}
 	else if (key == 'f' || key == 'F') {
 		window->scene->setInput('f');
+		window->scene->addInput(1);
 	}
 	else if (key == 'j' || key == 'J') {
 		window->scene->setInput('j');
+		window->scene->addInput(2);
 	}
 	else if (key == 'k' || key == 'K') {
 		window->scene->setInput('k');
+		window->scene->addInput(3);
 	}
 	else if (key == 'p' || key == 'P') {
 		window->scene->setInput('p');

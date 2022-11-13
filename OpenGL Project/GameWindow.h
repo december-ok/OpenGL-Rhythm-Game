@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "Render.h"
+#include "Input.h"
 
 class GameWindow
 {
