@@ -4,6 +4,7 @@
 #include "Global.h"
 #include "GameWindow.h"
 #include <string>
+#include "FireWork.h"
 using namespace std;
 
 class MainScene :public Scene
@@ -19,6 +20,7 @@ public:
 	void unsetInput(unsigned char) override;
 
 private:
+	FireWork* fireWork;
 	GameWindow* window;
 	void init();
 

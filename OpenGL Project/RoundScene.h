@@ -1,12 +1,12 @@
 #pragma once
-#include<vector>
-#include<string>
-#include"Global.h"
-#include"Note.h"
-#include<bass.h>
-#include"GameInfo.h"
-#include"Scene.h"
-#include"GameWindow.h"
+#include <vector>
+#include <string>
+#include "Global.h"
+#include "Note.h"
+#include <bass.h>
+#include "GameInfo.h"
+#include "Scene.h"
+#include "GameWindow.h"
 
 using namespace std;
 static unsigned int frame = 0;

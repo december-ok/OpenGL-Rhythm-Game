@@ -1,8 +1,11 @@
 #include"FireWork.h"
+#include <iostream>
+using namespace std;
 
-void drawCircle(float x, float y, float radius) {
+void drawCircle(float x, float y, float radius, RGBClass* rgb) {
 	float circle_points = 50;
 	float angle;
+	glColor4f(rgb->r, rgb->g, rgb->b, rgb->a);
 	glLineWidth(1);
 	glBegin(GL_TRIANGLE_FAN);
 	for (int i = 0; i < circle_points; ++i) {
@@ -12,9 +15,8 @@ void drawCircle(float x, float y, float radius) {
 	glEnd();
 }
 
-Vector::Vector() {
-	this->x = 0;
-	this->y = 0;
+float getRand(float size) {
+	return (rand() % (int)(2 * size * 100)) / 100.f - size;
 }
 
 Vector::Vector(float x, float y)
@@ -23,48 +25,78 @@ Vector::Vector(float x, float y)
 	this->y = y;
 }
 
-void Vector::set(Vector* v)
+void Vector::set(float x, float y)
 {
-	this->x = v->x;
-	this->y = v->y;
+	this->x = x;
+	this->y = y;
 }
 
-void Vector::add(Vector* v)
+void Vector::add(float x, float y)
 {
-	this->x += v->x;
-	this->y += v->y;
+	this->x += x;
+	this->y += y;
 }
 
-Vector Vector::clone()
+Vector* Vector::clone()
 {
-	return Vector(this->x, this->y);
+	return new Vector(this->x, this->y);
 }
 
-Particle::Particle(Vector* pos, Vector* vel, float size, float life)
+RGBClass::RGBClass(float r, float g, float b, float a)
 {
-	this->position = pos;
-	this->velocity = vel;
+	this->r = r;
+	this->g = g;
+	this->b = b;
+	this->a = a;
+}
+
+void RGBClass::setAlpha(float a)
+{
+	this->a = a;
+}
+
+RGBClass* RGBClass::copyAlpha(float a)
+{
+	return new RGBClass(this->r, this->g, this->b, a);
+}
+
+Particle::Particle(Vector* pos, Vector* vel, RGBClass* rgb)
+{
+	this->pos = pos;
+	this->vel = vel;
 	this->after_length = 10;
-	this->size = size;
-	this->life = life;
-	this->r = 1.0f;
-	this->g = 1.0f;
-	this->b = 1.0f;
+	this->life = 1;
+	this->rgb = rgb;
 	this->after = vector<Vector*>();
-	this->after.reserve(100);
+	this->after.reserve(this->after_length);
+	
+	this->size = 0.3f;
+}
+Particle ::~Particle()
+{
+	free(this->pos);
+	free(this->vel);
+	free(this->rgb);
+	for (auto v : this->after) {
+		free(v);
+	}
 }
 
 void Particle::render() {
-	drawCircle(this->position->x, this->position->y, 2.f);
+	drawCircle(this->pos->x, this->pos->y, this->size, this->rgb);
 	
 	for (int i = 0; i < this->after.size(); i++) {
-		drawCircle(this->after[i]->x, this->after[i]->y, 2.f);
+		RGBClass* tempColor = this->rgb->copyAlpha(i / (float)this->after_length - 1 + this->life);
+		drawCircle(this->after[i]->x, this->after[i]->y, this->size, tempColor);
+		free(tempColor);
 	}
 }
 
 void Particle::update() {
-	this->after.push_back(this->position);
-	this->position->add(this->velocity);
+	this->rgb->setAlpha(this->life);
+		
+	this->after.push_back(this->pos->clone());
+	this->pos->add(this->vel->x, this->vel->y);
 	
 	while (true) {
 		if (this->after.size() <= this->after_length) break;
@@ -74,63 +106,64 @@ void Particle::update() {
 }
 
 FireWork::FireWork(Vector* pos, float speed) {
-	this->position = pos;
+	this->pos = pos;
 	this->speed = speed;
 
-	this->elevator = new Particle(this->position, new Vector(0, this->speed), 2.f, 1.f);
+	this->color = new RGBClass(1, 0, 0, 1);
+
+	this->elevator = new Particle(pos, new Vector(0, this->speed), this->color);
 	this->explosionList = vector<Particle*>();
-	this->explosionList.reserve(50);
+	this->explosionList.reserve(this->EXPLOSION_COUNT);
+}
+
+FireWork::~FireWork() {
+	free(this->pos);
+	free(this->color);
+	free(this->elevator);
+	for (auto p : this->explosionList) {
+		free(p);
+	}
 }
 
 void FireWork::update() {
 	if (this->elevateMode) this->elevateUpdate();
-	else this->explodeRender();
+	else this->explodeUpdate();
 }
 
 void FireWork::elevateUpdate() {
 	this->elevator->update();
-	this->elevator->velocity->y += 0.01f;
-
-	if (this->elevator->velocity->y > 0) {
-		Vector* pos = this->elevator->position;
-		for (int i = 0; i < this->EXPLOSION_COUNT;++i) {
+	this->elevator->vel->add(0, -0.01f);
+	
+	if (this->elevator->vel->y <= 0) {
+		this->elevateMode = false;
+		Vector* pos = this->elevator->pos;
+		for (int i = 0; i < this->EXPLOSION_COUNT; i++) {
 			this->explosionList.push_back(
-				new Particle(
-					pos,
-					new Vector(
-						(float)(rand() % 150) / 100.f, (float)(rand() % 150) / 100.f
-					),
-					2.f,
-					1.f
-				)
+			new Particle(pos->clone(), new Vector(getRand(.8f), getRand(.8f)), this->color)
 			);
-
-			this->elevateMode = false;
 		}
 	}
 }
 
 void FireWork::explodeUpdate() {
-	for (int i = 0;i < this->EXPLOSION_COUNT;++i) {
-		Particle* p = this->explosionList[i];
-		p->velocity->y += 2;
-		p->life -= 0.004f;
+	for (auto p : this->explosionList) {
+		p->vel->y -= 0.002f;
+		p->life -= 0.008f;
 		p->update();
 	}
 }
 
 void FireWork::render() {
-	if (this->elevateMode)	this->elevateRender();
+	if (this->elevateMode) this->elevateRender();
 	else this->explodeRender();
 }
 
 void FireWork::elevateRender(){
-	this->elevator->render(); 
+	this->elevator->render();
 }
 
 void FireWork::explodeRender(){
-	for (int i = 0;i < this->EXPLOSION_COUNT; ++i) {
-		Particle* p = this->explosionList[i];
+	for (auto p : this->explosionList) {
 		p->render();
 	}
 }

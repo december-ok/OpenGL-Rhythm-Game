@@ -1,5 +1,6 @@
 #include "MainScene.h"
 #include "RoundScene.h"
+#include "MultiScene.h"
 
 MainScene::MainScene(GameWindow* window)
 {
@@ -14,16 +15,19 @@ MainScene::~MainScene()
 
 void MainScene::init()
 {
-	
+	this->fireWork = new FireWork(new Vector(50, 0), 1.3f);
 }
 
 void MainScene::render()
 {
+	this->fireWork->render();
 	this->render_ui();
 }
 
 void MainScene::update()
 {
+	this->fireWork->update();
+	
 	if (KeyUp) {
 		selection = (UI_SELECTION)((selection + 2) % 3);
 		KeyUp = false;
@@ -113,7 +117,8 @@ void MainScene::move_scene(void) {
 	}
 	else if (this->selection == ONLINE_PLAY)
 	{
-		
+		this->window->scene = new MultiScene(this->window, CANON);
+		free(this);
 	}
 	else if (this->selection == EXIT)
 	{
