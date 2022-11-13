@@ -4,6 +4,7 @@
 #include "Global.h"
 #include "GameWindow.h"
 #include <string>
+#include "FireWork.h"
 using namespace std;
 
 class MainScene :public Scene
@@ -22,6 +23,7 @@ public:
 	void addInput(int) override;
 
 private:
+	FireWork* fireWork;
 	GameWindow* window;
 	void init();
 

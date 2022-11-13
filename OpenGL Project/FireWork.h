@@ -4,35 +4,44 @@
 #include "Global.h"
 #include <math.h>
 #include <vector>
+#include <stdlib.h>
 using namespace std;
 
-void drawCircle(float x, float y, float radius);
 
 class Vector {
 public:
-	Vector();
 	Vector(float x, float y);
 
 	float x;
 	float y;
 	
-	void set(Vector* v);
-	void add(Vector* v);
-	Vector clone();
+	void set(float x, float y);
+	void add(float x, float y);
+	Vector* clone();
+};
+
+class RGBClass {
+public:
+	RGBClass(float r, float g, float b, float a);
+	float r;
+	float g;
+	float b;
+	float a;
+	void setAlpha(float a);
+	RGBClass* copyAlpha(float a);
 };
 
 class Particle {
 public:
-	Particle(Vector* pos, Vector* vel, float size, float life);
+	Particle(Vector* pos, Vector* vel, RGBClass* rgb);
+	~Particle();
 
-	Vector* position;
-	Vector* velocity;
+	Vector* pos;
+	Vector* vel;
 	int after_length;
 	float size;
 	float life;
-	float r;
-	float g;
-	float b;
+	RGBClass* rgb;
 	vector<Vector*> after;
 
 	void update();
@@ -42,17 +51,17 @@ public:
 class FireWork {
 public:
 	FireWork(Vector* pos, float speed);
+	~FireWork();
 
-	Vector* position;
-	Vector* velocity;
+	Vector* pos;
 	float speed;
-	int EXPLOSION_COUNT = 20;
+	RGBClass* color;
+	int EXPLOSION_COUNT = 100;
 	bool elevateMode = true;
 	
 	Particle* elevator;
 	vector<Particle*> explosionList;
-
-	vector<Particle*> particles;
+	
 
 	void update();
 	void elevateUpdate();
@@ -62,3 +71,6 @@ public:
 	void elevateRender();
 	void explodeRender();
 };
+
+void drawCircle(float x, float y, float radius, RGBClass* rgb);
+float getRand(float size);
