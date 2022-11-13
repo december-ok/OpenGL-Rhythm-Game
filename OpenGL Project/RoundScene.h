@@ -4,9 +4,11 @@
 #include"Global.h"
 #include"Note.h"
 #include<bass.h>
+#include<queue>
 #include"GameInfo.h"
 #include"Scene.h"
 #include"GameWindow.h"
+#include"Input.h"
 
 using namespace std;
 static unsigned int frame = 0;
@@ -28,6 +30,8 @@ class RoundScene:public Scene
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
+
+	queue<Input*> InputQueue;
 	
 	GameInfo* gameInfo;
 	GameWindow* window;
@@ -44,7 +48,8 @@ public:
 	void addTime();
 
 	//int getFrame();	
-	int getNoteDelay(int line);	// 노트의 딜레이 반환
+	//int getNoteDelay(int line);	// 노트의 딜레이 반환
+	void getNoteDelay(int line, unsigned int i_frame);
 	void deleteNote(int line, int n_frame);
 	void deleteMissNode();
 	int getLineInput(int line);
@@ -53,6 +58,9 @@ public:
 
 	void setInput(unsigned char) override;
 	void unsetInput(unsigned char) override;
+
+	void checkInput() override;
+	void addInput(int line) override;
 
 	//okt
 	bool pause = false;
