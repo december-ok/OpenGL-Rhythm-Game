@@ -122,6 +122,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,18 +134,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FireWork.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Note.cpp" />
-    <ClCompile Include="Round.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="RoundScene.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FireWork.h" />
     <ClInclude Include="GameInfo.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="MainScene.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="Render.h" />
-    <ClInclude Include="Round.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="RoundScene.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="GameWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

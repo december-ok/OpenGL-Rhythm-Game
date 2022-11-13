@@ -9,6 +9,9 @@
 
 #define LINES 4
 
+#define PI 3.14159265358979323846
+#define START_FRAME 5*FPS
+
 enum MUSIC {
 	CANON
 };
@@ -22,4 +25,8 @@ enum JUDGEMENT {
 	MISS
 };
 
-#define START_FRAME 5*FPS
+enum UI_SELECTION {
+	SINGLE_PLAY,
+	ONLINE_PLAY,
+	EXIT
+};

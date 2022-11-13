@@ -1,99 +1,106 @@
-﻿  Round.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(88,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(89,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(90,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(91,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(92,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(93,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(94,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(100,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(101,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(102,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(103,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(104,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(105,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(106,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(110,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(111,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(112,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(113,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(114,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(115,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(116,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(120,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(121,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(122,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(123,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(124,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(125,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(126,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(130,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(131,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(132,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(133,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(134,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(135,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(136,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(140,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(141,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(142,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(143,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(144,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(145,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(146,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(150,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(151,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(152,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(153,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(154,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(155,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(156,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(160,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(161,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(162,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(163,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(164,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(165,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(166,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(170,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(171,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(172,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(173,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(174,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(175,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(176,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(180,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(181,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(182,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(183,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(184,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(185,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(186,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(203,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(313,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(316,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(319,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(322,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(326,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(406,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(417,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(427,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(437,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(480,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(489,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(498,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(507,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(558,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(559,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(594,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(615,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(617,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(619,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(621,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Round.cpp(651,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  GameWindow.cpp
+  MainScene.cpp
+  Note.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.cpp(8,14): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.cpp(20,28): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.cpp(20,64): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.cpp(25,34): warning C4018: '<': signed/unsigned mismatch
+  RoundScene.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(99,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(100,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(101,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(102,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(103,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(104,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(105,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(111,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(112,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(113,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(114,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(115,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(116,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(117,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(121,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(122,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(123,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(124,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(125,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(126,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(127,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(131,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(132,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(133,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(134,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(135,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(136,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(137,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(141,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(142,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(143,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(144,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(145,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(146,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(147,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(151,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(152,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(153,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(154,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(155,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(156,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(157,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(161,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(162,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(163,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(164,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(165,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(166,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(167,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(171,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(172,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(173,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(174,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(175,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(176,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(177,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(181,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(182,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(183,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(184,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(185,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(186,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(187,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(191,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(192,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(193,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(194,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(195,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(196,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(197,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(214,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(324,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(327,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(330,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(333,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(337,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(422,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(433,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(443,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(453,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(496,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(505,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(514,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(523,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(574,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(575,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(610,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(630,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(632,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(634,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(636,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(666,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Generating code
-  0 of 208 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  7 of 280 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Release\OpenGL Project.exe

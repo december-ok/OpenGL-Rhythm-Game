@@ -1,6 +1,6 @@
-#include "Window.h"
+#include "GameWindow.h"
 
 int main(void) {
-	Window* window = new Window();
+	GameWindow* window = new GameWindow();
 	return 0;
 }
