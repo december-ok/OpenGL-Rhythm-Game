@@ -4,6 +4,7 @@
 #define HEIGHT 720
 #define COLUMS 127
 #define ROWS 108
+#define JUDGE_HEIGHT 5
 
 #define FPS 60
 
