@@ -9,8 +9,8 @@ using namespace std;
 GameWindow::GameWindow()
 {
 	window = this;
-	this->scene = new RoundScene(this, CANON);
-//	this->scene = new MainScene(this);
+//	this->scene = new RoundScene(this, CANON);
+	this->scene = new MainScene(this);
 	
 	this->windowInit(0,NULL);
 }
