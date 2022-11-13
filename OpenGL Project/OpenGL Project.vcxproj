@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FireWork.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MultiScene.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="FireWork.h" />
     <ClInclude Include="GameInfo.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MultiScene.h" />
     <ClInclude Include="Note.h" />

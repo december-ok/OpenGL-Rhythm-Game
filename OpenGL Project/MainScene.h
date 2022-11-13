@@ -19,6 +19,9 @@ public:
 	void setInput(unsigned char) override;
 	void unsetInput(unsigned char) override;
 
+	void checkInput() override;
+	void addInput(int) override;
+
 private:
 	FireWork* fireWork;
 	GameWindow* window;

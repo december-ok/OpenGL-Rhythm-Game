@@ -385,9 +385,35 @@ void RoundScene::unsetInput(unsigned char key) {
 	}
 }
 
+void RoundScene::checkInput()
+{
+	// Queue가 비어있지 않다면,
+	while (!InputQueue.empty()) {
+		// 현재 입력
+		Input* current_input = InputQueue.front();
+
+		int i_line = current_input->getInputLine();
+		unsigned int i_frame = current_input->getInputFrame();
+
+		// 입력 처리
+		getNoteDelay(i_line, i_frame);
+
+		// Queue 제거
+		InputQueue.pop();
+		delete current_input;
+	}
+
+}
+
+void RoundScene::addInput(int line)
+{
+	InputQueue.push(new Input(frame, line));
+}
+
 void RoundScene::update() {
 	this->addTime();
-	this->deleteMissNode();	// 여기가 맞나..?
+	this->deleteMissNode();
+	this->checkInput();
 	if (frame == START_FRAME) {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
@@ -658,45 +684,81 @@ void RoundScene::addTime() {
 //}
 
 /*사용자의 입력과 노트 프레임 간의 차이를 계산하는 함수*/
-int RoundScene::getNoteDelay(int line)
+//int RoundScene::getNoteDelay(int line)
+//{
+//	// 가장 가까운 노트
+//	int n_frame = this->line_input[line];
+//
+//	// 입력과 노트 프레임 사이의 차이
+//	int n_delay = this->notes[line][n_frame]->GetHeight(frame);
+//	int noteType = this->notes[line][n_frame]->type;
+//
+//	Note* nott = this->notes[line][n_frame];
+//
+//	// 일정 범위 내에 노트가 존재함
+//	if (n_delay <= 50) {
+//		// 노트 지움
+//		this->deleteNote(line, n_frame);
+//		this->setLineInput(line);
+//		printf("%d: Delay\n", n_delay);
+//		if (abs(n_delay) <= 10) {
+//			receiveJudgement(1,nott);
+//			return 1;
+//		}
+//		else if (abs(n_delay) <= 20) {
+//			receiveJudgement(2, nott);
+//			return 2;
+//		}
+//		else if (abs(n_delay) <= 30) {
+//			receiveJudgement(3, nott);
+//			return 3;
+//		}
+//		else if (abs(n_delay) <= 40) {
+//			receiveJudgement(4, nott);
+//			return 4;
+//		}
+//		else {
+//			receiveJudgement(5, nott);
+//		}
+//	}
+//	else {
+//	}
+//}
+
+void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 {
-	// 가장 가까운 노트
 	int n_frame = this->line_input[line];
 
 	// 입력과 노트 프레임 사이의 차이
-	int n_delay = this->notes[line][n_frame]->GetHeight(frame);
+	int n_delay = this->notes[line][n_frame]->GetHeight(i_frame);
 	int noteType = this->notes[line][n_frame]->type;
 
 	Note* nott = this->notes[line][n_frame];
 
 	// 일정 범위 내에 노트가 존재함
-	if (n_delay <= 50) {
+	if (n_delay <= MISS_FRAME) {
 		// 노트 지움
 		this->deleteNote(line, n_frame);
 		this->setLineInput(line);
 		printf("%d: Delay\n", n_delay);
-		if (abs(n_delay) <= 10) {
-			receiveJudgement(1,nott);
-			return 1;
+		if (abs(n_delay) <= PERFECT_FRAME) {
+			receiveJudgement(1, nott);
 		}
-		else if (abs(n_delay) <= 20) {
+		else if (abs(n_delay) <= GREAT_FRAME) {
 			receiveJudgement(2, nott);
-			return 2;
 		}
-		else if (abs(n_delay) <= 30) {
+		else if (abs(n_delay) <= NORMAL_FRAME) {
 			receiveJudgement(3, nott);
-			return 3;
 		}
-		else if (abs(n_delay) <= 40) {
+		else if (abs(n_delay) <= BAD_FRAME) {
 			receiveJudgement(4, nott);
-			return 4;
 		}
 		else {
 			receiveJudgement(5, nott);
 		}
 	}
-	else {
-	}
+
+
 }
 
 /*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함*/
