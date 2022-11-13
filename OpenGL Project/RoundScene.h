@@ -9,6 +9,7 @@
 #include"Scene.h"
 #include"GameWindow.h"
 #include"Input.h"
+#include"UserConfig.h"
 
 using namespace std;
 static unsigned int frame = 0;
@@ -34,6 +35,8 @@ class RoundScene:public Scene
 	queue<Input*> InputQueue;
 	
 	GameInfo* gameInfo;
+	UserConfig* U_Config;
+
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
@@ -64,9 +67,10 @@ public:
 
 	//okt
 	bool pause = false;
-	void receiveJudgement(int judge,Note* nott);
-	void calcScore(int judge);
+	void receiveJudgement(int judge, Note* nott);
+	void calcInfo(int judge);
 	void pauseSound(bool pause);
+	void setMVol(float volume);
 	
 
 private:

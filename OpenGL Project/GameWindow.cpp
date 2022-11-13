@@ -92,6 +92,18 @@ void set_keyboard_callback(unsigned char key, int x, int y)
 	else if (key == 'p' || key == 'P') {
 		window->scene->setInput('p');
 	}
+	else if (key == '[' || key == '{') {
+		window->scene->setInput('[');
+	}
+	else if (key == ']' || key == '}') {
+		window->scene->setInput(']');
+	}
+	else if (key == ',' || key == '<') {
+		window->scene->setInput(',');
+	}
+	else if (key == '.' || key == '>') {
+		window->scene->setInput('.');
+	}
 	else if (key == 13) {
 		window->scene->setInput(13);
 	}

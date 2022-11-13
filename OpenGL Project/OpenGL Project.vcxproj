@@ -105,12 +105,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>S:\gameProgramming\1103prj\OpenGL Project\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\gamePrj\1114\OpenGL Project\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>S:\gameProgramming\1103prj\OpenGL Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>S:\gamePrj\1114\OpenGL Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,6 +142,7 @@
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="RoundScene.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="UserConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FireWork.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="RoundScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="UserConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
