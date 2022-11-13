@@ -52,6 +52,9 @@ class MultiScene: public Scene
 
 		void setInput(unsigned char) override;
 		void unsetInput(unsigned char) override;
+
+		void checkInput() override;
+		void addInput(int) override;
 	private:
 		MultiSceneState state = CONNECTING_SERVER;
 		void init(void);

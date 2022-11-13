@@ -1,9 +1,8 @@
-﻿  FireWork.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\FireWork.cpp(12,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  MainScene.cpp
+﻿  MainScene.cpp
+  MultiScene.cpp
   Generating code
-  1 of 426 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  135 of 529 functions (25.5%) were compiled, the rest were copied from previous compilation.
+    103 functions were new in current compilation
+    23 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Release\OpenGL Project.exe

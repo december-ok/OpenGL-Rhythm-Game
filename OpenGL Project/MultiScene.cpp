@@ -80,3 +80,11 @@ void MultiScene::setInput(unsigned char key)
 void MultiScene::unsetInput(unsigned char key)
 {
 }
+
+void MultiScene::checkInput()
+{
+}
+
+void MultiScene::addInput(int key)
+{
+}
