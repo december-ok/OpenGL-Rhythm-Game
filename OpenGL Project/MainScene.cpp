@@ -24,18 +24,8 @@ void MainScene::render()
 
 void MainScene::update()
 {
-	if (KeyUp) {
-		selection = (UI_SELECTION)((selection + 2) % 3);
-		KeyUp = false;
-	}
-	if (KeyDown) {
-		selection = (UI_SELECTION)((selection + 1) % 3);
-		KeyDown = false;
-	}
-	if (KeyEnter) {
-		this->move_scene();
-		KeyEnter = false;
-	}
+	checkInput();
+
 }
 
 void MainScene::render_ui(void)
@@ -144,3 +134,25 @@ void MainScene::unsetInput(unsigned char input) {
 		this->KeyEnter = false;
 	}
 }
+
+void MainScene::checkInput()
+{
+	if (KeyUp) {
+		selection = (UI_SELECTION)((selection + 2) % 3);
+		KeyUp = false;
+	}
+	if (KeyDown) {
+		selection = (UI_SELECTION)((selection + 1) % 3);
+		KeyDown = false;
+	}
+	if (KeyEnter) {
+		this->move_scene();
+		KeyEnter = false;
+	}
+}
+
+void MainScene::addInput(int)
+{
+	return;
+}
+
