@@ -691,91 +691,44 @@ void RoundScene::addTime() {
 	}
 }
 
-///*입력 당시의 프레임을 줌. START_FRAME때문에 코드가 조금 더러움*/
-//int Round::getFrame()
-//{
-//	if (frame - START_FRAME < 0) {	// 노래 시작 전 Frame
-//		return -100;	// 우선 임시로 음수값을 줌. 왜냐하면, 노래 시작할 때 출력되는 노트와 '충돌'하면 안됨
-//	}
-//	else {
-//		return frame - START_FRAME;
-//	}
-//}
-
-/*사용자의 입력과 노트 프레임 간의 차이를 계산하는 함수*/
-//int RoundScene::getNoteDelay(int line)
-//{
-//	// 가장 가까운 노트
-//	int n_frame = this->line_input[line];
-//
-//	// 입력과 노트 프레임 사이의 차이
-//	int n_delay = this->notes[line][n_frame]->GetHeight(frame);
-//	int noteType = this->notes[line][n_frame]->type;
-//
-//	Note* nott = this->notes[line][n_frame];
-//
-//	// 일정 범위 내에 노트가 존재함
-//	if (n_delay <= 50) {
-//		// 노트 지움
-//		this->deleteNote(line, n_frame);
-//		this->setLineInput(line);
-//		printf("%d: Delay\n", n_delay);
-//		if (abs(n_delay) <= 10) {
-//			receiveJudgement(1,nott);
-//			return 1;
-//		}
-//		else if (abs(n_delay) <= 20) {
-//			receiveJudgement(2, nott);
-//			return 2;
-//		}
-//		else if (abs(n_delay) <= 30) {
-//			receiveJudgement(3, nott);
-//			return 3;
-//		}
-//		else if (abs(n_delay) <= 40) {
-//			receiveJudgement(4, nott);
-//			return 4;
-//		}
-//		else {
-//			receiveJudgement(5, nott);
-//		}
-//	}
-//	else {
-//	}
-//}
-
 void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 {
 	int n_frame = this->line_input[line];
 
 	// 입력과 노트 프레임 사이의 차이
-	int n_delay = this->notes[line][n_frame]->GetHeight(i_frame);
-	int noteType = this->notes[line][n_frame]->type;
-
 	Note* nott = this->notes[line][n_frame];
+
+	float n_delay = nott->GetHeight(i_frame) - JUDGE_HEIGHT;
+	int noteType = nott->type;
+
 
 	// 일정 범위 내에 노트가 존재함
 	if (n_delay <= MISS_FRAME) {
 		// 노트 지움
 		this->deleteNote(line, n_frame);
 		this->setLineInput(line);
-		printf("%d: Delay\n", n_delay);
-		if (abs(n_delay) <= PERFECT_FRAME) {
+
+		//노트 판정
+		printf("%d createFrame\n", nott->createFrame);
+		printf("%d inputFrame\n", frame);
+		printf("%f: Delay\n", n_delay);
+		if (n_delay <= PERFECT_FRAME && n_delay >= -PERFECT_FRAME) {
 			receiveJudgement(1, nott);
 		}
-		else if (abs(n_delay) <= GREAT_FRAME) {
+		else if (n_delay <= GREAT_FRAME && n_delay >= -GREAT_FRAME) {
 			receiveJudgement(2, nott);
 		}
-		else if (abs(n_delay) <= NORMAL_FRAME) {
+		else if (n_delay <= NORMAL_FRAME && n_delay >= -NORMAL_FRAME) {
 			receiveJudgement(3, nott);
 		}
-		else if (abs(n_delay) <= BAD_FRAME) {
+		else if (n_delay <= BAD_FRAME && n_delay >= -BAD_FRAME) {
 			receiveJudgement(4, nott);
 		}
 		else {
 			receiveJudgement(5, nott);
 		}
 	}
+
 
 
 }
