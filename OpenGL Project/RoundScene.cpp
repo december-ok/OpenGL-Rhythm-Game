@@ -38,6 +38,7 @@ RoundScene::RoundScene(GameWindow* window, MUSIC id)
 RoundScene::~RoundScene()
 {
 	free(this->gameInfo);
+	free(this->U_Config);
 	for (int line = 0; line < LINES;line++) {
 		for (size_t i = 0; i < this->notes[line].size(); i++)
 		{
@@ -53,6 +54,7 @@ RoundScene::~RoundScene()
 void RoundScene::init() {
 
 	this->gameInfo = new GameInfo();
+	U_Config = new UserConfig();
 	BASS_Init(-1, 44100, 0, 0, NULL);
 
 	this->loadMusic();
@@ -207,6 +209,7 @@ void RoundScene::init() {
 void RoundScene::loadMusic() {
 	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
 	BASS_ChannelPlay(this->stream, FALSE);
+	setMVol(U_Config->M_Vol);
 	BASS_ChannelPause(this->stream);
 
 	//끝나는 시점 계산
@@ -217,6 +220,7 @@ void RoundScene::loadMusic() {
 
 void RoundScene::playEffectSound() {
 	HSTREAM effect = BASS_StreamCreateFile(FALSE, "./hit_sound.mp3", 0, 0, 0);
+	BASS_ChannelSetAttribute(effect, BASS_ATTRIB_VOL, U_Config->E_Vol);
 	BASS_ChannelPlay(effect, FALSE);
 }
 
@@ -236,73 +240,46 @@ void RoundScene::pauseSound(bool pause)
 	}
 }
 
+void RoundScene::setMVol(float volume)
+{
+	bool check = BASS_ChannelSetAttribute(stream, BASS_ATTRIB_VOL, volume);
+}
+
 void RoundScene::receiveJudgement(int judge,Note* nott)
 {
-	//판정 ( 1:perfect, 2:great, 3:good? 4:bad 5:miss(침))
-	// 안치면 타입정보 안줌
-	int type = 0;
-	if(nott != NULL) type = nott->type;
+	//(0 = Normal, 1 = Section, 2 = Lie, 3 = Item)
+	int type = nott->type;
 
-	if (type == 3) {
-		printf("Item\n");
+	//miss 아닐때만 확인
+	//item type : 1 : 회복, 2 : 판정, up 3 : 상대방 가리기 
+
+	if (type == 3 && judge < 5) {
 		ItemNote* tmpNott = (ItemNote*)nott;
 		unsigned char itemType = tmpNott->itemType;
 
 		if (itemType == 1) {
 			gameInfo->HP += 30;
-			if (gameInfo->HP > 100)
-				gameInfo->HP = 100;
 		}
 		else if (itemType == 2) {
+			//프레임 단위(임시)
 			reinforce += 1000;
 		}
 	}
 
 	//판정 up 아이템 적용
-	//miss 와 퍼펙트 아닌 부분에서 판정을 하나씩 올림
-	if (reinforce > 0 && judge > 1 && judge <5){
+	//퍼펙트 < 해당노트 < miss 해당노트 판정 up
+	if (reinforce > 0 && judge > 1 && judge < 5) {
 		judge--;
 	}
+	//lie노트
+	//놓쳤을 때가 아닐 때 처리
 
-
-	//lie노드면 처리, 못치면 타입 중요한거 없음
 	if (type == 2) {
 		printf("lie\n");
-		gameInfo->HP -= 30;
+		if (judge < 6)
+			gameInfo->HP -= 30;
 	}
-	else if (judge == 1) {
-		gameInfo->HP += 2;
-		gameInfo->combo++;
-		gameInfo->perfect++;
-		gameInfo->recentJudgement = PERFECT;
-		calcScore(judge);
-	}
-	else if (judge == 2) {
-		gameInfo->HP += 1;
-		gameInfo->combo++;
-		gameInfo->great++;
-		gameInfo->recentJudgement = GREAT;
-		calcScore(judge);
-	}
-	else if (judge == 3) {
-		gameInfo->combo++;
-		gameInfo->normal++;
-		gameInfo->recentJudgement = NORMAL;
-		calcScore(judge);
-	}
-	else if (judge == 4) {
-		gameInfo->HP -= 5;
-		gameInfo->combo = 0;
-		gameInfo->bad++;
-		gameInfo->recentJudgement = BAD;
-		calcScore(judge);
-	}
-	else if (judge == 5) {
-		gameInfo->HP -= 10;
-		gameInfo->combo = 0;
-		gameInfo->miss++;
-		gameInfo->recentJudgement = MISS;
-	}
+	else calcInfo(judge);
 
 	if (gameInfo->HP > 100)
 		gameInfo->HP = 100;
@@ -312,7 +289,7 @@ void RoundScene::receiveJudgement(int judge,Note* nott)
 	}
 }
 
-void RoundScene::calcScore(int judge)
+void RoundScene::calcInfo(int judge)
 {
 	//perfect 1 great 2 normal 3 bad 4 miss : 점수 계산 없음
 	//노트 점수 : 기본점수 * 콤보 보너스(100combo당 10% 증가) * 판정 점수(1.3 1.1 1.0 0.5 0)
@@ -322,22 +299,43 @@ void RoundScene::calcScore(int judge)
 
 	switch (judge) {
 	case 1:
+		gameInfo->HP += 2;
+		gameInfo->combo++;
+		gameInfo->perfect++;
+		gameInfo->recentJudgement = PERFECT;
 		calc = base * (1 + (interval * 0.1)) * 1.3;
 		break;
 	case 2:
+		gameInfo->HP += 1;
+		gameInfo->combo++;
+		gameInfo->great++;
+		gameInfo->recentJudgement = GREAT;
 		calc = base * (1 + (interval * 0.1)) * 1.1;
 		break;
 	case 3:
+		gameInfo->combo++;
+		gameInfo->normal++;
+		gameInfo->recentJudgement = NORMAL;
 		calc = base * (1 + (interval * 0.1)) * 1;
 		break;
 	case 4:
+		gameInfo->HP -= 5;
+		gameInfo->combo = 0;
+		gameInfo->bad++;
+		gameInfo->recentJudgement = BAD;
 		calc = base * 0.5;
 		break;
+	default:
+		gameInfo->HP -= 10;
+		gameInfo->combo = 0;
+		gameInfo->miss++;
+		gameInfo->recentJudgement = MISS;
 	}
 
 	int tmp = calc;
 	gameInfo->score += tmp;
 }
+
 
 void RoundScene::setInput(unsigned char key) {
 	cout << key;
@@ -364,6 +362,25 @@ void RoundScene::setInput(unsigned char key) {
 	else if (key == 'p') {
 		pause = !(pause);
 		pauseSound(pause);
+	}
+	else if (key == '[') {
+		U_Config->M_Vol -= 0.1;
+		if (U_Config->M_Vol < 0) U_Config->M_Vol = 0;
+		setMVol(U_Config->M_Vol);
+	}
+	else if (key == ']') {
+		U_Config->M_Vol += 0.1;
+		if (U_Config->M_Vol > 1) U_Config->M_Vol = 1;
+		setMVol(U_Config->M_Vol);
+	}
+	//효과음 볼륨조정
+	else if (key == ',') {
+		U_Config->E_Vol -= 0.1;
+		if (U_Config->E_Vol < 0) U_Config->E_Vol = 0;
+	}
+	else if (key == '.') {
+		U_Config->E_Vol += 0.1;
+		if (U_Config->E_Vol > 1) U_Config->E_Vol = 1;
 	}
 }
 void RoundScene::unsetInput(unsigned char key) {
@@ -411,6 +428,7 @@ void RoundScene::addInput(int line)
 }
 
 void RoundScene::update() {
+	if (!pause) {
 	this->addTime();
 	this->deleteMissNode();
 	this->checkInput();
@@ -418,6 +436,7 @@ void RoundScene::update() {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
 	if (reinforce > 0) reinforce--;
+}
 }
 
 void RoundScene::render() {
@@ -784,7 +803,8 @@ void RoundScene::deleteMissNode() {
 	for (int i = 0; i < LINES; i++) {
 		// 입력 못한 노트 제거
 		if (this->notes[i][line_input[i]]->IsMissNote(frame)) {
-			receiveJudgement(5, NULL);
+			Note* nott = this->notes[i][line_input[i]];
+			receiveJudgement(6, nott);
 			printf("%d Miss Note 제거\n", line_input[i]);
 			this->notes[i][line_input[i]]->killNote();
 			this->setLineInput(i);

@@ -1,22 +1,98 @@
-﻿  Round.cpp
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(87,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(193,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(196,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(199,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(202,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(206,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(274,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(285,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(295,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(305,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(269,8): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(327,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(328,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(363,16): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(384,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(386,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(388,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(390,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(421,14): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gameProgramming\1103prj\OpenGL Project\Round.cpp(454): warning C4715: 'Round::getNoteDelay': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  OpenGL Project.vcxproj -> S:\gameProgramming\1103prj\x64\Debug\OpenGL Project.exe
+﻿  RoundScene.cpp
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(102,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(103,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(104,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(105,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(106,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(107,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(108,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(114,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(115,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(116,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(117,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(118,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(119,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(120,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(124,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(125,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(126,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(127,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(128,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(129,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(130,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(134,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(135,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(136,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(137,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(138,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(139,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(140,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(144,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(145,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(146,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(147,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(148,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(149,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(150,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(154,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(155,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(156,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(157,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(158,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(159,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(160,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(164,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(165,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(166,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(167,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(168,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(169,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(170,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(174,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(175,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(176,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(177,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(178,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(179,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(180,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(184,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(185,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(186,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(187,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(188,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(189,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(190,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(194,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(195,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(196,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(197,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(198,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(199,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(200,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(218,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(306,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(313,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(319,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(326,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(335,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(367,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(372,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(378,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(382,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(468,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(479,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(489,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(499,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(542,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(551,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(560,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(569,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(620,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(621,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(656,16): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(676,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(678,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(680,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(682,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\gamePrj\1114\OpenGL Project\RoundScene.cpp(752,14): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  OpenGL Project.vcxproj -> S:\gamePrj\1114\x64\Debug\OpenGL Project.exe
