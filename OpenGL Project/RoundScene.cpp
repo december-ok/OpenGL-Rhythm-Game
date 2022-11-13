@@ -402,7 +402,6 @@ void RoundScene::checkInput()
 		// Queue Á¦°Å
 		InputQueue.pop();
 		delete current_input;
-
 	}
 
 }
