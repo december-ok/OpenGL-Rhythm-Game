@@ -3,7 +3,7 @@ class GameInfo
 {
 public:
 	//게임 진행 정보
-	int HP = 100;
+	float HP = 100;
 	int score = 0;
 	int combo = 0;
 
