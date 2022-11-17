@@ -26,8 +26,11 @@ class RoundScene:public Scene
 	//unsigned int frame = 0;
 	unsigned int score = 0;
 	vector<Note*> notes[LINES];
-	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
+	int line_input[LINES]; // 각 라인 별 입력 횟수 저장
 
+	int section_input[LINES] = { 0, 0, 0, 0 };		// 롱노트 입력 시간
+	int section_delay[LINES] = { 0, 0, 0, 0 };		// 입력 보정을 위한 delay - 근데 이거 안쓰는 거 같은데..?
+	int section_judgement[LINES] = { -1, -1, -1, -1 };	// 롱노트 판정 저장
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
@@ -50,17 +53,16 @@ public:
 	void update() override;
 	void addTime();
 
-	//int getFrame();	
-	//int getNoteDelay(int line);	// 노트의 딜레이 반환
 	void getNoteDelay(int line, unsigned int i_frame);
 	void deleteNote(int line, int n_frame);
 	void deleteMissNode();
 	int getLineInput(int line);
 	void setLineInput(int line);
-	//void deleteMissNote();
 
 	void setInput(unsigned char) override;
 	void unsetInput(unsigned char) override;
+
+	void checkSectionNote();	// 롱노트 입력 검사
 
 	void checkInput() override;
 	void addInput(int line) override;
@@ -69,6 +71,7 @@ public:
 	bool pause = false;
 	void receiveJudgement(int judge, Note* nott);
 	void calcInfo(int judge);
+	void calcSectionInfo(int judge);
 	void pauseSound(bool pause);
 	void setMVol(float volume);
 	

@@ -70,7 +70,10 @@ void RoundScene::init() {
 		s = 1020;
 		t = 11.25f;
 
-		this->notes[1].push_back((Note*)new NoramlNote(300));
+		//this->notes[1].push_back((Note*)new NoramlNote(300));
+		this->notes[1].push_back((Note*)new SectionNote(300, 350));
+
+
 		this->notes[3].push_back((Note*)new NoramlNote(390));
 		this->notes[2].push_back((Note*)new NoramlNote(435));
 		this->notes[1].push_back((Note*)new NoramlNote(480));
@@ -247,13 +250,13 @@ void RoundScene::setMVol(float volume)
 
 void RoundScene::receiveJudgement(int judge,Note* nott)
 {
-	//(0 = Normal, 1 = Section, 2 = Lie, 3 = Item)
+	//(0 = Normal, 1 = Section, 2 = Lie, 3 = LieSection 4 = Item)
 	int type = nott->type;
 
 	//miss 아닐때만 확인
 	//item type : 1 : 회복, 2 : 판정, up 3 : 상대방 가리기 
 
-	if (type == 3 && judge < 5) {
+	if (type == 4 && judge < 5) {
 		ItemNote* tmpNott = (ItemNote*)nott;
 		unsigned char itemType = tmpNott->itemType;
 
@@ -274,10 +277,14 @@ void RoundScene::receiveJudgement(int judge,Note* nott)
 	//lie노트
 	//놓쳤을 때가 아닐 때 처리
 
+	// 가짜 노트 - 수정 필수!!!!!!!!!!!!! 가짜 롱노트 부분
 	if (type == 2) {
 		printf("lie\n");
 		if (judge < 6)
 			gameInfo->HP -= 30;
+	}
+	else if (type == 1) {
+		calcSectionInfo(judge);
 	}
 	else calcInfo(judge);
 
@@ -336,9 +343,55 @@ void RoundScene::calcInfo(int judge)
 	gameInfo->score += tmp;
 }
 
+void RoundScene::calcSectionInfo(int judge)
+{
+	//perfect 1 great 2 normal 3 bad 4 miss : 점수 계산 없음
+	//노트 점수 : 기본점수 * 콤보 보너스(100combo당 10% 증가) * 판정 점수(1.3 1.1 1.0 0.5 0)
+	int base = 100;
+	int interval = gameInfo->combo / 100;
+	float calc = 0;
+
+	switch (judge) {
+	case 1:
+		gameInfo->HP += 0.2;
+		gameInfo->combo++;
+		gameInfo->perfect++;
+		gameInfo->recentJudgement = PERFECT;
+		calc = base * (1 + (interval * 0.1)) * 1.3;
+		break;
+	case 2:
+		gameInfo->HP += 0.1;
+		gameInfo->combo++;
+		gameInfo->great++;
+		gameInfo->recentJudgement = GREAT;
+		calc = base * (1 + (interval * 0.1)) * 1.1;
+		break;
+	case 3:
+		gameInfo->combo++;
+		gameInfo->normal++;
+		gameInfo->recentJudgement = NORMAL;
+		calc = base * (1 + (interval * 0.1)) * 1;
+		break;
+	case 4:
+		gameInfo->HP -= 0.5;
+		gameInfo->combo = 0;
+		gameInfo->bad++;
+		gameInfo->recentJudgement = BAD;
+		calc = base * 0.5;
+		break;
+	default:
+		gameInfo->HP -= 1;
+		gameInfo->combo = 0;
+		gameInfo->miss++;
+		gameInfo->recentJudgement = MISS;
+	}
+
+	int tmp = calc;
+	gameInfo->score += tmp;
+}
 
 void RoundScene::setInput(unsigned char key) {
-	cout << key;
+	//cout << key;
 	if (key == 'd') {
 		this->key[0] = true;
 		this->renderKey[0] = true;
@@ -402,6 +455,76 @@ void RoundScene::unsetInput(unsigned char key) {
 	}
 }
 
+
+void RoundScene::checkSectionNote()
+{
+	// 모든 line에 대하여 검사
+	for (int i = 0; i < LINES; i++) {
+
+		// 현재 롱노트가 입력 상태일 때,
+		if (section_judgement[i] != -1) {
+			
+			// 현재 롱노트
+			Note* current_section =  notes[i][line_input[i]];
+
+			// 손이 떨어지지 않음 - 입력중
+			if (this->renderKey[i]) {
+				// 입력 길이가 롱노트의 길이보다 짧다면, 
+				if (current_section->getNoteLength() > section_input[i]) {
+					// 롱노트 판정 반복 전달
+					receiveJudgement(section_judgement[i], current_section);
+
+					// input++
+					section_input[i] += 1;
+				}
+				// 둘이 길이가 동일함 -> 이제부턴 롱노트 입력 x
+				else if (current_section->getNoteLength() == section_input[i]) {
+					// 입력 횟수, 판정 초기화
+					section_input[i] = 0;
+					section_judgement[i] = -1;
+					section_delay[i] = 0;
+
+					// 노트 제거
+					this->deleteNote(i, line_input[i]);
+					this->setLineInput(i);
+				}
+			}
+			// 손이 떨어짐 - 더 이상 롱노트 입력 X
+			else {
+				// 마지막 노트와의 판정 구하기
+				unsigned int end_frame =
+					(current_section->createFrame + current_section->getNoteLength()) + (ROWS - JUDGE_HEIGHT);
+				unsigned int unset_delay = end_frame - frame;
+				
+				// 노트 삭제
+				this->deleteNote(i, line_input[i]);
+				this->setLineInput(i);
+
+				// Normal 입력까지는 기존 입력 고수
+				if (unset_delay <= NORMAL_FRAME && unset_delay >= -NORMAL_FRAME) {
+					receiveJudgement(section_judgement[i], current_section);
+				}
+				// Bad 이하는 모두 Miss로
+				else {
+					receiveJudgement(5, current_section);
+				}
+
+				// 입력 횟수, 판정 초기화
+				section_input[i] = 0;
+				section_judgement[i] = -1;
+				section_delay[i] = 0;
+
+			}
+
+		}
+		else {
+			continue;
+		}
+
+	}
+	
+}
+
 void RoundScene::checkInput()
 {
 	// Queue가 비어있지 않다면,
@@ -432,6 +555,7 @@ void RoundScene::update() {
 	this->addTime();
 	this->deleteMissNode();
 	this->checkInput();
+	this->checkSectionNote();
 	if (frame == START_FRAME) {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
@@ -632,7 +756,8 @@ void RoundScene::renderNotes() {
 	int input_count = 0;
 	for (int line = 0; line < LINES; ++line) {
 		for (int scope = 0; scope < this->notes[line].size(); ++scope) {
-			if (this->notes[line][scope] == nullptr) break;
+			if (this->notes[line][scope] == nullptr)
+				break;
 			//cout << "fps: " << frame << " | ";
 			if (this->notes[line][scope]->IsActive(frame) && this->notes[line][scope]->isAlive) {
 				// 노트의 색 지정
@@ -653,18 +778,37 @@ void RoundScene::renderNotes() {
 					break;
 				}
 
+				// 바닥으로부터 노트(바닥)까지의 거리
 				int height = this->notes[line][scope]->GetHeight(frame);
-				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + 1);
+				int noteLength = this->notes[line][scope]->getNoteLength();
+
+				// 롱노트에 대하여
+				if (this->notes[line][scope]->type == 1) {
+					int bottom = 0;
+					// 롱노트가 현재 입력 대기중인 노트이고, 그 노트가 입력중일 때
+					if (scope == line_input[line] && section_judgement[line] != -1) {
+						bottom = JUDGE_HEIGHT;
+					}
+
+					// 일부 롱노트가 화면 아래에 있음
+					if (height < 2) {
+						glRectd(20.f + ((float)line * 4), bottom, 24.f + ((float)line * 4), height + noteLength);
+					}
+					else {
+						glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
+					}
+				}
+				else {
+					glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
+				}
+
+				//}
 				//cout << frame << " | " << line << ":" << height << "\n";
 
 				if (line == 0 && (0 <= height && height <= 10)) {
 				//	cout << line << ":" << height << "\n";
 				}
 			}
-			else if(this->notes[line][scope]->IsMissNote(frame)) {
-				this->deleteNote(line, scope);
-			}
-
 		}
 	}
 }
@@ -700,37 +844,46 @@ void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 
 	float n_delay = nott->GetHeight(i_frame) - JUDGE_HEIGHT;
 	int noteType = nott->type;
+	int judgeType = 5;
 
 
 	// 일정 범위 내에 노트가 존재함
 	if (n_delay <= MISS_FRAME) {
-		// 노트 지움
-		this->deleteNote(line, n_frame);
-		this->setLineInput(line);
-
+		
 		//노트 판정
-		printf("%d createFrame\n", nott->createFrame);
-		printf("%d inputFrame\n", frame);
-		printf("%f: Delay\n", n_delay);
+		//printf("%d createFrame\n", nott->createFrame);
+		//printf("%d inputFrame\n", frame);
+		//printf("%f: Delay\n", n_delay);
 		if (n_delay <= PERFECT_FRAME && n_delay >= -PERFECT_FRAME) {
-			receiveJudgement(1, nott);
+			judgeType = 1;
 		}
 		else if (n_delay <= GREAT_FRAME && n_delay >= -GREAT_FRAME) {
-			receiveJudgement(2, nott);
+			judgeType = 2;
 		}
 		else if (n_delay <= NORMAL_FRAME && n_delay >= -NORMAL_FRAME) {
-			receiveJudgement(3, nott);
+			judgeType = 3;
 		}
 		else if (n_delay <= BAD_FRAME && n_delay >= -BAD_FRAME) {
-			receiveJudgement(4, nott);
+			judgeType = 4;
 		}
+		receiveJudgement(judgeType, nott);
+
+		// 롱노트
+		if (noteType == 1) {
+			section_judgement[line] = judgeType;
+			section_delay[line] = n_delay;
+			section_input[line] = 1;
+
+			//int i_delay = i_frame - (nott->createFrame + (ROWS - JUDGE_HEIGHT));
+			//section_input[line] = i_delay;
+		}
+		// 이외의 노트
 		else {
-			receiveJudgement(5, nott);
+			// 노트 지움
+			this->deleteNote(line, n_frame);
+			this->setLineInput(line);
 		}
 	}
-
-
-
 }
 
 /*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함*/
@@ -738,7 +891,7 @@ void RoundScene::deleteNote(int line, int n_frame)
 {
 	if (this->notes[line][n_frame] != nullptr) {
 		this->notes[line][n_frame]->killNote();
-		printf("%d번 note 삭제\n", n_frame);
+		//printf("%d번 note 삭제\n", n_frame);
 	}
 
 }
@@ -758,7 +911,7 @@ void RoundScene::deleteMissNode() {
 		if (this->notes[i][line_input[i]]->IsMissNote(frame)) {
 			Note* nott = this->notes[i][line_input[i]];
 			receiveJudgement(6, nott);
-			printf("%d Miss Note 제거\n", line_input[i]);
+			//printf("%d Miss Note 제거\n", line_input[i]);
 			this->notes[i][line_input[i]]->killNote();
 			this->setLineInput(i);
 		}
