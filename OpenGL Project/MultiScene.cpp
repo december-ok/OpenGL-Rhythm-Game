@@ -1,4 +1,5 @@
-#include"MultiScene.h"
+#include "MultiScene.h"
+#include "NetworkSocket.h"
 
 MultiScene::MultiScene(GameWindow* window, MUSIC id)
 {
@@ -28,7 +29,7 @@ MultiScene::~MultiScene()
 
 void MultiScene::init(void)
 {
-	
+	new NetworkSocket(this);
 }
 
 void MultiScene::render()
