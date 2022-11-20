@@ -26,6 +26,7 @@ class MultiScene: public Scene
 	string artist = "";
 	string musicFile = "";
 	HSTREAM stream = NULL;
+	
 
 	//unsigned int frame = 0;
 	unsigned int score = 0;
@@ -55,8 +56,9 @@ class MultiScene: public Scene
 
 		void checkInput() override;
 		void addInput(int) override;
-	private:
+		
 		MultiSceneState state = CONNECTING_SERVER;
+	private:
 		void init(void);
 
 		void renderInfo(void);
