@@ -1,4 +1,4 @@
-﻿  NetworkSocket.cpp
+﻿  MultiScene.cpp
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
@@ -14,9 +14,16 @@ C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning 
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(54,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(85,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(87,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(89,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(91,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(104,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(105,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(113,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(114,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   Generating code
-  4 of 547 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+  3 of 550 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

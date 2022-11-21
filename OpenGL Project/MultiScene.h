@@ -8,6 +8,9 @@
 #include <bass.h>
 #include "GameInfo.h"
 #include <string>
+#define P1_COLUMN 12
+#define P2_COLUMN 78
+
 using namespace std;
 
 enum MultiSceneState
@@ -57,9 +60,12 @@ class MultiScene: public Scene
 		void checkInput() override;
 		void addInput(int) override;
 		
-		MultiSceneState state = CONNECTING_SERVER;
+		MultiSceneState state = PLAYING;
 	private:
 		void init(void);
 
 		void renderInfo(void);
+		void renderGame(void);
+		void renderInputEffect();
+		void renderGrid(void);
 };
