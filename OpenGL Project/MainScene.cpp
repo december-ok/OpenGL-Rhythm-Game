@@ -15,18 +15,34 @@ MainScene::~MainScene()
 
 void MainScene::init()
 {
-	this->fireWork = new FireWork(new Vector(50, 0), 1.3f);
+//	this->fireWork = new FireWork(new Vector(50, 0), 1.3f);
 }
 
 void MainScene::render()
 {
-	this->fireWork->render();
+	for (auto f : this->fireWork) {
+		if (f) {
+			f->render();
+		}
+	}
 	this->render_ui();
 }
 
 void MainScene::update()
 {
-	this->fireWork->update();
+	for (auto f : this->fireWork) {
+		if (f) {
+			f->update();
+		}
+	}
+
+	if(this->fps % (FPS/2) == 0){
+		int i = (this->fps % (5 * FPS)) / (FPS / 2);
+		if (this->fireWork[i]) {
+			free(this->fireWork[i]);
+		}
+		this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(0.9f, 1.3f));
+	}
 	
 	if (KeyUp) {
 		selection = (UI_SELECTION)((selection + 2) % 3);
@@ -40,6 +56,8 @@ void MainScene::update()
 		this->move_scene();
 		KeyEnter = false;
 	}
+	
+	++this->fps;
 }
 
 void MainScene::render_ui(void)
