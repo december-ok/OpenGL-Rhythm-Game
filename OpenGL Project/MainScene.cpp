@@ -1,7 +1,8 @@
 #include "MainScene.h"
 #include "RoundScene.h"
 #include "MultiScene.h"
-
+#include "TutorialScene.h"
+#include "ResultScene.h"
 MainScene::MainScene(GameWindow* window)
 {
 	this->window = window;
@@ -45,11 +46,11 @@ void MainScene::update()
 	}
 	
 	if (KeyUp) {
-		selection = (UI_SELECTION)((selection + 2) % 3);
+		selection = (UI_SELECTION)((selection + 3) % 4);
 		KeyUp = false;
 	}
 	if (KeyDown) {
-		selection = (UI_SELECTION)((selection + 1) % 3);
+		selection = (UI_SELECTION)((selection + 1) % 4);
 		KeyDown = false;
 	}
 	if (KeyEnter) {
@@ -71,14 +72,14 @@ void MainScene::render_ui(void)
 	// ·Î°í
 	content = "Rhythm Game";
 	glColor3f(1, 1,	 1);
-	glRasterPos2f(56.5f, 80.f);
+	glRasterPos2f(56.5f, 90.f);
 	for (auto c : content)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
 	
 	x = 49.f;
-	y = 50.f;
+	y = 60.f;
 	
 	if (selection == SINGLE_PLAY) {
 		glColor3f(0.7f, 0.7f, 0.7f);
@@ -89,13 +90,13 @@ void MainScene::render_ui(void)
 	glRectd(x, y, x + width, y + height);
 	content = "Single Play";
 	glColor3f(1, 1, 1);
-	glRasterPos2f(59.5f, 54.f);
+	glRasterPos2f(59.5f, 64.f);
 	for (auto c : content)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
 	}
 
-	y = 35.f;
+	y = 45.f;
 	if (selection == ONLINE_PLAY) {
 		glColor3f(0.7f, 0.7f, 0.7f);
 	}
@@ -105,13 +106,29 @@ void MainScene::render_ui(void)
 	glRectd(x, y, x + width, y + height);
 	content = "Online Play";
 	glColor3f(1, 1, 1);
-	glRasterPos2f(59.5f, 39.f);
+	glRasterPos2f(59.5f, 49.f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+	}
+	y = 30.f;
+	if (selection == TUTORIAL) {
+		glColor3f(0.7f, 0.7f, 0.7f);
+	}
+	else {
+		glColor3f(0.2f, 0.2f, 0.2f);
+	}
+	glRectd(x, y, x + width, y + height);
+	content = "How to Play";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(59.f, 34.f);
 	for (auto c : content)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
 	}
 
-	y = 20.f;
+
+	y = 15.f;
 	if (selection == EXIT) {
 		glColor3f(0.7f, 0.7f, 0.7f);
 	}
@@ -121,7 +138,7 @@ void MainScene::render_ui(void)
 	glRectd(x, y, x + width, y + height);
 	content = "Exit";
 	glColor3f(1, 1, 1);
-	glRasterPos2f(62.f, 24.f);
+	glRasterPos2f(62.f, 19.f);
 	for (auto c : content)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
@@ -136,6 +153,12 @@ void MainScene::move_scene(void) {
 	else if (this->selection == ONLINE_PLAY)
 	{
 		this->window->scene = new MultiScene(this->window, CANON);
+		free(this);
+	}
+	else if (this->selection == TUTORIAL){
+		
+		this->window->scene = new TutorialScene(this->window);
+		//this->window->scene = new ResultScene(this->window);
 		free(this);
 	}
 	else if (this->selection == EXIT)
