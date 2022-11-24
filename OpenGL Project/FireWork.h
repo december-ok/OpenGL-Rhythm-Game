@@ -56,7 +56,7 @@ public:
 	Vector* pos;
 	float speed;
 	RGBClass* color;
-	int EXPLOSION_COUNT = 100;
+	int EXPLOSION_COUNT = 75;
 	bool elevateMode = true;
 	
 	Particle* elevator;
@@ -74,3 +74,5 @@ public:
 
 void drawCircle(float x, float y, float radius, RGBClass* rgb);
 float getRand(float size);
+float getRandRage(float min, float max);
+int getRandPlusMinus();

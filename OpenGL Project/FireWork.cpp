@@ -1,9 +1,9 @@
 #include"FireWork.h"
-#include <iostream>
+#include <cmath>
 using namespace std;
 
 void drawCircle(float x, float y, float radius, RGBClass* rgb) {
-	float circle_points = 50;
+	float circle_points = 4;
 	float angle;
 	glColor4f(rgb->r, rgb->g, rgb->b, rgb->a);
 	glLineWidth(1);
@@ -17,6 +17,14 @@ void drawCircle(float x, float y, float radius, RGBClass* rgb) {
 
 float getRand(float size) {
 	return (rand() % (int)(2 * size * 100)) / 100.f - size;
+}
+
+float getRandRage(float min, float max) {
+	return (rand() % (int)((max - min) * 100)) / 100.f + min;
+}
+
+int getRandPlusMinus() {
+	return (rand() % 2) * 2 - 1;
 }
 
 Vector::Vector(float x, float y)
@@ -64,7 +72,7 @@ Particle::Particle(Vector* pos, Vector* vel, RGBClass* rgb)
 {
 	this->pos = pos;
 	this->vel = vel;
-	this->after_length = 10;
+	this->after_length = 25;
 	this->life = 1;
 	this->rgb = rgb;
 	this->after = vector<Vector*>();
@@ -109,7 +117,7 @@ FireWork::FireWork(Vector* pos, float speed) {
 	this->pos = pos;
 	this->speed = speed;
 
-	this->color = new RGBClass(1, 0, 0, 1);
+	this->color = new RGBClass(getRandRage(0,1), getRandRage(0, 1), getRandRage(0, 1), 1);
 
 	this->elevator = new Particle(pos, new Vector(0, this->speed), this->color);
 	this->explosionList = vector<Particle*>();
@@ -133,13 +141,18 @@ void FireWork::update() {
 void FireWork::elevateUpdate() {
 	this->elevator->update();
 	this->elevator->vel->add(0, -0.01f);
+
+	float speed = 0.5f;
 	
 	if (this->elevator->vel->y <= 0) {
 		this->elevateMode = false;
 		Vector* pos = this->elevator->pos;
 		for (int i = 0; i < this->EXPLOSION_COUNT; i++) {
+			float randX = getRand(speed);
+			float maxRandY = sqrt((speed * speed) + 0.001f - (randX * randX));
+			float randY = getRandRage(-1 * maxRandY, maxRandY) * 1.5;
 			this->explosionList.push_back(
-			new Particle(pos->clone(), new Vector(getRand(.8f), getRand(.8f)), this->color)
+				new Particle(pos->clone(), new Vector(randX, randY), this->color)
 			);
 		}
 	}
@@ -147,7 +160,7 @@ void FireWork::elevateUpdate() {
 
 void FireWork::explodeUpdate() {
 	for (auto p : this->explosionList) {
-		p->vel->y -= 0.002f;
+		p->vel->y -= 0.006f;
 		p->life -= 0.008f;
 		p->update();
 	}

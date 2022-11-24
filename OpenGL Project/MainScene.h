@@ -23,7 +23,7 @@ public:
 	void addInput(int) override;
 
 private:
-	FireWork* fireWork;
+	FireWork* fireWork[10];
 	GameWindow* window;
 	void init();
 
@@ -34,6 +34,8 @@ private:
 	bool KeyUp = false;
 	bool KeyDown = false;
 	bool KeyEnter = false;
+
+	int fps = 0;
 	
 	UI_SELECTION selection = SINGLE_PLAY;
 };
