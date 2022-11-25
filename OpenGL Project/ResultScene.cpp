@@ -32,6 +32,8 @@ void ResultScene::init()
 	//나중에 들어오는거보고 지울거
 	this->p_Info = GameInfo();
 	this->op_Info = GameInfo();
+	multi = multi;
+
 }
 
 
@@ -149,6 +151,242 @@ void ResultScene::render()
 	}
 	else {
 		//멀티
+		glColor3f(1, 1, 1);
+		string content = "";
+		if (p_Info.score < op_Info.score) {
+			// 로고
+			content = "YOU LOSE";
+			glColor3f(1, 1, 1);
+			glRasterPos2f(windowWidth / 2 - float(content.length()) / 2, 95.f);
+
+			for (auto c : content)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+			}
+		}
+		else if (p_Info.score == op_Info.score) {
+			//비김
+
+			content = "DRAW";
+			glColor3f(1, 1, 1);
+			glRasterPos2f(windowWidth / 2 - float(content.length()) / 2, 95.f);
+
+			for (auto c : content)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+			}
+		}
+		else {
+			//이김
+
+			content = "YOU WIN";
+			glColor3f(1, 1, 1);
+			glRasterPos2f(windowWidth / 2 - float(content.length()) / 2, 95.f);
+
+			for (auto c : content)
+			{
+				glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+			}
+		}
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8, 80.f);
+		glVertex2f(windowWidth / 8, 7.f);
+		glEnd();
+		
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 3, 80.f);
+		glVertex2f(windowWidth / 8 * 3, 7.f);
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 3, 7.f);
+		glVertex2f(windowWidth / 8, 7.f);
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 3, 80.f);
+		glVertex2f(windowWidth / 8, 80.f);
+		glEnd();
+
+
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8*7, 80.f);
+		glVertex2f(windowWidth / 8*7, 7.f);
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 5, 80.f);
+		glVertex2f(windowWidth / 8 * 5, 7.f);
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 5, 7.f);
+		glVertex2f(windowWidth / 8*7, 7.f);
+		glEnd();
+
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(windowWidth / 8 * 5, 80.f);
+		glVertex2f(windowWidth / 8*7, 80.f);
+		glEnd();
+
+		content = "YOU";
+		glColor3f(1, 1, 1);
+		glRasterPos2f(windowWidth / 4 - float(content.length()/2)-0.5f, 83.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+		}
+
+
+
+		content = "RIVAL";
+		glColor3f(1, 1, 1);
+		glRasterPos2f(windowWidth / 4*3 - float(content.length() / 2) - 0.5f, 83.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+		}
+
+		float xx = windowWidth / 4;
+
+		content = "SCORE : " + to_string(p_Info.score);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 73.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+		content = "MAX COMBO : " + to_string(p_Info.max_combo);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 63.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "PERFECT : " + to_string(p_Info.perfect);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 53.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "GREAT : " + to_string(p_Info.great);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 43.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "NORMAL : " + to_string(p_Info.normal);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 33.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "BAD : " + to_string(p_Info.bad);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 23.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "MISS : " + to_string(p_Info.miss);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2), 13.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		xx = windowWidth / 4*3;
+
+		content = "SCORE : " + to_string(op_Info.score);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 73.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+		content = "MAX COMBO : " + to_string(op_Info.max_combo);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 63.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "PERFECT : " + to_string(op_Info.perfect);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 53.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "GREAT : " + to_string(op_Info.great);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 43.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "NORMAL : " + to_string(op_Info.normal);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 33.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "BAD : " + to_string(op_Info.bad);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2) - 0.5f, 23.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "MISS : " + to_string(op_Info.miss);
+		glColor3f(1, 1, 1);
+		glRasterPos2f(xx - float(content.length() / 2), 13.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "PRESS ENTER TO CONTINUE!";
+		glColor3f(1, 1, 1);
+		glRasterPos2f(windowWidth / 8 * 6, 100.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
 	}
 }
 

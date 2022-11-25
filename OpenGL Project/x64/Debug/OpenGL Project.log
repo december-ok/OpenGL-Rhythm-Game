@@ -1,44 +1,17 @@
-﻿  ResultScene.cpp
-S:\gamePrj\1124\OpenGL Project\Note.h(27,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(28,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(41,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(42,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(55,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(56,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(72,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(73,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(88,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(89,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\ResultScene.cpp(27,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\ResultScene.cpp(28,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\ResultScene.cpp(29,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\ResultScene.cpp(30,44): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  TutorialScene.cpp
-S:\gamePrj\1124\OpenGL Project\Note.h(27,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(28,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(41,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(42,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(55,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(56,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(72,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(73,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(88,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\Note.h(89,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(16,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(17,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(18,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(19,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(239,36): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-S:\gamePrj\1124\OpenGL Project\TutorialScene.cpp(240,37): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  OpenGL Project.vcxproj -> S:\gamePrj\1124\x64\Debug\OpenGL Project.exe
+﻿  MainScene.cpp
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(27,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(28,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(41,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(42,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(55,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(56,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(72,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(73,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(88,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\Desktop\1125\OpenGL Project\Note.h(89,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  OpenGL Project.vcxproj -> C:\Users\okt03\Desktop\1125\x64\Debug\OpenGL Project.exe
