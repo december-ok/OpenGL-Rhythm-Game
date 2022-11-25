@@ -104,11 +104,24 @@ void set_keyboard_callback(unsigned char key, int x, int y)
 	else if (key == '.' || key == '>') {
 		window->scene->setInput('.');
 	}
+	// q: Blink Test용
+	else if (key == 'q' || key == 'Q') {
+		window->scene->setInput('q');
+	}
+	// w: Accel Test용
+	else if (key == 'w' || key == 'W') {
+		window->scene->setInput('w');
+	}
+	// w: Slow down Test 용
+	else if (key == 'e' || key == 'E') {
+		window->scene->setInput('e');
+	}
+	// r: LieNote Test 용
+	else if (key == 'r' || key == 'R') {
+		window->scene->setInput('r');
+	}
 	else if (key == 13) {
 		window->scene->setInput(13);
-	}
-	else if (key == 27) {
-		window->scene->setInput(27);
 	}
 }
 
