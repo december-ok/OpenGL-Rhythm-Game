@@ -1,20 +1,22 @@
 #include "ResultScene.h"
 
-ResultScene::ResultScene(GameWindow*)
+ResultScene::ResultScene(GameWindow* window)
 {
 	this->window = window;
 	this->init();
 }
 
-ResultScene::ResultScene(GameWindow*, GameInfo p, GameInfo op, bool multi)
+ResultScene::ResultScene(GameWindow* window, GameInfo* p, GameInfo* op, bool multi)
 {
+	
 	this->multi = multi;
-	this->p_Info = p;
+	this->p_Info = *p;
 	if (multi) {
-		this->op_Info = op;
+		this->op_Info = *op;
 	}
 	this->window = window;
 	this->init();
+
 }
 
 ResultScene::~ResultScene()
@@ -28,12 +30,6 @@ void ResultScene::init()
 	screenHeight = glutGet(GLUT_SCREEN_HEIGHT) / 10;
 	windowWidth = glutGet(GLUT_WINDOW_WIDTH) / 10;
 	windowHeight = glutGet(GLUT_WINDOW_HEIGHT)/10;
-	printf("%f", screenHeight);
-	//나중에 들어오는거보고 지울거
-	this->p_Info = GameInfo();
-	this->op_Info = GameInfo();
-	multi = multi;
-
 }
 
 
@@ -143,6 +139,15 @@ void ResultScene::render()
 		content = "MISS : " + to_string(p_Info.miss);
 		glColor3f(1, 1, 1);
 		glRasterPos2f(xx, 30.f);
+
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+		}
+
+		content = "PRESS ENTER TO CONTINUE!";
+		glColor3f(1, 1, 1);
+		glRasterPos2f(windowWidth / 8 * 6, 100.f);
 
 		for (auto c : content)
 		{

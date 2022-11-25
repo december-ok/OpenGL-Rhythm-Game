@@ -72,7 +72,7 @@ public:
 	//okt
 	bool pause = false;
 	void receiveJudgement(int judge, Note* nott);
-	void calcInfo(int judge);
+	void calcInfo(int judge, int highlight);
 	void calcSectionInfo(int judge);
 	void pauseSound(bool pause);
 	void setMVol(float volume);

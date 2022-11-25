@@ -6,13 +6,14 @@
 #include <bass.h>
 #include <stdlib.h>
 #include "FireWork.h"
+#include "ResultScene.h"
 
 using namespace std;
 
 
 RoundScene::RoundScene(GameWindow* window, MUSIC id)
 {
-	this->window;
+	this->window = window;
 	
 	this->id = id;
 	for (int i = 0; i < LINES; i++) {
@@ -37,18 +38,16 @@ RoundScene::RoundScene(GameWindow* window, MUSIC id)
 
 RoundScene::~RoundScene()
 {
-	free(this->gameInfo);
-	free(this->U_Config);
-	for (int line = 0; line < LINES;line++) {
-		for (size_t i = 0; i < this->notes[line].size(); i++)
+		for (int line = 0; line < LINES; line++) {
+
+		for (size_t i = 0; i < this->notes[line].size() - 1; i++)
 		{
-			free(this->notes[line][i]);
+			if (this->notes[line][i] != NULL) {
+				free(this->notes[line][i]);
+			}
 		}
 	}
-	
-	BASS_Free();
-
-	free(this);
+		free(this);
 }
 
 void RoundScene::init() {
@@ -250,20 +249,20 @@ void RoundScene::setMVol(float volume)
 
 void RoundScene::receiveJudgement(int judge,Note* nott)
 {
-	//(0 = Normal, 1 = Section, 2 = Lie, 3 = LieSection 4 = Item)
+	//(0 = Normal, 1 = Section, 2 = Lie, 3 = LieSection 4 = 하이라이트 5 = Item1, 6 = Item2, 7 = Item3)
+
 	int type = nott->type;
 
 	//miss 아닐때만 확인
-	//item type : 1 : 회복, 2 : 판정, up 3 : 상대방 가리기 
+	//item1 : 회복, 2판정, up 3상대방 가리기 
 
-	if (type == 4 && judge < 5) {
-		ItemNote* tmpNott = (ItemNote*)nott;
-		unsigned char itemType = tmpNott->itemType;
+	if (type >= 5 && judge < 5) {
 
-		if (itemType == 1) {
+
+		if (type == 5) {
 			gameInfo->HP += 30;
 		}
-		else if (itemType == 2) {
+		else if (type == 6) {
 			//프레임 단위(임시)
 			reinforce += 1000;
 		}
@@ -286,21 +285,32 @@ void RoundScene::receiveJudgement(int judge,Note* nott)
 	else if (type == 1) {
 		calcSectionInfo(judge);
 	}
-	else calcInfo(judge);
+	else if (type == 4)
+		calcInfo(judge, 1);
+	else calcInfo(judge, 0);
 
 	if (gameInfo->HP > 100)
 		gameInfo->HP = 100;
+
 	if (gameInfo->HP <= 0) {
-		printf("사망\n");
-		exit(0);
+		this->window->scene = new ResultScene(this->window,gameInfo,NULL,0);
+		free(this->gameInfo);
+		free(this->U_Config);
+		BASS_Free();
+		delete(this);
 	}
 }
 
-void RoundScene::calcInfo(int judge)
+void RoundScene::calcInfo(int judge, int highlight)
 {
 	//perfect 1 great 2 normal 3 bad 4 miss : 점수 계산 없음
 	//노트 점수 : 기본점수 * 콤보 보너스(100combo당 10% 증가) * 판정 점수(1.3 1.1 1.0 0.5 0)
-	int base = 100;
+	int base = 0;
+	if (highlight)
+		base = 150;
+	else
+		base = 100;
+
 	int interval = gameInfo->combo / 100;
 	float calc = 0;
 
@@ -344,6 +354,7 @@ void RoundScene::calcInfo(int judge)
 	int tmp = calc;
 	gameInfo->score += tmp;
 }
+
 
 void RoundScene::calcSectionInfo(int judge)
 {
@@ -417,6 +428,7 @@ void RoundScene::setInput(unsigned char key) {
 	else if (key == 'p') {
 		pause = !(pause);
 		pauseSound(pause);
+		
 	}
 	else if (key == '[') {
 		U_Config->M_Vol -= 0.1;
