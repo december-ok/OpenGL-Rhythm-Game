@@ -27,12 +27,22 @@ class RoundScene:public Scene
 
 	//unsigned int frame = 0;
 	unsigned int score = 0;
+
 	vector<Note*> notes[LINES];
-	int line_input[LINES]; // 각 라인 별 입력 횟수 저장
+	vector<Note*> lie_notes[LINES];	// 가짜 노트 벡터
+
+	int line_input[LINES];	// 각 라인 별 입력 횟수 저장
+	int lie_input[LINES];	// 거짓 노트 입력 횟수 저장
 
 	int section_input[LINES] = { 0, 0, 0, 0 };		// 롱노트 입력 시간
 	int section_delay[LINES] = { 0, 0, 0, 0 };		// 입력 보정을 위한 delay - 근데 이거 안쓰는 거 같은데..?
 	int section_judgement[LINES] = { -1, -1, -1, -1 };	// 롱노트 판정 저장
+
+	bool blink_on = false;
+	bool lie_on = false;
+
+	int blink_count = 0;
+	int lie_count = 0;
 
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
@@ -68,6 +78,37 @@ public:
 
 	void checkInput() override;
 	void addInput(int line) override;
+
+	// Item - LieNote
+	int getNearNote(int line, int current_frame);	// Note Binary Search
+	void makeLieNoteData(int current_frame);
+	void renderLieNotes();
+	void setLieInput(int line);
+	void lieNoteOn();
+	void lieNoteOff();
+	void lieTimerCheck();
+	void clearLieNoteVector();
+
+	// Section Note: 범위 내에 자신과 겹치는 노트가 존재하는지 확인 - 미구현
+	int isOverlapNote(int start_frame, int end_frame);
+
+	// Item - Blink
+	void blink();
+	void blinkOff();
+	void blinkCountUp();
+
+	// Item - Accelerate
+	void setAccelNote(int _frame);
+	double calcAccelNoteDist(int _time);
+
+	// Item + Slow Down
+	void setSlowNote(int _frame);
+	double calcSlowNoteDist(int _time);
+
+	// Item + Twist Note
+
+
+	// Item + Mirror
 
 	//okt
 	bool pause = false;

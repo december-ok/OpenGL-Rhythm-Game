@@ -277,7 +277,7 @@ void RoundScene::receiveJudgement(int judge,Note* nott)
 	//lie노트
 	//놓쳤을 때가 아닐 때 처리
 
-	// 가짜 노트 - 수정 필수!!!!!!!!!!!!! 가짜 롱노트 부분
+	// 가짜 노트 - 가짜 롱노트는 없음.
 	if (type == 2) {
 		printf("lie\n");
 		if (judge < 6)
@@ -338,9 +338,7 @@ void RoundScene::calcInfo(int judge)
 		gameInfo->miss++;
 		gameInfo->recentJudgement = MISS;
 	}
-	if (gameInfo->max_combo < gameInfo->combo) {
-		gameInfo->max_combo = gameInfo->combo;
-	}
+
 	int tmp = calc;
 	gameInfo->score += tmp;
 }
@@ -436,6 +434,23 @@ void RoundScene::setInput(unsigned char key) {
 	else if (key == '.') {
 		U_Config->E_Vol += 0.1;
 		if (U_Config->E_Vol > 1) U_Config->E_Vol = 1;
+	}
+	// 아이템 테스트용
+	else if (key == 'q') {
+		blink();
+		printf("Blink On!\n");
+	}
+	else if (key == 'w') {
+		setAccelNote(frame);
+		printf("Accel On!\n");
+	}
+	else if (key == 'e') {
+		setSlowNote(frame);
+		printf("Slow Down On!\n");
+	}
+	else if (key == 'r') {
+		lieNoteOn();
+		printf("Lie Note On!\n");
 	}
 }
 void RoundScene::unsetInput(unsigned char key) {
@@ -552,17 +567,320 @@ void RoundScene::addInput(int line)
 	InputQueue.push(new Input(frame, line));
 }
 
+int RoundScene::getNearNote(int line, int current_frame)
+{
+	int note_start = 0;
+	int note_end = this->notes[line].size() - 1;
+	int vector_center = 0;	// 임시 초기화
+
+	// 최적의 frame: binary_search
+	while (note_start <= note_end) {
+		vector_center = (note_start + note_end) / 2;
+		if (this->notes[line][vector_center]->createFrame == current_frame) {
+			return vector_center;
+		}
+		// 오른쪽으로
+		else if (this->notes[line][vector_center]->createFrame > current_frame) {
+			note_end = vector_center - 1;
+		}
+		// 왼쪽으로
+		else {
+			note_start = vector_center + 1;
+		}
+	}
+
+	// 자신보다 아래에 있는 노트 + 맨 끝 노트가 아닐 때,
+	if (this->notes[line][vector_center]->createFrame < current_frame && vector_center != this->notes[line].size()) {
+		return vector_center + 1;
+	}
+	else {
+		return vector_center;
+	}
+	
+}
+
+void RoundScene::makeLieNoteData(int current_frame)
+{
+	// 각 라인별 현재 frame과 가장 가까운 노트 index 찾기
+	int nearest_note[LINES];		// 노트 index
+	int nearest_note_frame[LINES];	// 노트 생성 frame
+
+	for (int i = 0; i < LINES; i++) {
+		// 각 라인별 가장 인접한 노트를 받음 - 해당 노트부터 시작
+		nearest_note[i] = getNearNote(i, current_frame);
+		nearest_note_frame[i] = this->notes[i][nearest_note[i]]->createFrame;
+	}
+
+	for (int i = current_frame; i < current_frame + LIE_DURATION; i++) {
+		// 최신 update
+		for (int j = 0; j < LINES; j++) {
+			// 롱노트일때
+			if (this->notes[j][nearest_note[j]]->type == 1) {
+				int _length = this->notes[j][nearest_note[j]]->getNoteLength();
+				// 롱노트가 현재 프레임보다 아래에 있다면,
+				if (nearest_note_frame[j] + _length < i) {
+					nearest_note[j]++;
+					nearest_note_frame[j] = this->notes[j][nearest_note[j]]->createFrame;
+				}
+			}
+			// 일반노트일때
+			else {
+				// 해당 노트를 지나왔다면
+				if (nearest_note_frame[j] < i) {
+					nearest_note[j]++;
+					nearest_note_frame[j] = this->notes[j][nearest_note[j]]->createFrame;
+				}
+			}
+		}
+		
+		// 가짜 노트 넣을 수 있는지 확인용
+		bool is_available[LINES];
+
+		// 해당 프레임에 존재하는 노트 수
+		int _count = 0;
+
+		// 거짓노트 가능한 개수
+		int lie_count = LINES - 1;
+
+		// 배열 초기화
+		for (int k = 0; k < LINES; k++) {
+			
+			// 롱노트라면?
+			if (this->notes[k][nearest_note[k]]->type == 1) {
+				int _length = this->notes[k][nearest_note[k]]->getNoteLength();
+				// 롱노트가 사이에 존재한다면, 
+				if (nearest_note_frame[k] + _length > i) {
+					is_available[k] = false;
+				}
+			}
+			// 아니라면?
+			else {
+				// 이미 해당 line frame에 진짜 노트가 존재함
+				if (nearest_note_frame[k] == i) {
+					is_available[k] = false;
+					_count++;
+				}
+				else {
+					is_available[k] = true;
+				}
+
+			}
+			
+		}
+		// 만들 수 있는 가짜노트 전부 생성
+		for (int l = _count; l > 0; l--) {
+			// 임의의 시작 라인
+			int rand_line = rand() % 100;
+			bool _flag = true;
+
+			for (int m = 0; m < LINES; m++) {
+
+				// 임의의 라인 선택 - 커지지 않도록 mod 연산
+				rand_line = rand_line % 4;
+
+				// 가짜 노트 삽입 가능
+				if (is_available[rand_line]) {
+					lie_notes[rand_line].push_back((Note*) new LieNote(i));
+					is_available[rand_line++] = false;
+					_flag = false;
+					break;
+				}
+				else {
+					rand_line++;
+					continue;
+				}
+			}
+
+			// 더 이상 가짜 노트 추가 불가능
+			if (_flag) {
+				break;
+			}
+		}
+	}	
+}
+
+void RoundScene::renderLieNotes()
+{
+	if (frame + 120 > 10000) return;
+	int input_count = 0;
+	for (int line = 0; line < LINES; ++line) {
+		for (int scope = 0; scope < this->lie_notes[line].size(); ++scope) {
+			if (this->lie_notes[line][scope] == nullptr)
+				break;
+			if (this->lie_notes[line][scope]->IsActive(frame) && this->lie_notes[line][scope]->isAlive) {
+				
+				// 노트의 색 지정
+				glColor3f(0.96f, 1, 0.98f);
+
+				int height = this->lie_notes[line][scope]->GetHeight(frame);
+				int noteLength = this->lie_notes[line][scope]->getNoteLength();
+
+				//printf("%d: line, %d: scope, %d: accel_dist\n", line, scope, frame);
+
+				glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
+
+			}
+		}
+	}
+}
+
+void RoundScene::setLieInput(int line)
+{
+	lie_input[line]++;
+}
+
+void RoundScene::lieNoteOn()
+{
+	lie_on = true;
+	makeLieNoteData(frame);
+}
+
+void RoundScene::lieNoteOff()
+{
+	lie_on = false;
+	lie_count = 0;
+	// 거짓 노트 입력 횟수 초기화
+	for (int i = 0; i < LINES; i++) {
+		lie_input[i] = 0;
+	}
+	printf("Lie Note Off\n");
+}
+
+void RoundScene::lieTimerCheck()
+{
+	lie_count++;
+	if (lie_count > LIE_DURATION + ROWS) {
+		lieNoteOff();
+		clearLieNoteVector();
+	}
+}
+
+void RoundScene::clearLieNoteVector()
+{
+	for (int i = 0; i < LINES; i++) {
+		this->lie_notes[i].clear();
+		vector<Note*>().swap(this->lie_notes[i]);
+	}
+}
+
+// 미구현
+int RoundScene::isOverlapNote(int start_frame, int end_frame)
+{
+	for (int i = 0; i < LINES; i++) {
+
+	}
+	return 0;
+}
+
+void RoundScene::blink()
+{
+	blink_on = true;
+}
+
+void RoundScene::blinkOff()
+{
+	blink_on = false;
+	blink_count = 0;
+	printf("Blink Off..\n");
+}
+
+void RoundScene::blinkCountUp()
+{
+	blink_count++;
+}
+
+void RoundScene::setAccelNote(int _frame)
+{
+	// 모든 라인에 대하여,
+	for (int i = 0; i < LINES; i++) {
+		int _count = line_input[i];
+		while (true) {
+			// 이미 만들어진 노트
+			if (this->notes[i][_count]->createFrame < _frame) {
+				_count++;
+				continue;
+			}
+			// 가속할 노트들
+			else if (this->notes[i][_count]->createFrame <= _frame + ACCEL_DURATION) {
+				this->notes[i][_count++]->isAccel = true;
+				continue;
+			}
+			// 범위를 넘어가는 것들
+			else {
+				break;
+			}
+		}
+	}
+}
+
+double RoundScene::calcAccelNoteDist(int _time)
+{
+	if (_time < 0) {
+		return 0.0;
+	}
+	else {
+		return ACCEL_INIT_VELOCITY * _time + ACCEL_CONSTANT * _time * _time;
+
+	}
+}
+
+void RoundScene::setSlowNote(int _frame)
+{
+	// 모든 라인에 대하여,
+	for (int i = 0; i < LINES; i++) {
+		int _count = line_input[i];
+		while (true) {
+			// 이미 만들어진 노트
+			if (this->notes[i][_count]->createFrame < _frame) {
+				_count++;
+				continue;
+			}
+			// 가속할 노트들
+			else if (this->notes[i][_count]->createFrame <= _frame + SLOW_DOWN_DURATION) {
+				this->notes[i][_count++]->isSlow = true;
+				continue;
+			}
+			// 범위를 넘어가는 것들
+			else {
+				break;
+			}
+		}
+	}
+}
+
+double RoundScene::calcSlowNoteDist(int _time)
+{
+	if (_time < 0) {
+		return 0.0;
+	}
+	else {
+		return SLOW_DOWN_INIT_VELOCITY * _time + SLOW_DOWN_CONSTANT * _time * _time;
+
+	}
+}
+
 void RoundScene::update() {
 	if (!pause) {
 	this->addTime();
 	this->deleteMissNode();
 	this->checkInput();
 	this->checkSectionNote();
+	if (blink_on && blink_count >= BLINK_DURATION) {
+		blinkOff();
+	}
+	else if (blink_on) {
+		blinkCountUp();
+	}
+
+	if (lie_on) {
+		lieTimerCheck();
+	}
+
 	if (frame == START_FRAME) {
 		this->playSound();	// 5초 뒤 음악 실행
 	}
 	if (reinforce > 0) reinforce--;
-}
+	}
 }
 
 void RoundScene::render() {
@@ -570,7 +888,13 @@ void RoundScene::render() {
 	//drawCircle(20, 20, 3);
 	
 	
-	this->renderNotes();
+	if (!blink_on || (blink_count/BLINK_DELAY) % 2 == 1) {
+		this->renderNotes();
+	}
+
+	if (lie_on) {
+		this->renderLieNotes();
+	}
 	this->renderGrid();
 	this->renderInputEffect();
 	
@@ -780,36 +1104,99 @@ void RoundScene::renderNotes() {
 					break;
 				}
 
-				// 바닥으로부터 노트(바닥)까지의 거리
-				int height = this->notes[line][scope]->GetHeight(frame);
-				int noteLength = this->notes[line][scope]->getNoteLength();
+				// 가짜 노트 색상 변경
+				if (this->notes[line][scope]->type == 2) {
+					glColor3f(0.96f, 1, 0.98f);
 
-				// 롱노트에 대하여
-				if (this->notes[line][scope]->type == 1) {
-					int bottom = 0;
-					// 롱노트가 현재 입력 대기중인 노트이고, 그 노트가 입력중일 때
-					if (scope == line_input[line] && section_judgement[line] != -1) {
-						bottom = JUDGE_HEIGHT;
+				}
+				// 가속 노트
+				if (this->notes[line][scope]->isAccel) {
+					int height = this->notes[line][scope]->GetHeight(frame);
+					double accel_dist = ROWS - calcAccelNoteDist(ROWS - height);
+					//printf("%d: line, %d: scope, %lf: accel_dist\n", line, scope, accel_dist);
+
+					// 롱노트에 대하여
+					if (this->notes[line][scope]->type == 1) {
+						int bottom = 0;
+						int accel_end_dist = ROWS - calcAccelNoteDist((ROWS - height) - this->notes[line][scope]->getNoteLength());
+
+						// 롱노트가 현재 입력 대기중인 노트이고, 그 노트가 입력중일 때
+						if (scope == line_input[line] && section_judgement[line] != -1) {
+							bottom = JUDGE_HEIGHT;
+						}
+
+						// 일부 롱노트가 화면 아래에 있음
+						if (height < 2) {
+							glRectd(20.f + ((float)line * 4), bottom, 24.f + ((float)line * 4), accel_end_dist);
+						}
+						else {
+							glRectd(20.f + ((float)line * 4), accel_dist, 24.f + ((float)line * 4), accel_end_dist);
+						}
+					}
+					else {
+						glRectd(20.f + ((float)line * 4), accel_dist, 24.f + ((float)line * 4), accel_dist + 1);
 					}
 
-					// 일부 롱노트가 화면 아래에 있음
-					if (height < 2) {
-						glRectd(20.f + ((float)line * 4), bottom, 24.f + ((float)line * 4), height + noteLength);
+				}
+				// 감속 노트
+				else if (this->notes[line][scope]->isSlow) {
+					int height = this->notes[line][scope]->GetHeight(frame);
+					double slow_dist = ROWS - calcSlowNoteDist(ROWS - height);
+					//printf("%d: line, %d: scope, %lf: accel_dist\n", line, scope, slow_dist);
+
+					// 롱노트에 대하여
+					if (this->notes[line][scope]->type == 1) {
+						int bottom = 0;
+						int slow_end_dist = ROWS - calcSlowNoteDist((ROWS - height) - this->notes[line][scope]->getNoteLength());
+
+						// 롱노트가 현재 입력 대기중인 노트이고, 그 노트가 입력중일 때
+						if (scope == line_input[line] && section_judgement[line] != -1) {
+							bottom = JUDGE_HEIGHT;
+						}
+
+						// 일부 롱노트가 화면 아래에 있음
+						if (height < 2) {
+							glRectd(20.f + ((float)line * 4), bottom, 24.f + ((float)line * 4), slow_end_dist);
+						}
+						else {
+							glRectd(20.f + ((float)line * 4), slow_dist, 24.f + ((float)line * 4), slow_end_dist);
+						}
+					}
+					else {
+						glRectd(20.f + ((float)line * 4), slow_dist, 24.f + ((float)line * 4), slow_dist + 1);
+					}
+				}
+				else {
+					// 바닥으로부터 노트(바닥)까지의 거리
+					int height = this->notes[line][scope]->GetHeight(frame);
+					int noteLength = this->notes[line][scope]->getNoteLength();
+
+					// 롱노트에 대하여
+					if (this->notes[line][scope]->type == 1) {
+						int bottom = 0;
+						// 롱노트가 현재 입력 대기중인 노트이고, 그 노트가 입력중일 때
+						if (scope == line_input[line] && section_judgement[line] != -1) {
+							bottom = JUDGE_HEIGHT;
+						}
+
+						// 일부 롱노트가 화면 아래에 있음
+						if (height < 2) {
+							glRectd(20.f + ((float)line * 4), bottom, 24.f + ((float)line * 4), height + noteLength);
+						}
+						else {
+							glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
+						}
 					}
 					else {
 						glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
 					}
 				}
-				else {
-					glRectd(20.f + ((float)line * 4), height, 24.f + ((float)line * 4), height + noteLength);
-				}
-
 				//}
 				//cout << frame << " | " << line << ":" << height << "\n";
 
-				if (line == 0 && (0 <= height && height <= 10)) {
-				//	cout << line << ":" << height << "\n";
-				}
+				//if (line == 0 && (0 <= height && height <= 10)) {
+				////	cout << line << ":" << height << "\n";
+				//}
 			}
 		}
 	}
@@ -840,18 +1227,45 @@ void RoundScene::addTime() {
 void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 {
 	int n_frame = this->line_input[line];
+	int l_frame = this->lie_input[line];
 
-	// 입력과 노트 프레임 사이의 차이
+	// 거짓 노트 검사 필요 + 거짓 노트 입력으로 판정
+	if (lie_notes[line].size() > 0) {
+		
+		// 거짓 노트
+		if (this->notes[line][n_frame]->createFrame > this->lie_notes[line][l_frame]->createFrame) {
+
+			LieNote* lie_nott = (LieNote*)this->lie_notes[line][l_frame];
+
+			// 입력과 프레임간 차이
+			float n_delay = lie_nott->GetHeight(i_frame) - JUDGE_HEIGHT;
+			int noteType = lie_nott->type;
+			int judgeType = 5;
+
+			// 일정 범위 내에 노트가 존재함
+			if (n_delay <= MISS_FRAME) {
+				receiveJudgement(judgeType, lie_nott);
+
+				this->deleteNote(line, n_frame);
+				this->setLieInput(line);
+			}
+
+			return;
+		}
+		
+		
+	}
+	
+	// 일반 노트
 	Note* nott = this->notes[line][n_frame];
 
 	float n_delay = nott->GetHeight(i_frame) - JUDGE_HEIGHT;
 	int noteType = nott->type;
 	int judgeType = 5;
 
-
 	// 일정 범위 내에 노트가 존재함
 	if (n_delay <= MISS_FRAME) {
-		
+
 		//노트 판정
 		//printf("%d createFrame\n", nott->createFrame);
 		//printf("%d inputFrame\n", frame);
@@ -875,9 +1289,6 @@ void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 			section_judgement[line] = judgeType;
 			section_delay[line] = n_delay;
 			section_input[line] = 1;
-
-			//int i_delay = i_frame - (nott->createFrame + (ROWS - JUDGE_HEIGHT));
-			//section_input[line] = i_delay;
 		}
 		// 이외의 노트
 		else {
@@ -886,6 +1297,7 @@ void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 			this->setLineInput(line);
 		}
 	}
+	
 }
 
 /*입력된 노트를 삭제하는 함수. 이후 판정선을 넘어간 노트도 지워야 함*/
