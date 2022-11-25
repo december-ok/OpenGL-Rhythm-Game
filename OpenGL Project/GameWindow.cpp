@@ -107,6 +107,9 @@ void set_keyboard_callback(unsigned char key, int x, int y)
 	else if (key == 13) {
 		window->scene->setInput(13);
 	}
+	else if (key == 27) {
+		window->scene->setInput(27);
+	}
 }
 
 void set_special_keyboard_callback(int key, int x, int y)

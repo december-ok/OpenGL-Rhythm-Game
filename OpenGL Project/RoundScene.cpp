@@ -338,7 +338,9 @@ void RoundScene::calcInfo(int judge)
 		gameInfo->miss++;
 		gameInfo->recentJudgement = MISS;
 	}
-
+	if (gameInfo->max_combo < gameInfo->combo) {
+		gameInfo->max_combo = gameInfo->combo;
+	}
 	int tmp = calc;
 	gameInfo->score += tmp;
 }

@@ -6,7 +6,7 @@ public:
 	float HP = 100;
 	int score = 0;
 	int combo = 0;
-
+	int max_combo = 0;
 	JUDGEMENT recentJudgement = NONE;
 
 	//결과 출력용

@@ -105,12 +105,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>S:\gamePrj\1114\OpenGL Project\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\okt03\Desktop\1125\OpenGL Project\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>S:\gamePrj\1114\OpenGL Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\okt03\Desktop\1125\OpenGL Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,8 +141,10 @@
     <ClCompile Include="MultiScene.cpp" />
     <ClCompile Include="NetworkSocket.cpp" />
     <ClCompile Include="Note.cpp" />
+    <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="RoundScene.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="TutorialScene.cpp" />
     <ClCompile Include="UserConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +157,11 @@
     <ClInclude Include="NetworkSocket.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="Render.h" />
+    <ClInclude Include="ResultScene.h" />
     <ClInclude Include="RoundScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="TutorialScene.h" />
     <ClInclude Include="UserConfig.h" />
   </ItemGroup>
   <ItemGroup>
