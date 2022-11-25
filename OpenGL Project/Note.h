@@ -6,6 +6,8 @@ class Note
 public:
 	int createFrame; // 생성 되는 시점의 fps
 	bool isAlive = true;	// 죽은 노트: 입력이 된 노트
+	bool isAccel = false;
+	bool isSlow = false;
 	unsigned char type; // 노트의 종류 (0 = Normal, 1 = Section, 2 = Lie, 3 = Item)
 
 	~Note() {};
