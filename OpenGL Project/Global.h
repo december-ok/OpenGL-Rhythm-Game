@@ -13,6 +13,21 @@
 #define PI 3.14159265358979323846
 #define START_FRAME 5*FPS
 
+#define LIE_DURATION 200
+
+#define BLINK_DURATION 400
+#define BLINK_DELAY 20
+
+#define ACCEL_DURATION 400
+#define ACCEL_INIT_VELOCITY 0
+#define ACCEL_CONSTANT 0.0097087		// 수정 X: 수정하면 판정선과 노트가 맞지 않음
+
+#define SLOW_DOWN_DURATION 400
+#define SLOW_DOWN_INIT_VELOCITY 1.5
+#define SLOW_DOWN_CONSTANT  -0.004854	// 수정 X: 수정하면 판정선과 노트가 맞지 않음
+
+#define INF 214748364	// 일부러 마지막 자리 뺌
+
 enum MUSIC {
 	CANON
 };
@@ -29,7 +44,6 @@ enum JUDGEMENT {
 enum UI_SELECTION {
 	SINGLE_PLAY,
 	ONLINE_PLAY,
-	TUTORIAL,
 	EXIT
 };
 
