@@ -7,6 +7,7 @@
 #include "Note.h"
 #include <bass.h>
 #include "GameInfo.h"
+#include "UserConfig.h"
 #include <string>
 #include <queue>
 #include<time.h>
@@ -40,6 +41,7 @@ class MultiScene: public Scene
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
 
 	queue<Input*> InputQueue;
+	UserConfig* U_Config;
 
 	// Timer 변수
 	clock_t init_timer;
@@ -60,7 +62,7 @@ class MultiScene: public Scene
 	
 	public:
 		GameInfo* opponentGameInfo;
-
+		bool isEnd = false;
 		bool key[LINES] = { false, false, false, false };
 		bool renderKey[LINES] = { false, false, false, false };
 		bool opponentRenderKey[LINES] = { false, false, false, false };
@@ -102,7 +104,7 @@ class MultiScene: public Scene
 		void syncTimer();
 		void setSync();
 
-		
+		void setMVol(float volume);
 		MultiSceneState state = CONNECTING_SERVER;
 	private:
 		void init(void);

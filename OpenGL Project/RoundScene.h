@@ -14,7 +14,6 @@
 #include<time.h>
 #include<stdlib.h>
 using namespace std;
-static unsigned int frame = 0;
 
 class RoundScene:public Scene
 {
@@ -25,7 +24,7 @@ class RoundScene:public Scene
 	string musicFile = "";
 	HSTREAM stream = NULL;
 
-	//unsigned int frame = 0;
+	unsigned int frame = 0;
 	unsigned int score = 0;
 	vector<Note*> notes[LINES];
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장

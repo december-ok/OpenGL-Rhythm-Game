@@ -86,7 +86,7 @@ void TutorialScene::render()
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
 
-	content = "PAUSE : \"P\"";
+	content = "PAUSE(SINGLE) : \"P\"";
 	glColor3f(1, 1, 1);
 	glRasterPos2f(windowWidth / 3 * 2 + 16, 55.0f);
 	for (auto c : content)
@@ -126,11 +126,109 @@ void TutorialScene::render()
 	{
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
+	content = "Items";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 90.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
 
-	//노트길이 4,1
+	content = "HP up";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 83.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Recovery 30 HP";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 83.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Reinforce";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 76.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Reinforce input judgment";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 76.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Blink";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 69.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
 
+	content = "blinks note after several times";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 69.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Accel";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 62.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "gradually increasing note speed";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 62.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Slow down";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 55.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
 
+	content = "gradually decreasing note speed";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 55.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Lie Note";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 48.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
 
+	content = "Do not touch 'Lie Note'.";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 48.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = ":";
+	for (int i = 0; i < 6; i++) {
+		glRasterPos2f(windowWidth / 3 - 3, 83.0f - 7.0f*float(i));
+		for (auto c : content)
+		{
+			glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+		}
+	}
 	content = "Notes";
 	glColor3f(1, 1, 1);
 	glRasterPos2f(1.0f, 90.0f);
@@ -214,23 +312,7 @@ void TutorialScene::render()
 	glEnd();
 
 
-	//for (int i = 0; i < LINES + 1; ++i) {
-	//	glBegin(GL_LINE_LOOP);
-	//	glVertex2f(windowWidth / 2 - 8 + (i * 4), 28.0f);
-	//	glVertex2f(windowWidth / 2 - 8 + (i * 4), 70.0f);
-	//	glEnd();
-	//}
 
-	//glColor3f(1, 1, 1);
-	//glRectd(windowWidth / 2 - 8, 30.0f, windowWidth / 2 + 8, 31.0f);
-
-	//content = "<- LINE";
-	//glColor3f(1, 1, 1);
-	//glRasterPos2f(windowWidth / 2 - 2, 30.0f);
-	//for (auto c : content)
-	//{
-	//	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
-	//}
 }
 
 void TutorialScene::update()

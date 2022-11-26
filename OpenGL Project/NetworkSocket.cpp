@@ -22,7 +22,7 @@ void Init()
 {
 	WSADATA wsadata;
 	WSAStartup(MAKEWORD(2, 2), &wsadata); // 扩加 檬扁拳
-	char server_ip[40] = "192.168.177.1";
+	char server_ip[40] = "192.168.56.1";
 	SOCKET sock;
 	sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 家南 积己
 	SOCKADDR_IN servaddr = { 0 }; // 辑滚 林家

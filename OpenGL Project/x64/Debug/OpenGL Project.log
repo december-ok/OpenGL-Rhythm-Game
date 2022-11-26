@@ -1,226 +1,69 @@
-﻿  MainScene.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
+﻿S:\VS\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
   MultiScene.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(87,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(89,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(91,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(93,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(102,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(104,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(106,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(108,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(121,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(122,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(130,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(131,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  NetworkSocket.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(53,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(62,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(72,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  ResultScene.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\ResultScene.cpp(29,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\ResultScene.cpp(30,45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\ResultScene.cpp(31,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\ResultScene.cpp(32,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  RoundScene.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(101,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(102,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(103,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(104,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(105,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(106,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(107,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(113,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(114,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(115,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(116,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(117,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(118,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(119,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(123,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(124,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(125,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(126,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(127,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(128,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(129,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(133,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(134,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(135,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(136,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(137,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(138,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(139,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(143,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(144,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(145,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(146,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(147,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(148,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(149,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(153,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(154,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(155,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(156,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(157,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(159,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(163,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(164,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(165,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(166,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(167,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(168,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(169,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(173,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(174,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(175,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(176,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(177,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(178,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(179,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(183,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(184,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(185,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(186,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(187,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(188,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(189,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(193,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(194,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(195,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(196,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(197,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(198,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(199,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(217,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(316,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(323,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(329,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(336,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(347,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(362,22): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(366,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(369,22): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(373,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(379,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(386,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(395,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(427,25): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(432,25): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(438,25): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(442,25): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(627,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(638,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(648,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(658,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(701,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(710,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(719,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(728,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(779,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(780,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(855,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(857,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(859,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(861,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(880,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\RoundScene.cpp(909,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  TutorialScene.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(41,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(42,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(55,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(56,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(72,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(16,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(17,45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(18,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(19,45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(239,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\TutorialScene.cpp(240,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Debug\OpenGL Project.exe
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(29,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(29,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(30,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(43,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(43,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(44,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(57,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(57,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(58,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(74,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(75,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(90,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(90,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(91,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(42,6): warning C4101: 's' :참조되지 않은 지역 변수입니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(43,8): warning C4101: 't' :참조되지 않은 지역 변수입니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(576,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(587,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(597,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(607,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(623,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(634,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(644,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(654,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(698,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(707,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(716,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(725,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(763,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(772,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(781,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(790,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(829,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(831,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(833,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(835,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(844,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(846,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(848,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(850,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(863,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(864,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(872,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(873,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1027,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1032,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1038,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1043,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1081,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1108,26): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1225,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1232,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1238,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1245,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1256,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1323,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1327,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1330,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1334,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1340,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1347,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1356,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1392,36): warning C4244: '=': 'double'에서 'clock_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1407,9): warning C4244: '인수': 'double'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1421,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  OpenGL Project.vcxproj -> C:\Users\okt03\Desktop\exe\OpenGL Project.exe
