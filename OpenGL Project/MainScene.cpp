@@ -12,11 +12,17 @@ MainScene::MainScene(GameWindow* window)
 
 MainScene::~MainScene()
 {
+	for (auto f : this->fireWork) {
+		if (f) {
+			delete f;
+		}
+	}
+	
 }
 
 void MainScene::init()
 {
-//	this->fireWork = new FireWork(new Vector(50, 0), 1.3f);
+	
 }
 
 void MainScene::render()
@@ -42,7 +48,7 @@ void MainScene::update()
 		if (this->fireWork[i]) {
 			free(this->fireWork[i]);
 		}
-		this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(0.9f, 1.3f));
+		this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
 	}
 	
 	if (KeyUp) {

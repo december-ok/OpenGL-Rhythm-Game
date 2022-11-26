@@ -32,5 +32,7 @@ public:
 	NetworkSocket(MultiScene* scene);
 	~NetworkSocket();
 
-	void sendInput(int line, int 판정, int score);
+	void sendInput(int line);
+	void sendUnput(int line);
+	void sendNote(int line, int 판정, int score, int combo);
 };

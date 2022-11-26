@@ -1,6 +1,8 @@
 #include "MultiScene.h"
 #include "NetworkSocket.h"
 
+NetworkSocket* gameSocket;
+
 MultiScene::MultiScene(GameWindow* window, MUSIC id)
 {
 	this->window = window;
@@ -29,7 +31,7 @@ MultiScene::~MultiScene()
 
 void MultiScene::init(void)
 {
-	new NetworkSocket(this);
+	gameSocket = new NetworkSocket(this);
 }
 
 void MultiScene::render()
@@ -91,6 +93,21 @@ void MultiScene::renderInputEffect() {
 		glVertex2f(P1_COLUMN + 4 + (i * 4), 5);
 		glEnd();
 	}
+
+	for (int i = 0;i < LINES;i++) {
+		if (!this->opponentRenderKey[i]) continue;
+
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+		glVertex2f(P2_COLUMN + (i * 4), 5);
+		glColor4f(0, 0, 0, 0);
+		glVertex2f(P2_COLUMN + (i * 4), 40.f);
+		glColor4f(0, 0, 0, 0);
+		glVertex2f(P2_COLUMN + 4 + (i * 4), 40.f);
+		glColor3f(1, 1, 1);
+		glVertex2f(P2_COLUMN + 4 + (i * 4), 5);
+		glEnd();
+	}
 }
 
 void MultiScene::renderGrid()
@@ -143,26 +160,33 @@ void MultiScene::update()
 
 void MultiScene::setInput(unsigned char key)
 {
-	printf("asdf");
 	if (key == 'd') {
 		this->key[0] = true;
 		this->renderKey[0] = true;
 //		this->playEffectSound();
+		
+		gameSocket->sendInput(0);
 	}
 	else if (key == 'f') {
 		this->key[1] = true;
 		this->renderKey[1] = true;
 //		this->playEffectSound();
+
+		gameSocket->sendInput(1);
 	}
 	else if (key == 'j') {
 		this->key[2] = true;
 		this->renderKey[2] = true;
 //		this->playEffectSound();
+
+		gameSocket->sendInput(2);
 	}
 	else if (key == 'k') {
 		this->key[3] = true;
 		this->renderKey[3] = true;
 //		this->playEffectSound();
+
+		gameSocket->sendInput(3);
 	}
 }
 
@@ -171,18 +195,26 @@ void MultiScene::unsetInput(unsigned char key)
 	if (key == 'd') {
 		this->key[0] = false;
 		this->renderKey[0] = false;
+
+		gameSocket->sendUnput(0);
 	}
 	else if (key == 'f') {
 		this->key[1] = false;
 		this->renderKey[1] = false;
+
+		gameSocket->sendUnput(1);
 	}
 	else if (key == 'j') {
 		this->key[2] = false;
 		this->renderKey[2] = false;
+
+		gameSocket->sendUnput(2);
 	}
 	else if (key == 'k') {
 		this->key[3] = false;
 		this->renderKey[3] = false;
+
+		gameSocket->sendUnput(3);
 	}
 }
 

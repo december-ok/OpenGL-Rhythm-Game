@@ -22,7 +22,7 @@ void Init()
 {
 	WSADATA wsadata;
 	WSAStartup(MAKEWORD(2, 2), &wsadata); // 윈속 초기화
-	char server_ip[40] = "172.30.208.1";
+	char server_ip[40] = "192.168.177.1";
 	SOCKET sock;
 	sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 소켓 생성
 	SOCKADDR_IN servaddr = { 0 }; // 서버 주소
@@ -45,10 +45,28 @@ void Init()
 	WSACleanup(); // 윈속 해체화
 }
 
-void NetworkSocket::sendInput(int line, int 판정, int score)
+void NetworkSocket::sendInput(int line) {
+	if (pure_socket) {
+		string str = "input " + to_string(this->playerNum) + " " + to_string(line);
+		char msg[MAX_MSG_LEN];
+		strcpy(msg, str.c_str());
+		send(pure_socket, msg, strlen(msg), 0);
+	}
+}
+
+void NetworkSocket::sendUnput(int line) {
+	if (pure_socket) {
+		string str = "unput " + to_string(this->playerNum) + " " + to_string(line);
+		char msg[MAX_MSG_LEN];
+		strcpy(msg, str.c_str());
+		send(pure_socket, msg, strlen(msg), 0);
+	}
+}
+
+void NetworkSocket::sendNote(int line, int 판정, int score, int combo)
 {
 	if (pure_socket) {
-		string str = "input " + to_string(this->playerNum) + " " + to_string(line) + " " + to_string(판정) + " " + to_string(score);
+		string str = "note " + to_string(this->playerNum) + " " + to_string(line) + " " + to_string(판정) + " " + to_string(score) + " " + to_string(combo);
 		char msg[MAX_MSG_LEN];
 		strcpy(msg, str.c_str());
 		send(pure_socket, msg, strlen(msg), 0);
@@ -61,7 +79,6 @@ void RecvData(SOCKET s) {
 		recv(s, msg, sizeof(msg), 0);
 		printf("수신:%s\n", msg);
 
-		// check "start" is included
 		if (strstr(msg, "start") != NULL) {
 			char* token = strtok(msg, " ");
 			token = strtok(NULL, " ");
@@ -71,8 +88,9 @@ void RecvData(SOCKET s) {
 			globalScene->state = PLAYING;
 		}
 		
-		// check "input" is included
-		if (strstr(msg, "input") != NULL) {
+		
+		// FORMAT: note playernum line 판정 점수 콤보
+		if (strstr(msg, "note") != NULL) {
 			char* token = strtok(msg, " ");
 			token = strtok(NULL, " ");
 			int playerNum = atoi(token);
@@ -84,7 +102,36 @@ void RecvData(SOCKET s) {
 				int 판정 = atoi(token);
 				token = strtok(NULL, " ");
 				int score = atoi(token);
+				token = strtok(NULL, " ");
+				int combo = atoi(token);
+			}
+		}
 
+		// FORMAT: input playernum line
+		if (strstr(msg, "input") != NULL) {
+			char* token = strtok(msg, " ");
+			token = strtok(NULL, " ");
+			int playerNum = atoi(token);
+
+			if (playerNum != globalSocket->playerNum) {
+				token = strtok(NULL, " ");
+				int line = atoi(token);
+
+				globalScene->opponentRenderKey[line] = true;
+			}
+		}
+
+		// FORMAT: unput playernum line
+		if (strstr(msg, "unput") != NULL) {
+			char* token = strtok(msg, " ");
+			token = strtok(NULL, " ");
+			int playerNum = atoi(token);
+
+			if (playerNum != globalSocket->playerNum) {
+				token = strtok(NULL, " ");
+				int line = atoi(token);
+
+				globalScene->opponentRenderKey[line] = false;
 			}
 		}
 	}

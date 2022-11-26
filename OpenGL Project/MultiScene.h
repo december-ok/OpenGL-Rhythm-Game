@@ -37,9 +37,6 @@ class MultiScene: public Scene
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
 
 
-	bool key[LINES] = { false, false, false, false };
-	bool renderKey[LINES] = { false, false, false, false };
-
 	GameInfo* gameInfo;
 	GameWindow* window;
 	unsigned int reinforce = 0;
@@ -48,6 +45,10 @@ class MultiScene: public Scene
 	int comma = 0;
 	
 	public:
+		bool key[LINES] = { false, false, false, false };
+		bool renderKey[LINES] = { false, false, false, false };
+		bool opponentRenderKey[LINES] = { false, false, false, false };
+		
 		MultiScene(GameWindow*, MUSIC);
 		~MultiScene();
 
@@ -60,7 +61,7 @@ class MultiScene: public Scene
 		void checkInput() override;
 		void addInput(int) override;
 		
-		MultiSceneState state = PLAYING;
+		MultiSceneState state = CONNECTING_SERVER;
 	private:
 		void init(void);
 

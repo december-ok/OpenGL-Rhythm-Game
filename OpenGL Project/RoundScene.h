@@ -10,9 +10,7 @@
 #include"GameWindow.h"
 #include"Input.h"
 #include"UserConfig.h"
-
-
-
+#include "FireWork.h"
 using namespace std;
 static unsigned int frame = 0;
 
@@ -45,6 +43,8 @@ class RoundScene:public Scene
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
+	FireWork* fireWork[10];
+	
 public:
 	RoundScene(GameWindow*, MUSIC);
 	~RoundScene();

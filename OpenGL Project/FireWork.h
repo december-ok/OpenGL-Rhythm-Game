@@ -73,6 +73,5 @@ public:
 };
 
 void drawCircle(float x, float y, float radius, RGBClass* rgb);
-float getRand(float size);
 float getRandRage(float min, float max);
 int getRandPlusMinus();

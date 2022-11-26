@@ -15,12 +15,8 @@ void drawCircle(float x, float y, float radius, RGBClass* rgb) {
 	glEnd();
 }
 
-float getRand(float size) {
-	return (rand() % (int)(2 * size * 100)) / 100.f - size;
-}
-
 float getRandRage(float min, float max) {
-	return (rand() % (int)((max - min) * 100)) / 100.f + min;
+	return (rand() * (max - min) / RAND_MAX) + min;
 }
 
 int getRandPlusMinus() {
@@ -140,7 +136,7 @@ void FireWork::update() {
 
 void FireWork::elevateUpdate() {
 	this->elevator->update();
-	this->elevator->vel->add(0, -0.01f);
+	this->elevator->vel->add(0, -0.02f);
 
 	float speed = 0.5f;
 	
@@ -148,7 +144,7 @@ void FireWork::elevateUpdate() {
 		this->elevateMode = false;
 		Vector* pos = this->elevator->pos;
 		for (int i = 0; i < this->EXPLOSION_COUNT; i++) {
-			float randX = getRand(speed);
+			float randX = getRandRage(-speed, speed);
 			float maxRandY = sqrt((speed * speed) + 0.001f - (randX * randX));
 			float randY = getRandRage(-1 * maxRandY, maxRandY) * 1.5;
 			this->explosionList.push_back(
@@ -177,6 +173,6 @@ void FireWork::elevateRender(){
 
 void FireWork::explodeRender(){
 	for (auto p : this->explosionList) {
-		p->render();
+		if(p->life > 0) p->render();
 	}
 }

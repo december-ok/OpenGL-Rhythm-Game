@@ -554,21 +554,40 @@ void RoundScene::addInput(int line)
 
 void RoundScene::update() {
 	if (!pause) {
-	this->addTime();
-	this->deleteMissNode();
-	this->checkInput();
-	this->checkSectionNote();
-	if (frame == START_FRAME) {
-		this->playSound();	// 5초 뒤 음악 실행
+		int former_combo = this->gameInfo->combo;
+		
+		this->addTime();
+		this->deleteMissNode();
+		this->checkInput();
+		this->checkSectionNote();
+		if (frame == START_FRAME) {
+			this->playSound();	// 5초 뒤 음악 실행
+		}
+		if (reinforce > 0) reinforce--;
+
+		for (auto f : this->fireWork) {
+			if (f) {
+				f->update();
+			}
+		}
+		if (former_combo != this->gameInfo->combo && this->gameInfo->combo > 0 && this->gameInfo->combo % 50 == 0) {
+			for (int i = 0;i < 10; ++i) {
+				if (this->fireWork[i]) free(this->fireWork[i]);
+				this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
+			}
+		}
 	}
-	if (reinforce > 0) reinforce--;
-}
 }
 
 void RoundScene::render() {
 	//glColor4f(1, 0.8f, 0, 0.5f);
 	//drawCircle(20, 20, 3);
 	
+	for (int i = 0;i < 10; ++i) {
+		if (this->fireWork[i]) {
+			this->fireWork[i]->render();
+		}
+	}
 	
 	this->renderNotes();
 	this->renderGrid();
@@ -577,6 +596,7 @@ void RoundScene::render() {
 	this->renderCombo();
 	this->renderJudgement();
 	this->renderScoreAndInfo();
+	
 }
 
 void RoundScene::renderCombo() {
