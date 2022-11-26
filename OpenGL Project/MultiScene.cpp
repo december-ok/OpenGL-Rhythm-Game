@@ -1,6 +1,6 @@
 #include "MultiScene.h"
 #include "NetworkSocket.h"
-
+#include "ResultScene.h"
 NetworkSocket* gameSocket;
 
 MultiScene::MultiScene(GameWindow* window, MUSIC id)
@@ -978,7 +978,17 @@ void MultiScene::update()
 		// frame 싱크 조절
 		calcSync();
 		syncTimer();
-
+		if (frame == endFrame) {
+			isEnd = true;
+		}
+		if (this->isEnd) {
+			BASS_Free();
+			this->window->scene = new ResultScene(this->window, myGameInfo, opponentGameInfo, 1);
+			free(this->myGameInfo);
+			free(this->opponentGameInfo);
+			free(this->U_Config);
+			delete(this);
+		}
 	}
 }
 	
@@ -1026,6 +1036,7 @@ void MultiScene::setInput(unsigned char key)
 	//효과음 볼륨조정
 	else if (key == ',') {
 		U_Config->E_Vol -= 0.1;
+		printf("%f\n", U_Config->E_Vol);
 		if (U_Config->E_Vol < 0) U_Config->E_Vol = 0;
 	}
 	else if (key == '.') {
@@ -1401,7 +1412,7 @@ void MultiScene::loadMusic()
 {
 	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
 	BASS_ChannelPlay(this->stream, FALSE);
-	//	setMVol(U_Config->M_Vol);
+	setMVol(U_Config->M_Vol);
 	BASS_ChannelPause(this->stream);
 
 	//끝나는 시점 계산
@@ -1420,5 +1431,11 @@ void MultiScene::playSound()
 void MultiScene::playEffectSound()
 {
 	HSTREAM effect = BASS_StreamCreateFile(FALSE, "./hit_sound.mp3", 0, 0, 0);
+	BASS_ChannelSetAttribute(effect, BASS_ATTRIB_VOL, U_Config->E_Vol);
 	BASS_ChannelPlay(effect, FALSE);
+}
+
+void MultiScene::setMVol(float volume)
+{
+	bool check = BASS_ChannelSetAttribute(stream, BASS_ATTRIB_VOL, volume);
 }
