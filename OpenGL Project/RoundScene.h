@@ -35,6 +35,8 @@ class RoundScene:public Scene
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
 
+	bool isEnd = false;
+
 	queue<Input*> InputQueue;
 	
 	GameInfo* gameInfo;

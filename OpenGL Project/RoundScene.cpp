@@ -39,19 +39,16 @@ RoundScene::RoundScene(GameWindow* window, MUSIC id)
 RoundScene::~RoundScene()
 {
 		for (int line = 0; line < LINES; line++) {
-
-		for (size_t i = 0; i < this->notes[line].size() - 1; i++)
-		{
-			if (this->notes[line][i] != NULL) {
-				free(this->notes[line][i]);
+			for (size_t i = 0; i < this->notes[line].size() - 1; i++) {
+				if (this->notes[line][i] != NULL) {
+					free(this->notes[line][i]);
+				}
 			}
 		}
-	}
-		free(this);
 }
 
 void RoundScene::init() {
-
+	
 	this->gameInfo = new GameInfo();
 	U_Config = new UserConfig();
 	BASS_Init(-1, 44100, 0, 0, NULL);
@@ -293,11 +290,7 @@ void RoundScene::receiveJudgement(int judge,Note* nott)
 		gameInfo->HP = 100;
 
 	if (gameInfo->HP <= 0) {
-		this->window->scene = new ResultScene(this->window,gameInfo,NULL,0);
-		free(this->gameInfo);
-		free(this->U_Config);
-		BASS_Free();
-		delete(this);
+		this->isEnd = true;
 	}
 }
 
@@ -393,7 +386,7 @@ void RoundScene::calcSectionInfo(int judge)
 		calc = base * 0.5;
 		break;
 	default:
-		gameInfo->HP -= 1;
+		gameInfo->HP -= 10;
 		gameInfo->combo = 0;
 		gameInfo->miss++;
 		gameInfo->recentJudgement = MISS;
@@ -565,6 +558,14 @@ void RoundScene::addInput(int line)
 }
 
 void RoundScene::update() {
+	if (this->isEnd) {
+		BASS_Free();
+		this->window->scene = new ResultScene(this->window, gameInfo, NULL, 0);
+		free(this->gameInfo);
+		free(this->U_Config);
+		delete(this);
+	}
+	
 	if (!pause) {
 		int former_combo = this->gameInfo->combo;
 		
