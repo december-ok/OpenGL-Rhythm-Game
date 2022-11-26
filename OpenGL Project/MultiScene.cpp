@@ -34,7 +34,7 @@ void MultiScene::init(void)
 	gameSocket = new NetworkSocket(this);
 	this->myGameInfo = new GameInfo();
 	this->opponentGameInfo = new GameInfo();
-//	U_Config = new UserConfig();
+	U_Config = new UserConfig();
 	BASS_Init(-1, 44100, 0, 0, NULL);
 
 	this->loadMusic();
@@ -192,7 +192,7 @@ void MultiScene::init(void)
 void MultiScene::loadMusic() {
 	this->stream = BASS_StreamCreateFile(FALSE, this->musicFile.c_str(), 0, 0, 0);
 	BASS_ChannelPlay(this->stream, FALSE);
-//	setMVol(U_Config->M_Vol);
+	setMVol(U_Config->M_Vol);
 	BASS_ChannelPause(this->stream);
 
 	//끝나는 시점 계산
@@ -203,7 +203,7 @@ void MultiScene::loadMusic() {
 
 void MultiScene::playEffectSound() {
 	HSTREAM effect = BASS_StreamCreateFile(FALSE, "./hit_sound.mp3", 0, 0, 0);
-//	BASS_ChannelSetAttribute(effect, BASS_ATTRIB_VOL, U_Config->E_Vol);
+	BASS_ChannelSetAttribute(effect, BASS_ATTRIB_VOL, U_Config->E_Vol);
 	BASS_ChannelPlay(effect, FALSE);
 }
 
@@ -696,6 +696,25 @@ void MultiScene::setInput(unsigned char key)
 
 		gameSocket->sendInput(3);
 	}
+	else if (key == '[') {
+		U_Config->M_Vol -= 0.1;
+		if (U_Config->M_Vol < 0) U_Config->M_Vol = 0;
+		setMVol(U_Config->M_Vol);
+	}
+	else if (key == ']') {
+		U_Config->M_Vol += 0.1;
+		if (U_Config->M_Vol > 1) U_Config->M_Vol = 1;
+		setMVol(U_Config->M_Vol);
+	}
+	//효과음 볼륨조정
+	else if (key == ',') {
+		U_Config->E_Vol -= 0.1;
+		if (U_Config->E_Vol < 0) U_Config->E_Vol = 0;
+	}
+	else if (key == '.') {
+		U_Config->E_Vol += 0.1;
+		if (U_Config->E_Vol > 1) U_Config->E_Vol = 1;
+	}
 }
 
 void MultiScene::unsetInput(unsigned char key)
@@ -732,4 +751,9 @@ void MultiScene::checkInput()
 
 void MultiScene::addInput(int key)
 {
+}
+
+void MultiScene::setMVol(float volume)
+{
+	bool check = BASS_ChannelSetAttribute(stream, BASS_ATTRIB_VOL, volume);
 }

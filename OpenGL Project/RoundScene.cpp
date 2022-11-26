@@ -14,12 +14,12 @@ using namespace std;
 RoundScene::RoundScene(GameWindow* window, MUSIC id)
 {
 	this->window = window;
-	
+
 	this->id = id;
 	for (int i = 0; i < LINES; i++) {
 		line_input[i] = 0;
 	}
-	
+
 	switch (this->id)
 	{
 	case CANON:
@@ -38,17 +38,17 @@ RoundScene::RoundScene(GameWindow* window, MUSIC id)
 
 RoundScene::~RoundScene()
 {
-		for (int line = 0; line < LINES; line++) {
-			for (size_t i = 0; i < this->notes[line].size() - 1; i++) {
-				if (this->notes[line][i] != NULL) {
-					free(this->notes[line][i]);
-				}
+	for (int line = 0; line < LINES; line++) {
+		for (size_t i = 0; i < this->notes[line].size() - 1; i++) {
+			if (this->notes[line][i] != NULL) {
+				free(this->notes[line][i]);
 			}
 		}
+	}
 }
 
 void RoundScene::init() {
-	
+
 	this->gameInfo = new GameInfo();
 	U_Config = new UserConfig();
 	BASS_Init(-1, 44100, 0, 0, NULL);
@@ -224,7 +224,7 @@ void RoundScene::playEffectSound() {
 }
 
 void RoundScene::playSound() {
-	if (this->stream){
+	if (this->stream) {
 		BASS_ChannelPlay(this->stream, FALSE);
 	}
 }
@@ -244,7 +244,7 @@ void RoundScene::setMVol(float volume)
 	bool check = BASS_ChannelSetAttribute(stream, BASS_ATTRIB_VOL, volume);
 }
 
-void RoundScene::receiveJudgement(int judge,Note* nott)
+void RoundScene::receiveJudgement(int judge, Note* nott)
 {
 	//(0 = Normal, 1 = Section, 2 = Lie, 3 = LieSection 4 = 하이라이트 5 = Item1, 6 = Item2, 7 = Item3)
 
@@ -421,7 +421,7 @@ void RoundScene::setInput(unsigned char key) {
 	else if (key == 'p') {
 		pause = !(pause);
 		pauseSound(pause);
-		
+
 	}
 	else if (key == '[') {
 		U_Config->M_Vol -= 0.1;
@@ -470,9 +470,9 @@ void RoundScene::checkSectionNote()
 
 		// 현재 롱노트가 입력 상태일 때,
 		if (section_judgement[i] != -1) {
-			
+
 			// 현재 롱노트
-			Note* current_section =  notes[i][line_input[i]];
+			Note* current_section = notes[i][line_input[i]];
 
 			// 손이 떨어지지 않음 - 입력중
 			if (this->renderKey[i]) {
@@ -502,7 +502,7 @@ void RoundScene::checkSectionNote()
 				unsigned int end_frame =
 					(current_section->createFrame + current_section->getNoteLength()) + (ROWS - JUDGE_HEIGHT);
 				unsigned int unset_delay = end_frame - frame;
-				
+
 				// 노트 삭제
 				this->deleteNote(i, line_input[i]);
 				this->setLineInput(i);
@@ -529,7 +529,7 @@ void RoundScene::checkSectionNote()
 		}
 
 	}
-	
+
 }
 
 void RoundScene::checkInput()
@@ -565,10 +565,10 @@ void RoundScene::update() {
 		free(this->U_Config);
 		delete(this);
 	}
-	
+
 	if (!pause) {
 		int former_combo = this->gameInfo->combo;
-		
+
 		this->addTime();
 		this->deleteMissNode();
 		this->checkInput();
@@ -584,7 +584,7 @@ void RoundScene::update() {
 			}
 		}
 		if (former_combo != this->gameInfo->combo && this->gameInfo->combo > 0 && this->gameInfo->combo % 50 == 0) {
-			for (int i = 0;i < 10; ++i) {
+			for (int i = 0; i < 10; ++i) {
 				if (this->fireWork[i]) free(this->fireWork[i]);
 				this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
 			}
@@ -595,33 +595,33 @@ void RoundScene::update() {
 void RoundScene::render() {
 	//glColor4f(1, 0.8f, 0, 0.5f);
 	//drawCircle(20, 20, 3);
-	
-	for (int i = 0;i < 10; ++i) {
+
+	for (int i = 0; i < 10; ++i) {
 		if (this->fireWork[i]) {
 			this->fireWork[i]->render();
 		}
 	}
-	
+
 	this->renderNotes();
 	this->renderGrid();
 	this->renderInputEffect();
-	
+
 	this->renderCombo();
 	this->renderJudgement();
 	this->renderScoreAndInfo();
-	
+
 }
 
 void RoundScene::renderCombo() {
 	if (this->gameInfo->combo == 0) {
 		return;
 	}
-	
+
 	float x = 50;
 	float y = 50;
-	
+
 	string content = to_string(this->gameInfo->combo) + " COMBO";
-	
+
 	glPushMatrix();
 	glTranslatef(x, y, 0);
 	glScalef(0.04, 0.06, 1);
@@ -694,7 +694,7 @@ void RoundScene::renderJudgement() {
 		content = "  MISS  ";
 		break;
 	}
-	
+
 
 	glPushMatrix();
 	glTranslatef(x, y, 0);
@@ -737,8 +737,8 @@ void RoundScene::renderJudgement() {
 void RoundScene::renderScoreAndInfo() {
 	float x = 0;
 	float y = 105;
-	
-	string content ="Score: " + to_string(this->gameInfo->score);
+
+	string content = "Score: " + to_string(this->gameInfo->score);
 	glColor4f(1, 1, 1, 1);
 	glRasterPos2f(x, y);
 	for (auto c : content)
@@ -747,7 +747,7 @@ void RoundScene::renderScoreAndInfo() {
 	}
 
 	y = 101;
-	content = "Life: " + to_string(this->gameInfo->HP);
+	content = "Life: " + to_string(int(this->gameInfo->HP));
 	glColor4f(1, 1, 1, 1);
 	glRasterPos2f(x, y);
 	for (auto c : content)
@@ -775,14 +775,14 @@ void RoundScene::renderGrid() {
 	//glVertex2f(x, y + 1);
 	//glEnd();
 
-	for (int i = 0; i < LINES+1; ++i) {
+	for (int i = 0; i < LINES + 1; ++i) {
 		glBegin(GL_LINE_LOOP);
 		glVertex2f(20 + (i * 4), 0);
 		glVertex2f(20 + (i * 4), ROWS);
 		glEnd();
 	}
 
-	glColor3f(1,1,1);
+	glColor3f(1, 1, 1);
 	glRectd(20, 5, 36, 6);
 }
 
@@ -842,19 +842,19 @@ void RoundScene::renderNotes() {
 				//cout << frame << " | " << line << ":" << height << "\n";
 
 				if (line == 0 && (0 <= height && height <= 10)) {
-				//	cout << line << ":" << height << "\n";
+					//	cout << line << ":" << height << "\n";
 				}
 			}
 		}
 	}
 }
 void RoundScene::renderInputEffect() {
-	for (int i = 0;i < LINES;i++) {
+	for (int i = 0; i < LINES; i++) {
 		if (!this->renderKey[i]) continue;
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
 		glVertex2f(20 + (i * 4), 5);
-		glColor4f(0, 0, 0, 0); 
+		glColor4f(0, 0, 0, 0);
 		glVertex2f(20 + (i * 4), 40.f);
 		glColor4f(0, 0, 0, 0);
 		glVertex2f(24 + (i * 4), 40.f);
@@ -867,7 +867,7 @@ void RoundScene::renderInputEffect() {
 void RoundScene::addTime() {
 	frame += 1;
 	if (frame == endFrame) {
-		exit(0);
+		this->isEnd = true;
 	}
 }
 
@@ -885,7 +885,7 @@ void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 
 	// 일정 범위 내에 노트가 존재함
 	if (n_delay <= MISS_FRAME) {
-		
+
 		//노트 판정
 		//printf("%d createFrame\n", nott->createFrame);
 		//printf("%d inputFrame\n", frame);

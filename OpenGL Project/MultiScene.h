@@ -7,6 +7,7 @@
 #include "Note.h"
 #include <bass.h>
 #include "GameInfo.h"
+#include "UserConfig.h"
 #include <string>
 #define P1_COLUMN 12
 #define P2_COLUMN 78
@@ -36,7 +37,7 @@ class MultiScene: public Scene
 	vector<Note*> notes[LINES];
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
 
-
+	UserConfig* U_Config;
 	GameInfo* myGameInfo;
 	GameWindow* window;
 	unsigned int reinforce = 0;
@@ -66,7 +67,7 @@ class MultiScene: public Scene
 
 		void checkInput() override;
 		void addInput(int) override;
-		
+		void setMVol(float volume);
 		MultiSceneState state = CONNECTING_SERVER;
 	private:
 		void init(void);
