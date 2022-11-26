@@ -136,6 +136,26 @@ void unset_keyboard_callback(unsigned char key, int x, int y)
 	else if (key == 'k' || key == 'K') {
 		window->scene->unsetInput('k');
 	}
+	// q: Blink Test용
+	else if (key == 'q' || key == 'Q') {
+		window->scene->setInput('q');
+	}
+	// w: Accel Test용
+	else if (key == 'w' || key == 'W') {
+		window->scene->setInput('w');
+	}
+	// w: Slow down Test 용
+	else if (key == 'e' || key == 'E') {
+		window->scene->setInput('e');
+	}
+	// r: LieNote Test 용
+	else if (key == 'r' || key == 'R') {
+		window->scene->setInput('r');
+	}
+	// t: LieNote Test 용
+	else if (key == 't' || key == 'T') {
+		window->scene->setInput('t');
+	}
 	else if (key == 13) {	
 		window->scene->unsetInput(13);
 	}

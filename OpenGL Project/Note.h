@@ -6,6 +6,8 @@ class Note
 public:
 	int createFrame; // 생성 되는 시점의 fps
 	bool isAlive = true;	// 죽은 노트: 입력이 된 노트
+	bool isAccel = false;
+	bool isSlow = false;
 	unsigned char type; // 노트의 종류 (0 = Normal, 1 = Section, 2 = Lie, 3 = Item)
 
 	~Note() {};
@@ -18,11 +20,11 @@ public:
 	virtual int getNoteLength() = 0;	// 노트의 길이(일반 노트: 1, 롱노트: n)
 };
 
-class NoramlNote : public Note
+class NormalNote : public Note
 {
 public:
-	NoramlNote(int _createTime) { this->type = 0; this->createFrame = _createTime; };
-	~NoramlNote() {};
+	NormalNote(int _createTime) { this->type = 0; this->createFrame = _createTime; };
+	~NormalNote() {};
 	int getNoteLength() override { return 1; }
 	bool IsActive(unsigned int _frame) override { return (this->createFrame < _frame&& this->createFrame + ROWS >= _frame); }
 	bool IsMissNote(unsigned int _frame) override { return this->createFrame + ROWS < _frame&& this->isAlive; }
