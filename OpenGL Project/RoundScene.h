@@ -11,6 +11,8 @@
 #include"Input.h"
 #include"UserConfig.h"
 #include "FireWork.h"
+#include<time.h>
+#include<stdlib.h>
 using namespace std;
 static unsigned int frame = 0;
 
@@ -42,6 +44,29 @@ class RoundScene:public Scene
 	GameInfo* gameInfo;
 	UserConfig* U_Config;
 
+	// Timer 변수
+	clock_t init_timer;
+	clock_t start_timer;
+	clock_t end_timer;
+
+	int timer_count = 0;
+	clock_t clock_delay = 0;
+	bool adjust_on = false;
+
+	// Item Blink
+	int blink_count = 0;
+	bool blink_on = false;
+
+	// LieNote
+	bool lie_on = false;
+	int lie_count = 0;
+	vector<Note*> lie_notes[LINES];		// 가짜 노트 벡터
+	int lie_input[LINES];				// 거짓 노트 입력 횟수 저장
+
+	// Auto Mode
+	bool auto_on = true;
+	int auto_input[LINES];
+
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
@@ -70,6 +95,40 @@ public:
 
 	void checkInput() override;
 	void addInput(int line) override;
+
+	// Timer
+	void showTimer();
+	void timeCheck();
+	void calcTimer();
+
+	// Item - Blink
+	void blink();
+	void blinkOff();
+	void blinkCountUp();
+
+	// Item - Accelerate
+	void setAccelNote(int _frame);
+	double calcAccelNoteDist(int _time);
+
+	// Item + Slow Down
+	void setSlowNote(int _frame);
+	double calcSlowNoteDist(int _time);
+
+	// Item - LieNote
+	int getNearNote(int line, int current_frame);	// Note Binary Search
+	void makeLieNoteData(int current_frame);
+	void renderLieNotes();
+	void setLieInput(int line);
+	void lieNoteOn();
+	void lieNoteOff();
+	void lieTimerCheck();
+	void clearLieNoteVector();
+
+	// Auto mode
+	void autoMode();
+	void setTempLineInput();
+	void unsetAutoMode();
+
 
 	//okt
 	bool pause = false;
