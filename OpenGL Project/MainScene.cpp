@@ -164,7 +164,6 @@ void MainScene::move_scene(void) {
 	else if (this->selection == TUTORIAL){
 		
 		this->window->scene = new TutorialScene(this->window);
-		//this->window->scene = new ResultScene(this->window);
 		free(this);
 	}
 	else if (this->selection == EXIT)

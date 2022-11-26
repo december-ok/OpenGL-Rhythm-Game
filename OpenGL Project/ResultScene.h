@@ -15,7 +15,7 @@ public:
 
 	GameInfo p_Info, op_Info;
 	ResultScene(GameWindow*);
-	ResultScene(GameWindow*, GameInfo p,GameInfo op, bool multi);
+	ResultScene(GameWindow*, GameInfo* p,GameInfo* op, bool multi);
 
 	~ResultScene();
 
