@@ -37,10 +37,12 @@ class MultiScene: public Scene
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장 - list로 할 때
 
 
-	GameInfo* gameInfo;
+	GameInfo* myGameInfo;
+	GameInfo* opponentGameInfo;
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
+	int frame = 0;
 
 	int comma = 0;
 	
@@ -48,6 +50,10 @@ class MultiScene: public Scene
 		bool key[LINES] = { false, false, false, false };
 		bool renderKey[LINES] = { false, false, false, false };
 		bool opponentRenderKey[LINES] = { false, false, false, false };
+
+		int section_input[LINES] = { 0, 0, 0, 0 };		// 롱노트 입력 시간
+		int section_delay[LINES] = { 0, 0, 0, 0 };		// 입력 보정을 위한 delay - 근데 이거 안쓰는 거 같은데..?
+		int section_judgement[LINES] = { -1, -1, -1, -1 };	// 롱노트 판정 저장
 		
 		MultiScene(GameWindow*, MUSIC);
 		~MultiScene();
@@ -69,4 +75,13 @@ class MultiScene: public Scene
 		void renderGame(void);
 		void renderInputEffect();
 		void renderGrid(void);
+		void renderNotes(void);
+		void renderCombo();
+		void renderJudgement();
+		void renderScoreAndInfo();
+
+		void loadMusic();
+		void playSound();
+
+		void playEffectSound();
 };
