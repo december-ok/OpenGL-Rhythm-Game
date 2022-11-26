@@ -86,6 +86,7 @@ void RecvData(SOCKET s) {
 			globalSocket->playerNum = playerNum;
 			
 			globalScene->state = PLAYING;
+			continue;
 		}
 		
 		
@@ -104,7 +105,12 @@ void RecvData(SOCKET s) {
 				int score = atoi(token);
 				token = strtok(NULL, " ");
 				int combo = atoi(token);
+
+				globalScene->opponentGameInfo->recentJudgement = (JUDGEMENT)ÆÇÁ¤;
+				globalScene->opponentGameInfo->score = score;
+				globalScene->opponentGameInfo->combo = combo;
 			}
+			continue;
 		}
 
 		// FORMAT: input playernum line
@@ -119,6 +125,7 @@ void RecvData(SOCKET s) {
 
 				globalScene->opponentRenderKey[line] = true;
 			}
+			continue;
 		}
 
 		// FORMAT: unput playernum line
@@ -133,6 +140,7 @@ void RecvData(SOCKET s) {
 
 				globalScene->opponentRenderKey[line] = false;
 			}
+			continue;
 		}
 	}
 }

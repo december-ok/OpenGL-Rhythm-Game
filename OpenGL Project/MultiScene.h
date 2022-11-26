@@ -38,7 +38,6 @@ class MultiScene: public Scene
 
 
 	GameInfo* myGameInfo;
-	GameInfo* opponentGameInfo;
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
@@ -47,6 +46,7 @@ class MultiScene: public Scene
 	int comma = 0;
 	
 	public:
+		GameInfo* opponentGameInfo;
 		bool key[LINES] = { false, false, false, false };
 		bool renderKey[LINES] = { false, false, false, false };
 		bool opponentRenderKey[LINES] = { false, false, false, false };

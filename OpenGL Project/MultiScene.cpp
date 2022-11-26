@@ -263,234 +263,234 @@ void MultiScene::renderGame()
 }
 
 void MultiScene::renderCombo() {
-	if (this->myGameInfo->combo == 0) {
-		return;
-	}
-
 	float x = 20;
 	float y = 50;
 
 	string content = to_string(this->myGameInfo->combo) + " COMBO";
+	if (this->myGameInfo->combo) {
+		glPushMatrix();
+		glTranslatef(x, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glColor4f(1, 0.8f, 0, 0.5f);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.15f, y, 0);
+		glColor4f(0, 0.65f, 1, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.3f, y, 0);
+		glColor4f(0.19f, 0.65f, 0.32f, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.45f, y, 0);
+		glColor4f(0.9f, 1, 0.15f, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+	}
 
-	glPushMatrix();
-	glTranslatef(x, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glColor4f(1, 0.8f, 0, 0.5f);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.15f, y, 0);
-	glColor4f(0, 0.65f, 1, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.3f, y, 0);
-	glColor4f(0.19f, 0.65f, 0.32f, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.45f, y, 0);
-	glColor4f(0.9f, 1, 0.15f, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
+	if (this->opponentGameInfo->combo) {
+		x = 85;
 
-	x = 85;
+		content = to_string(this->opponentGameInfo->combo) + " COMBO";
 
-	content = to_string(this->opponentGameInfo->combo) + " COMBO";
-
-	glPushMatrix();
-	glTranslatef(x, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glColor4f(1, 0.8f, 0, 0.5f);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		glPushMatrix();
+		glTranslatef(x, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glColor4f(1, 0.8f, 0, 0.5f);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.15f, y, 0);
+		glColor4f(0, 0.65f, 1, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.3f, y, 0);
+		glColor4f(0.19f, 0.65f, 0.32f, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.45f, y, 0);
+		glColor4f(0.9f, 1, 0.15f, 0.5f);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
 	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.15f, y, 0);
-	glColor4f(0, 0.65f, 1, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.3f, y, 0);
-	glColor4f(0.19f, 0.65f, 0.32f, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.45f, y, 0);
-	glColor4f(0.9f, 1, 0.15f, 0.5f);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
 }
 
 void MultiScene::renderJudgement() {
-	if (this->myGameInfo->recentJudgement == NONE) {
-		return;
-	}
-
 	float x = 20;
 	float y = 36;
 
 	string content = "";
-	switch (this->myGameInfo->recentJudgement) {
-	case PERFECT:
-		glColor4f(0.64f, 0.05f, 0.6f, 0.5f);
-		content = "PERFECT";
-		break;
-	case GREAT:
-		glColor4f(0.9f, 0.55f, 0.15f, 0.5f);
-		content = " GREAT ";
-		break;
-	case NORMAL:
-		glColor4f(0.1f, 0.75f, 0.15f, 0.5f);
-		content = " NORMAL";
-		break;
-	case BAD:
-		glColor4f(0.3f, 0.75f, 0.74f, 0.5f);
-		content = "  BAD  ";
-		break;
-	case MISS:
-		glColor4f(0.4f, 0.4f, 0.4f, 0.5f);
-		content = "  MISS  ";
-		break;
-	}
+	if (this->myGameInfo->recentJudgement != NONE) {
+
+		switch (this->myGameInfo->recentJudgement) {
+		case PERFECT:
+			glColor4f(0.64f, 0.05f, 0.6f, 0.5f);
+			content = "PERFECT";
+			break;
+		case GREAT:
+			glColor4f(0.9f, 0.55f, 0.15f, 0.5f);
+			content = " GREAT ";
+			break;
+		case NORMAL:
+			glColor4f(0.1f, 0.75f, 0.15f, 0.5f);
+			content = " NORMAL";
+			break;
+		case BAD:
+			glColor4f(0.3f, 0.75f, 0.74f, 0.5f);
+			content = "  BAD  ";
+			break;
+		case MISS:
+			glColor4f(0.4f, 0.4f, 0.4f, 0.5f);
+			content = "  MISS  ";
+			break;
+		}
 
 
-	glPushMatrix();
-	glTranslatef(x, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.15f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.3f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.45f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-
-	x = 85;
-	content = "";
-	switch (this->opponentGameInfo->recentJudgement) {
-	case PERFECT:
-		glColor4f(0.64f, 0.05f, 0.6f, 0.5f);
-		content = "PERFECT";
-		break;
-	case GREAT:
-		glColor4f(0.9f, 0.55f, 0.15f, 0.5f);
-		content = " GREAT ";
-		break;
-	case NORMAL:
-		glColor4f(0.1f, 0.75f, 0.15f, 0.5f);
-		content = " NORMAL";
-		break;
-	case BAD:
-		glColor4f(0.3f, 0.75f, 0.74f, 0.5f);
-		content = "  BAD  ";
-		break;
-	case MISS:
-		glColor4f(0.4f, 0.4f, 0.4f, 0.5f);
-		content = "  MISS  ";
-		break;
+		glPushMatrix();
+		glTranslatef(x, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.15f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.3f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.45f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
 	}
 
+	if (this->opponentGameInfo->recentJudgement != NONE) {	
+		x = 85;
+		content = "";
+		switch (this->opponentGameInfo->recentJudgement) {
+		case PERFECT:
+			glColor4f(0.64f, 0.05f, 0.6f, 0.5f);
+			content = "PERFECT";
+			break;
+		case GREAT:
+			glColor4f(0.9f, 0.55f, 0.15f, 0.5f);
+			content = " GREAT ";
+			break;
+		case NORMAL:
+			glColor4f(0.1f, 0.75f, 0.15f, 0.5f);
+			content = " NORMAL";
+			break;
+		case BAD:
+			glColor4f(0.3f, 0.75f, 0.74f, 0.5f);
+			content = "  BAD  ";
+			break;
+		case MISS:
+			glColor4f(0.4f, 0.4f, 0.4f, 0.5f);
+			content = "  MISS  ";
+			break;
+		}
 
-	glPushMatrix();
-	glTranslatef(x, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+
+		glPushMatrix();
+		glTranslatef(x, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.15f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.3f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		glTranslatef(x + 0.45f, y, 0);
+		glScalef(0.04, 0.06, 1);
+		glLineWidth(5);
+		for (auto c : content)
+		{
+			glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
+		}
+		glPopMatrix();
 	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.15f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.3f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(x + 0.45f, y, 0);
-	glScalef(0.04, 0.06, 1);
-	glLineWidth(5);
-	for (auto c : content)
-	{
-		glutStrokeCharacter(GLUT_STROKE_ROMAN, c);
-	}
-	glPopMatrix();
 }
 
 void MultiScene::renderScoreAndInfo() {
@@ -671,28 +671,28 @@ void MultiScene::setInput(unsigned char key)
 	if (key == 'd') {
 		this->key[0] = true;
 		this->renderKey[0] = true;
-//		this->playEffectSound();
+		this->playEffectSound();
 		
 		gameSocket->sendInput(0);
 	}
 	else if (key == 'f') {
 		this->key[1] = true;
 		this->renderKey[1] = true;
-//		this->playEffectSound();
+		this->playEffectSound();
 
 		gameSocket->sendInput(1);
 	}
 	else if (key == 'j') {
 		this->key[2] = true;
 		this->renderKey[2] = true;
-//		this->playEffectSound();
+		this->playEffectSound();
 
 		gameSocket->sendInput(2);
 	}
 	else if (key == 'k') {
 		this->key[3] = true;
 		this->renderKey[3] = true;
-//		this->playEffectSound();
+		this->playEffectSound();
 
 		gameSocket->sendInput(3);
 	}
