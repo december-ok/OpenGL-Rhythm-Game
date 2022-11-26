@@ -733,6 +733,7 @@ void RoundScene::renderJudgement() {
 	}
 	glPopMatrix();
 }
+
 void RoundScene::renderScoreAndInfo() {
 	float x = 0;
 	float y = 105;

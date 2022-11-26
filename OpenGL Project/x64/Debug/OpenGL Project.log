@@ -1,4 +1,4 @@
-﻿  GameWindow.cpp
+﻿  MainScene.cpp
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
@@ -14,7 +14,7 @@ C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning 
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-  MainScene.cpp
+  MultiScene.cpp
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
@@ -30,7 +30,19 @@ C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning 
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
-  Note.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(87,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(89,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(91,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(93,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(102,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(104,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(106,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(108,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(121,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(122,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(130,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(131,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  NetworkSocket.cpp
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(28,82): warning C4018: '<': signed/unsigned mismatch
@@ -46,6 +58,9 @@ C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(73,79): warning 
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(88,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(89,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(53,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(62,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(72,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   ResultScene.cpp
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(27,110): warning C4018: '>=': signed/unsigned mismatch
