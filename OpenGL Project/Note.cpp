@@ -1,6 +1,7 @@
 #include "Note.h"
-#include "RoundScene.h"
 #include <iostream>
+
+void SwapLine(RoundScene* _roundScene, unsigned char _index01, unsigned char _index02);
 
 int Note::GetHeight(unsigned int _frame)
 {
@@ -30,6 +31,19 @@ void Note::killNote() {
 }
 
 
-void ItemNote::UseItem()
+void ItemNote::UseItem(RoundScene* _roundScene)
 {
+	cout << "아이템 사용" << endl;
+	if (itemType == SWITCHLINE) {
+		cout << "라인 변경" << endl;
+		SwapLine(_roundScene, 0, 3);
+		SwapLine(_roundScene, 1, 2);
+	}
+}
+
+void SwapLine(RoundScene* _roundScene, unsigned char _index01, unsigned char _index02)
+{
+	vector<Note*> tmp = *_roundScene->getNotes(_index01);
+	*(_roundScene->getNotes(_index01)) = *(_roundScene->getNotes(_index02));
+	*(_roundScene->getNotes(_index02)) = tmp;
 }

@@ -1,6 +1,10 @@
 #pragma once
 #include "Global.h"
+#include "RoundScene.h"
 #include <iostream>
+
+class RoundScene;
+
 class Note
 {
 public:
@@ -76,19 +80,23 @@ public:
 
 };
 
+enum ITEMTYPE {
+	ITEM_01,
+	ITEM_02,
+	SWITCHLINE
+};
+
 // 아이템 노트(4)
 class ItemNote : public Note
 {
 public:
 	
-	unsigned char itemType;
+	ITEMTYPE itemType;
 
-	ItemNote(int _createTime, unsigned char _itemType) { this->type = 4; this->createFrame = _createTime; this->itemType = _itemType; };
+	ItemNote(int _createTime, ITEMTYPE _itemType) { this->type = 4; this->createFrame = _createTime; this->itemType = _itemType; };
 	~ItemNote() {};
-	void UseItem();
+	void UseItem(RoundScene* _roundScene);
 	int getNoteLength() override { return 1; }
 	bool IsActive(unsigned int _frame) override { return (this->createFrame < _frame&& this->createFrame + ROWS >= _frame); }
 	bool IsMissNote(unsigned int _frame) override { return this->createFrame + ROWS < _frame&& this->isAlive; }
-
-
 };

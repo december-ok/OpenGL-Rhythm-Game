@@ -63,6 +63,7 @@ void RoundScene::init() {
 	case CANON:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
+		this->notes[0].push_back((Note*)new ItemNote(240, SWITCHLINE));
 		this->notes[2].push_back((Note*)new SectionNote(300, 373));
 
 		this->notes[3].push_back((Note*)new NormalNote(390));
@@ -1562,6 +1563,10 @@ void RoundScene::renderNotes() {
 					break;
 				}
 
+				// 아이템 노트 색 지정
+				if (this->notes[line][scope]->type == 4)
+					glColor3f(0.6f, 1, 0.6f);
+
 				// 가속 노트
 				if (this->notes[line][scope]->isAccel) {
 					int height = this->notes[line][scope]->GetHeight(frame);
@@ -1743,6 +1748,15 @@ void RoundScene::getNoteDelay(int line, unsigned int i_frame)
 			section_delay[line] = n_delay;
 			section_input[line] = 1;
 
+		}
+		// 아이템 노트
+		else if (noteType == 4) {
+			ItemNote* itemNote = (ItemNote*)nott;
+			itemNote->UseItem(this);
+
+			// 노트 지움
+			this->deleteNote(line, n_frame);
+			this->setLineInput(line);
 		}
 		// 이외의 노트
 		else {

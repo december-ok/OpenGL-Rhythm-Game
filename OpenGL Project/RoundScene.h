@@ -15,6 +15,8 @@
 #include<stdlib.h>
 using namespace std;
 
+class Note;
+
 class RoundScene:public Scene
 {
 	
@@ -26,7 +28,7 @@ class RoundScene:public Scene
 
 	unsigned int frame = 0;
 	unsigned int score = 0;
-	vector<Note*> notes[LINES];
+	vector<class Note*> notes[LINES];
 	int line_input[LINES]; // 각 라인 별 입력 횟수 저장
 
 	int section_input[LINES] = { 0, 0, 0, 0 };		// 롱노트 입력 시간
@@ -81,6 +83,7 @@ public:
 	void update() override;
 	void addTime();
 
+	vector<Note*>* getNotes(unsigned char _index) { return &notes[_index]; };
 	void getNoteDelay(int line, unsigned int i_frame);
 	void deleteNote(int line, int n_frame);
 	void deleteMissNode();

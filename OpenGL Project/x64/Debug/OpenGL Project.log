@@ -1,69 +1,18 @@
-﻿S:\VS\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
-  MultiScene.cpp
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(29,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(29,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(30,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(43,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(43,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(44,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(57,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(57,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(58,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(74,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(75,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(90,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(90,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\Note.h(91,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(42,6): warning C4101: 's' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(43,8): warning C4101: 't' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(576,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(587,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(597,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(607,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(623,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(634,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(644,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(654,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(698,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(707,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(716,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(725,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(763,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(772,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(781,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(790,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(829,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(831,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(833,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(835,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(844,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(846,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(848,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(850,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(863,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(864,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(872,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(873,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1027,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1032,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1038,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1043,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1081,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1108,26): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1225,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1232,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1238,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1245,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1256,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1323,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1327,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1330,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1334,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1340,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1347,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1356,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1392,36): warning C4244: '=': 'double'에서 'clock_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1407,9): warning C4244: '인수': 'double'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\source\repos\OpenGL-Rhythm-Game\OpenGL Project\MultiScene.cpp(1421,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  OpenGL Project.vcxproj -> C:\Users\okt03\Desktop\exe\OpenGL Project.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+  Note.cpp
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(78,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(78,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(79,79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(100,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(100,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\gus66\OneDrive\문서\GitHub\OpenGL-Rhythm-Game\OpenGL Project\Note.h(101,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  OpenGL Project.vcxproj -> C:\Users\gus66\OneDrive\Desktop\exe\OpenGL Project.exe
