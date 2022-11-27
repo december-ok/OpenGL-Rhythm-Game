@@ -11,6 +11,11 @@
 using namespace std;
 
 
+int RoundScene::getFrame()
+{
+	return this->frame;
+}
+
 RoundScene::RoundScene(GameWindow* window, MUSIC id)
 {
 	this->window = window;
@@ -58,14 +63,21 @@ void RoundScene::init() {
 	int s;
 	float t;
 
+	// 아이템 박스 배열 생성
+	for (int i = 0; i < ITEM_COUNT; i++) {
+		int _tmp = rand() % (ITEM_NUMBER + 1);
+		item_box[i] = (ITEMTYPE)_tmp;
+		
+	}
+
 	switch (this->id)
 	{
 	case CANON:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
-		this->notes[0].push_back((Note*)new ItemNote(80, HPUP));
-		this->notes[0].push_back((Note*)new ItemNote(120, REINFORCE));
-		this->notes[0].push_back((Note*)new ItemNote(240, SWITCHLINE));
+		//this->notes[0].push_back((Note*)new NormalNote(80));
+		//this->notes[0].push_back((Note*)new NormalNote(120, REINFORCE));
+		//this->notes[0].push_back((Note*)new NormalNote(240, SWITCHLINE));
 		this->notes[2].push_back((Note*)new SectionNote(300, 373));
 
 		this->notes[3].push_back((Note*)new NormalNote(390));
@@ -99,7 +111,7 @@ void RoundScene::init() {
 		this->notes[1].push_back((Note*)new HighLightNote(1009));
 		this->notes[3].push_back((Note*)new HighLightNote(1014));
 
-		this->notes[0].push_back((Note*)new NormalNote(1020));
+		this->notes[0].push_back((Note*)new ItemNote(1020, item_box[0]));
 		this->notes[1].push_back((Note*)new NormalNote(1043));
 		this->notes[3].push_back((Note*)new NormalNote(1065));
 
@@ -195,7 +207,7 @@ void RoundScene::init() {
 		this->notes[0].push_back((Note*)new NormalNote(2955));
 		this->notes[3].push_back((Note*)new NormalNote(2978));
 
-		this->notes[2].push_back((Note*)new NormalNote(3000));
+		this->notes[2].push_back((Note*)new ItemNote(3000, item_box[1]));
 		this->notes[1].push_back((Note*)new NormalNote(3023));
 		this->notes[2].push_back((Note*)new NormalNote(3045));
 		this->notes[3].push_back((Note*)new NormalNote(3068));
@@ -275,7 +287,7 @@ void RoundScene::init() {
 		this->notes[0].push_back((Note*)new NormalNote(3968));
 		this->notes[1].push_back((Note*)new NormalNote(3979));
 
-		this->notes[3].push_back((Note*)new NormalNote(3990));
+		this->notes[3].push_back((Note*)new ItemNote(3990, item_box[2]));
 		this->notes[2].push_back((Note*)new NormalNote(4001));
 		this->notes[1].push_back((Note*)new NormalNote(4013));
 		this->notes[2].push_back((Note*)new NormalNote(4024));
@@ -380,7 +392,7 @@ void RoundScene::init() {
 		this->notes[2].push_back((Note*)new NormalNote(5138));
 		this->notes[3].push_back((Note*)new NormalNote(5149));
 
-		this->notes[0].push_back((Note*)new NormalNote(5160));
+		this->notes[0].push_back((Note*)new ItemNote(5160, item_box[3]));
 		this->notes[2].push_back((Note*)new NormalNote(5183));
 		this->notes[0].push_back((Note*)new NormalNote(5194));
 		this->notes[1].push_back((Note*)new NormalNote(5205));
@@ -458,7 +470,7 @@ void RoundScene::init() {
 		this->notes[2].push_back((Note*)new NormalNote(6038));
 		this->notes[3].push_back((Note*)new NormalNote(6049));
 
-		this->notes[2].push_back((Note*)new NormalNote(6060));
+		this->notes[2].push_back((Note*)new ItemNote(6060, item_box[4]));
 		this->notes[1].push_back((Note*)new NormalNote(6071));
 		this->notes[0].push_back((Note*)new NormalNote(6083));
 		this->notes[0].push_back((Note*)new NormalNote(6094));
@@ -757,26 +769,26 @@ void RoundScene::setInput(unsigned char key) {
 		if (U_Config->E_Vol > 1) U_Config->E_Vol = 1;
 	}
 	// 아이템 테스트용
-	else if (key == 'q') {
-		blink();
-		printf("Blink On!\n");
-	}
-	else if (key == 'w') {
-		setAccelNote(frame);
-		printf("Accel On!\n");
-	}
-	else if (key == 'e') {
-		setSlowNote(frame);
-		printf("Slow Down On!\n");
-	}
-	else if (key == 'r') {
-		lieNoteOn();
-		printf("Lie Note On!\n");
-	}
-	else if (key == 't') {
-		unsetAutoMode();
-		printf("Auto Mode Off!\n");
-	}
+	//else if (key == 'q') {
+	//	blink();
+	//	printf("Blink On!\n");
+	//}
+	//else if (key == 'w') {
+	//	setAccelNote(frame);
+	//	printf("Accel On!\n");
+	//}
+	//else if (key == 'e') {
+	//	setSlowNote(frame);
+	//	printf("Slow Down On!\n");
+	//}
+	//else if (key == 'r') {
+	//	lieNoteOn();
+	//	printf("Lie Note On!\n");
+	//}
+	//else if (key == 't') {
+	//	unsetAutoMode();
+	//	printf("Auto Mode Off!\n");
+	//}
 
 }
 void RoundScene::unsetInput(unsigned char key) {
@@ -1276,17 +1288,22 @@ void RoundScene::update() {
 
 		this->addTime();
 
+		// 현재 Auto Off
 		// x Auto Mode
-		if (!auto_on) {
-			this->checkInput();
-			this->checkSectionNote();
-			this->deleteMissNode();
-		}
-		// Auto Mode
-		else {
-			autoMode();
-			setTempLineInput();
-		}
+		//if (!auto_on) {
+		//	this->checkInput();
+		//	this->checkSectionNote();
+		//	this->deleteMissNode();
+		//}
+		//// Auto Mode
+		//else {
+		//	autoMode();
+		//	setTempLineInput();
+		//}
+
+		this->checkInput();
+		this->checkSectionNote();
+		this->deleteMissNode();
 
 		// frame 보정
 		showTimer();

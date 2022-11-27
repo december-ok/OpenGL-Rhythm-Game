@@ -38,11 +38,15 @@ class RoundScene:public Scene
 	bool key[LINES] = { false, false, false, false };
 	bool renderKey[LINES] = { false, false, false, false };
 
+	ITEMTYPE item_box[ITEM_COUNT];
+
 	bool isEnd = false;
 
 	queue<Input*> InputQueue;
 	
 	UserConfig* U_Config;
+
+	
 
 	// Timer 변수
 	clock_t init_timer;
@@ -63,8 +67,8 @@ class RoundScene:public Scene
 	vector<Note*> lie_notes[LINES];		// 가짜 노트 벡터
 	int lie_input[LINES];				// 거짓 노트 입력 횟수 저장
 
-	// Auto Mode
-	bool auto_on = true;
+	// Auto Mode - 현재 Off
+	bool auto_on = false;
 	int auto_input[LINES];
 
 	GameWindow* window;
@@ -89,6 +93,8 @@ public:
 	void deleteMissNode();
 	int getLineInput(int line);
 	void setLineInput(int line);
+
+	int getFrame();
 
 	void setInput(unsigned char) override;
 	void unsetInput(unsigned char) override;
