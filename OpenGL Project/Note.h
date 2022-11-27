@@ -76,12 +76,6 @@ public:
 
 };
 
-enum ITEMTYPE {
-	HPUP,
-	REINFORCE,
-	SWITCHLINE
-};
-
 // 아이템 노트(4)
 class ItemNote : public Note
 {
