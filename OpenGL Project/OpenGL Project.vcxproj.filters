@@ -112,6 +112,9 @@
     <Media Include="hit_sound.mp3">
       <Filter>Resource Files</Filter>
     </Media>
+    <Media Include="BirthdayCake.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Font Include="font.ttf">

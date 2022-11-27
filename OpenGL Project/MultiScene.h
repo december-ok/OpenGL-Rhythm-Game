@@ -57,6 +57,7 @@ class MultiScene: public Scene
 	GameWindow* window;
 	unsigned int reinforce = 0;
 	int endFrame = 0;
+	FireWork* fireWork[5];
 
 	int comma = 0;
 	

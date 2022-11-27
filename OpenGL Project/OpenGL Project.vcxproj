@@ -170,6 +170,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="BirthdayCake.mp3" />
     <Media Include="Canon.mp3" />
     <Media Include="hit_sound.mp3" />
     <Media Include="WE_WERE_YOUNG.mp3" />

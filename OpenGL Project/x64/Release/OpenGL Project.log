@@ -1,25 +1,73 @@
-﻿  NetworkSocket.cpp
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(29,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(29,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(30,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(43,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(43,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(44,80): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(57,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(57,110): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(58,82): warning C4018: '<': signed/unsigned mismatch
+﻿  MultiScene.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(34,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(48,80): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(62,82): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,74): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,107): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(75,79): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(75,82): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,74): warning C4018: '<': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,110): warning C4018: '>=': signed/unsigned mismatch
 C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(91,82): warning C4018: '<': signed/unsigned mismatch
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(53,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(62,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\test\source\repos\OpenGL Project\OpenGL Project\NetworkSocket.cpp(73,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(47,6): warning C4101: 's': unreferenced local variable
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(48,8): warning C4101: 't': unreferenced local variable
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(629,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(640,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(650,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(660,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(676,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(687,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(697,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(707,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(751,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(760,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(769,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(778,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(816,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(825,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(834,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(843,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(882,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(884,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(886,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(888,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(897,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(899,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(901,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(903,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(916,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(917,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(925,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(926,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1095,25): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1100,25): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1106,25): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1111,25): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1149,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1176,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1294,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1301,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1307,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1314,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1325,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1392,24): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1396,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1399,24): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1403,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1409,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1416,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1425,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1461,36): warning C4244: '=': conversion from 'double' to 'clock_t', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1476,9): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1490,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Generating code
-  2 of 832 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 878 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    5 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Release\OpenGL Project.exe

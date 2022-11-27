@@ -37,7 +37,8 @@
 
 
 enum MUSIC {
-	CANON
+	CANON,
+	BIRTHDAY_CAKE
 };
 
 enum JUDGEMENT {

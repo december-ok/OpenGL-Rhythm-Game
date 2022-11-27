@@ -1,237 +1,85 @@
-﻿  GameWindow.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  MainScene.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+﻿  MainScene.cpp
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(34,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(48,80): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(62,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(75,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(91,82): warning C4018: '<': signed/unsigned mismatch
   MultiScene.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(42,6): warning C4101: 's' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(43,8): warning C4101: 't' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(576,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(587,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(597,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(607,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(623,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(634,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(644,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(654,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(698,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(707,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(716,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(725,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(763,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(772,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(781,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(790,25): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(829,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(831,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(833,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(835,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(844,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(846,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(848,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(850,28): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(863,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(864,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(872,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(873,24): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1027,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1032,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1038,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1043,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1081,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1108,26): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1226,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1233,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1239,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1246,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1257,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1324,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1328,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1331,24): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1335,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1341,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1348,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1357,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1393,36): warning C4244: '=': 'double'에서 'clock_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1408,9): warning C4244: '인수': 'double'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\MultiScene.cpp(1422,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  NetworkSocket.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\NetworkSocket.cpp(53,40): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\NetworkSocket.cpp(62,40): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\NetworkSocket.cpp(73,40): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Note.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  ResultScene.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\ResultScene.cpp(29,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\ResultScene.cpp(30,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\ResultScene.cpp(31,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\ResultScene.cpp(32,44): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  RoundScene.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(58,6): warning C4101: 's' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(59,8): warning C4101: 't' :참조되지 않은 지역 변수입니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(546,25): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(630,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(637,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(643,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(650,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(661,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(676,22): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(680,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(683,22): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(687,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(693,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(700,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(709,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(741,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(746,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(752,25): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(756,25): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(904,36): warning C4244: '=': 'double'에서 'clock_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(926,9): warning C4244: '인수': 'double'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1027,45): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1274,43): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1275,43): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1368,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1379,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1389,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1399,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1442,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1451,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1460,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1469,24): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1520,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1521,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1572,26): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1601,25): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1661,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1663,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1665,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1667,17): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1693,18): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1715,16): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\RoundScene.cpp(1741,26): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  TutorialScene.cpp
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(34,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(48,80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(62,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(75,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(96,110): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\Note.h(97,82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(16,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(17,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(18,43): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(19,45): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(337,36): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\okt03\Desktop\new\OpenGL Project\TutorialScene.cpp(338,37): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  OpenGL Project.vcxproj -> C:\Users\okt03\Desktop\new\x64\Debug\OpenGL Project.exe
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(33,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(34,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(47,107): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(48,80): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(61,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(62,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(74,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(75,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,74): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(90,110): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\Note.h(91,82): warning C4018: '<': signed/unsigned mismatch
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(47,6): warning C4101: 's': unreferenced local variable
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(48,8): warning C4101: 't': unreferenced local variable
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(622,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(633,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(643,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(653,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(669,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(680,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(690,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(700,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(744,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(753,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(762,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(771,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(809,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(818,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(827,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(836,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(875,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(877,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(879,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(881,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(890,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(892,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(894,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(896,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(909,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(910,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(918,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(919,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1073,25): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1078,25): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1084,25): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1089,25): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1127,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1154,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1272,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1279,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1285,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1292,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1303,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1370,24): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1374,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1377,24): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1381,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1387,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1394,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1403,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1439,36): warning C4244: '=': conversion from 'double' to 'clock_t', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1454,9): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\test\source\repos\OpenGL Project\OpenGL Project\MultiScene.cpp(1468,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  OpenGL Project.vcxproj -> C:\Users\test\source\repos\OpenGL Project\x64\Debug\OpenGL Project.exe

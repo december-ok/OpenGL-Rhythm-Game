@@ -32,6 +32,10 @@ RoundScene::RoundScene(GameWindow* window, MUSIC id)
 		this->artist = "Johan Pachelbel";
 		this->musicFile = "./Canon.mp3";
 		break;
+	case BIRTHDAY_CAKE:
+		this->name = "Birthday Cake";
+		this->artist = "Daldam Music";
+		this->musicFile = "./BirthdayCake.mp3";
 	default:
 		break;
 	}
@@ -62,6 +66,7 @@ void RoundScene::init() {
 
 	int s;
 	float t;
+	int temp_time;
 
 	// 아이템 박스 배열 생성
 	for (int i = 0; i < ITEM_COUNT; i++) {
@@ -541,6 +546,46 @@ void RoundScene::init() {
 		this->notes[2].push_back((Note*)new NormalNote(INF));
 		this->notes[3].push_back((Note*)new NormalNote(INF));
 		break;
+	case BIRTHDAY_CAKE:
+		temp_time = 321;
+		this->notes[1].push_back((Note*)new NormalNote(temp_time));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+		this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+		this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+		this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+		temp_time = 561;
+		this->notes[1].push_back((Note*)new NormalNote(temp_time));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+		this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+		this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+		this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+		temp_time = 798;
+		this->notes[1].push_back((Note*)new NormalNote(temp_time));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+		this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+		this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+		this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+		this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+		this->notes[0].push_back((Note*)new NormalNote(1071));
+		this->notes[1].push_back((Note*)new NormalNote(1089));
+		this->notes[2].push_back((Note*)new NormalNote(1101));
+		this->notes[3].push_back((Note*)new NormalNote(1119));
+
+		this->notes[2].push_back((Note*)new SectionNote(1161, 1221));
+		
+		this->notes[0].push_back((Note*)new NormalNote(INF));
+		this->notes[1].push_back((Note*)new NormalNote(INF));
+		this->notes[2].push_back((Note*)new NormalNote(INF));
+		this->notes[3].push_back((Note*)new NormalNote(INF));
+		break;
 	default:
 		break;
 	}
@@ -556,6 +601,8 @@ void RoundScene::loadMusic() {
 	QWORD len = BASS_ChannelGetLength(stream, BASS_POS_BYTE);
 	double time = BASS_ChannelBytes2Seconds(stream, len);
 	endFrame = START_FRAME + (time * FPS);
+	cout << endFrame;
+	
 }
 
 void RoundScene::playEffectSound() {
@@ -1276,6 +1323,7 @@ void RoundScene::update() {
 		free(this->gameInfo);
 		free(this->U_Config);
 		delete(this);
+		return;
 	}
 
 	if (!pause) {
@@ -1314,15 +1362,15 @@ void RoundScene::update() {
 		}
 		if (reinforce > 0) reinforce--;
 
+		if (former_combo != this->gameInfo->combo && this->gameInfo->combo > 0 && this->gameInfo->combo % 50 == 0) {
+			for (int i = 0; i < 5; ++i) {
+				if (this->fireWork[i]) free(this->fireWork[i]);
+				this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
+			}
+		}
 		for (auto f : this->fireWork) {
 			if (f) {
 				f->update();
-			}
-		}
-		if (former_combo != this->gameInfo->combo && this->gameInfo->combo > 0 && this->gameInfo->combo % 50 == 0) {
-			for (int i = 0; i < 10; ++i) {
-				if (this->fireWork[i]) free(this->fireWork[i]);
-				this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
 			}
 		}
 
@@ -1346,7 +1394,7 @@ void RoundScene::render() {
 	//glColor4f(1, 0.8f, 0, 0.5f);
 	//drawCircle(20, 20, 3);
 
-	for (int i = 0; i < 10; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		if (this->fireWork[i]) {
 			this->fireWork[i]->render();
 		}

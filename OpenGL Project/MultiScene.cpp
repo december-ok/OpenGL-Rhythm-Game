@@ -18,6 +18,10 @@ MultiScene::MultiScene(GameWindow* window, MUSIC id)
 		this->artist = "Johan Pachelbel";
 		this->musicFile = "./Canon.mp3";
 		break;
+	case BIRTHDAY_CAKE:
+		this->name = "Birthday Cake";
+		this->artist = "Daldam Music";
+		this->musicFile = "./BirthdayCake.mp3";
 	default:
 		break;
 	}
@@ -27,6 +31,7 @@ MultiScene::MultiScene(GameWindow* window, MUSIC id)
 
 MultiScene::~MultiScene()
 {
+	
 }
 
 void MultiScene::init(void)
@@ -41,6 +46,7 @@ void MultiScene::init(void)
 
 	int s;
 	float t;
+	int temp_time;
 
 	switch (this->id)
 	{
@@ -510,6 +516,46 @@ void MultiScene::init(void)
 			this->notes[2].push_back((Note*)new NormalNote(INF));
 			this->notes[3].push_back((Note*)new NormalNote(INF));
 			break;
+		case BIRTHDAY_CAKE:
+			temp_time = 321;
+			this->notes[1].push_back((Note*)new NormalNote(temp_time));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+			this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+			this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+			this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+			temp_time = 561;
+			this->notes[1].push_back((Note*)new NormalNote(temp_time));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+			this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+			this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+			this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+			temp_time = 798;
+			this->notes[1].push_back((Note*)new NormalNote(temp_time));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 20));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 48));
+			this->notes[0].push_back((Note*)new NormalNote(temp_time + 60));
+			this->notes[2].push_back((Note*)new NormalNote(temp_time + 79));
+			this->notes[1].push_back((Note*)new NormalNote(temp_time + 89));
+			this->notes[3].push_back((Note*)new SectionNote(temp_time + 107, temp_time + 157));
+
+			this->notes[0].push_back((Note*)new NormalNote(1071));
+			this->notes[1].push_back((Note*)new NormalNote(1089));
+			this->notes[2].push_back((Note*)new NormalNote(1101));
+			this->notes[3].push_back((Note*)new NormalNote(1119));
+
+			this->notes[2].push_back((Note*)new SectionNote(1161, 1221));
+
+			this->notes[0].push_back((Note*)new NormalNote(INF));
+			this->notes[1].push_back((Note*)new NormalNote(INF));
+			this->notes[2].push_back((Note*)new NormalNote(INF));
+			this->notes[3].push_back((Note*)new NormalNote(INF));
+			break;
 		default:
 			break;
 			
@@ -556,8 +602,15 @@ void MultiScene::renderInfo(void)
 
 void MultiScene::renderGame()
 {
+	for (int i = 0; i < 5; ++i) {
+		if (this->fireWork[i]) {
+			this->fireWork[i]->render();
+		}
+	}
+	
 	this->renderNotes();
 	this->renderGrid();
+	
 	this->renderInputEffect();
 
 	this->renderCombo();
@@ -964,23 +1017,8 @@ void MultiScene::renderNotes(void)
 void MultiScene::update()
 {
 	if (this->state == PLAYING) {
-		if (this->frame == START_FRAME) {
-			this->playSound();
-		}
+		int former_combo = this->myGameInfo->combo;
 
-		++this->frame;
-
-		// 입력 검사
-		this->checkInput();
-		this->checkSectionNote();
-		this->deleteMissNode();
-
-		// frame 싱크 조절
-		calcSync();
-		syncTimer();
-		if (frame == endFrame) {
-			isEnd = true;
-		}
 		if (this->isEnd) {
 			BASS_Free();
 			this->window->scene = new ResultScene(this->window, myGameInfo, opponentGameInfo, 1);
@@ -988,6 +1026,36 @@ void MultiScene::update()
 			free(this->opponentGameInfo);
 			free(this->U_Config);
 			delete(this);
+			return;
+		}
+		if (this->frame == START_FRAME) {
+			this->playSound();
+		}
+
+		// 입력 검사
+		this->checkInput();
+		this->checkSectionNote();
+		this->deleteMissNode();
+		
+		if (former_combo != this->myGameInfo->combo && this->myGameInfo->combo > 0 && this->myGameInfo->combo % 50 == 0) {
+			for (int i = 0; i < 5; ++i) {
+				if (this->fireWork[i]) free(this->fireWork[i]);
+				this->fireWork[i] = new FireWork(new Vector(getRandRage(0, 127), 0), getRandRage(1.1f, 2.f));
+			}
+		}
+		for (auto f : this->fireWork) {
+			if (f) {
+				f->update();
+			}
+		}
+
+		++this->frame;
+
+		// frame 싱크 조절
+		calcSync();
+		syncTimer();
+		if (frame == endFrame) {
+			isEnd = true;
 		}
 	}
 }
@@ -1420,6 +1488,7 @@ void MultiScene::loadMusic()
 	QWORD len = BASS_ChannelGetLength(stream, BASS_POS_BYTE);
 	double time = BASS_ChannelBytes2Seconds(stream, len);
 	endFrame = START_FRAME + (time * FPS);
+	cout << endFrame;
 }
 
 void MultiScene::playSound()

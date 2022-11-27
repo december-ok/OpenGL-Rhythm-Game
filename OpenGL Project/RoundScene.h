@@ -74,7 +74,7 @@ class RoundScene:public Scene
 	GameWindow* window;
 
 	int endFrame = 0;
-	FireWork* fireWork[10];
+	FireWork* fireWork[5];
 	
 public:
 

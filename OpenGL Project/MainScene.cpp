@@ -3,6 +3,7 @@
 #include "MultiScene.h"
 #include "TutorialScene.h"
 #include "ResultScene.h"
+
 MainScene::MainScene(GameWindow* window)
 {
 	this->window = window;
@@ -153,12 +154,12 @@ void MainScene::render_ui(void)
 
 void MainScene::move_scene(void) {
 	if (this->selection == SINGLE_PLAY) {
-		this->window->scene = new RoundScene(this->window, CANON);
+		this->window->scene = new RoundScene(this->window, BIRTHDAY_CAKE);
 		free(this);
 	}
 	else if (this->selection == ONLINE_PLAY)
 	{
-		this->window->scene = new MultiScene(this->window, CANON);
+		this->window->scene = new MultiScene(this->window, BIRTHDAY_CAKE);
 		free(this);
 	}
 	else if (this->selection == TUTORIAL){
