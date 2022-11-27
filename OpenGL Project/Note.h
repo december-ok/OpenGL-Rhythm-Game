@@ -64,25 +64,21 @@ public:
 
 };
 
-// 가짜 롱노트
-class LieSectionNote : public Note
+// 3번 하이라이트
+class HighLightNote : public Note
 {
-	int sectionTime; // 지속되는 시간 (시작점은 createTime을 기준)
-	int endFrame;	// 종료되야 하는 frame
-
 public:
-	LieSectionNote(int _createTime, int _endFrame) { this->type = 3; this->createFrame = _createTime; this->endFrame = _endFrame; this->sectionTime = this->endFrame - this->createFrame;
-	};
-	~LieSectionNote() {};
-	int getNoteLength() override { return sectionTime; }
-	bool IsActive(unsigned int _frame) override { return (this->createFrame < _frame&& this->endFrame + ROWS >= _frame); }
-	bool IsMissNote(unsigned int _frame) override { return this->endFrame + ROWS < _frame&& this->isAlive; }
+	HighLightNote(int _createTime) { this->type = 3; this->createFrame = _createTime; };
+	~HighLightNote() {};
+	int getNoteLength() override { return 1; }
+	bool IsActive(unsigned int _frame) override { return (this->createFrame < _frame&& this->createFrame + ROWS >= _frame); }
+	bool IsMissNote(unsigned int _frame) override { return this->createFrame + ROWS < _frame&& this->isAlive; }
 
 };
 
 enum ITEMTYPE {
-	ITEM_01,
-	ITEM_02,
+	HPUP,
+	REINFORCE,
 	SWITCHLINE
 };
 
