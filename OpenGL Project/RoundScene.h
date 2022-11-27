@@ -42,7 +42,6 @@ class RoundScene:public Scene
 
 	queue<Input*> InputQueue;
 	
-	GameInfo* gameInfo;
 	UserConfig* U_Config;
 
 	// Timer º¯¼ö
@@ -69,11 +68,12 @@ class RoundScene:public Scene
 	int auto_input[LINES];
 
 	GameWindow* window;
-	unsigned int reinforce = 0;
+
 	int endFrame = 0;
 	FireWork* fireWork[10];
 	
 public:
+
 	RoundScene(GameWindow*, MUSIC);
 	~RoundScene();
 	
@@ -140,6 +140,11 @@ public:
 	void pauseSound(bool pause);
 	void setMVol(float volume);
 	
+	GameInfo* gameInfo;
+	unsigned int reinforce = 0;
+
+	float highlight1 = 0.0f;
+	float highlight2 = 0.0f;
 
 private:
 	void renderGrid();

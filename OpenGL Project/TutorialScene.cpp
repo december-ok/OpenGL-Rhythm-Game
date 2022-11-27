@@ -221,8 +221,24 @@ void TutorialScene::render()
 	{
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
+
+	content = "Line Swap";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 14, 41.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+	content = "Line changes to center";
+	glColor3f(1, 1, 1);
+	glRasterPos2f(windowWidth / 3 - 2, 41.0f);
+	for (auto c : content)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
+	}
+
 	content = ":";
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 7; i++) {
 		glRasterPos2f(windowWidth / 3 - 3, 83.0f - 7.0f*float(i));
 		for (auto c : content)
 		{

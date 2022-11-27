@@ -63,6 +63,8 @@ void RoundScene::init() {
 	case CANON:
 		// 노드 수작업 부분
 		// 오류 확인용 여러 케이스
+		this->notes[0].push_back((Note*)new ItemNote(80, HPUP));
+		this->notes[0].push_back((Note*)new ItemNote(120, REINFORCE));
 		this->notes[0].push_back((Note*)new ItemNote(240, SWITCHLINE));
 		this->notes[2].push_back((Note*)new SectionNote(300, 373));
 
@@ -78,25 +80,24 @@ void RoundScene::init() {
 
 		this->notes[3].push_back((Note*)new NormalNote(750));
 		this->notes[2].push_back((Note*)new NormalNote(795));
-
 		this->notes[3].push_back((Note*)new SectionNote(840, 913));
 
-		this->notes[0].push_back((Note*)new NormalNote(930));
-		this->notes[2].push_back((Note*)new NormalNote(936));
-		this->notes[0].push_back((Note*)new NormalNote(941));
-		this->notes[2].push_back((Note*)new NormalNote(947));
-		this->notes[0].push_back((Note*)new NormalNote(953));
-		this->notes[2].push_back((Note*)new NormalNote(958));
-		this->notes[0].push_back((Note*)new NormalNote(964));
-		this->notes[2].push_back((Note*)new NormalNote(969));
-		this->notes[1].push_back((Note*)new NormalNote(975));
-		this->notes[3].push_back((Note*)new NormalNote(981));
-		this->notes[1].push_back((Note*)new NormalNote(986));
-		this->notes[3].push_back((Note*)new NormalNote(992));
-		this->notes[1].push_back((Note*)new NormalNote(998));
-		this->notes[3].push_back((Note*)new NormalNote(1003));
-		this->notes[1].push_back((Note*)new NormalNote(1009));
-		this->notes[3].push_back((Note*)new NormalNote(1014));
+		this->notes[0].push_back((Note*)new HighLightNote(930));
+		this->notes[2].push_back((Note*)new HighLightNote(936));
+		this->notes[0].push_back((Note*)new HighLightNote(941));
+		this->notes[2].push_back((Note*)new HighLightNote(947));
+		this->notes[0].push_back((Note*)new HighLightNote(953));
+		this->notes[2].push_back((Note*)new HighLightNote(958));
+		this->notes[0].push_back((Note*)new HighLightNote(964));
+		this->notes[2].push_back((Note*)new HighLightNote(969));
+		this->notes[1].push_back((Note*)new HighLightNote(975));
+		this->notes[3].push_back((Note*)new HighLightNote(981));
+		this->notes[1].push_back((Note*)new HighLightNote(986));
+		this->notes[3].push_back((Note*)new HighLightNote(992));
+		this->notes[1].push_back((Note*)new HighLightNote(998));
+		this->notes[3].push_back((Note*)new HighLightNote(1003));
+		this->notes[1].push_back((Note*)new HighLightNote(1009));
+		this->notes[3].push_back((Note*)new HighLightNote(1014));
 
 		this->notes[0].push_back((Note*)new NormalNote(1020));
 		this->notes[1].push_back((Note*)new NormalNote(1043));
@@ -578,30 +579,14 @@ void RoundScene::receiveJudgement(int judge, Note* nott)
 
 	int type = nott->type;
 
-	//miss 아닐때만 확인
-	//item1 : 회복, 2판정, up 3상대방 가리기 
 
-	if (type >= 5 && judge < 5) {
-
-
-		if (type == 5) {
-			gameInfo->HP += 30;
-		}
-		else if (type == 6) {
-			//프레임 단위(임시)
-			reinforce += 1000;
-		}
-	}
 
 	//판정 up 아이템 적용
 	//퍼펙트 < 해당노트 < miss 해당노트 판정 up
 	if (reinforce > 0 && judge > 1 && judge < 5) {
 		judge--;
 	}
-	//lie노트
-	//놓쳤을 때가 아닐 때 처리
 
-	// 가짜 노트 - 수정 필수!!!!!!!!!!!!! 가짜 롱노트 부분
 	if (type == 2) {
 		printf("lie\n");
 		if (judge < 6)
@@ -610,7 +595,7 @@ void RoundScene::receiveJudgement(int judge, Note* nott)
 	else if (type == 1) {
 		calcSectionInfo(judge);
 	}
-	else if (type == 4)
+	else if (type == 3)
 		calcInfo(judge, 1);
 	else calcInfo(judge, 0);
 
@@ -618,6 +603,7 @@ void RoundScene::receiveJudgement(int judge, Note* nott)
 		gameInfo->HP = 100;
 
 	if (gameInfo->HP <= 0) {
+		gameInfo->HP = 0;
 		this->isEnd = true;
 	}
 }
@@ -1282,6 +1268,11 @@ void RoundScene::update() {
 
 	if (!pause) {
 		int former_combo = this->gameInfo->combo;
+		
+		//
+		float f_float = float(frame);
+		highlight1 = (sin(f_float / 5) + 1) / 8 + 0.75;
+		highlight2 = (cos(f_float / 5) + 1) / 8 + 0.75;
 
 		this->addTime();
 
@@ -1562,7 +1553,9 @@ void RoundScene::renderNotes() {
 				default:
 					break;
 				}
-
+				// 하이라이트 노트 색 지정
+				if (this->notes[line][scope]->type == 3)
+					glColor3f(highlight1, highlight2, 0);
 				// 아이템 노트 색 지정
 				if (this->notes[line][scope]->type == 4)
 					glColor3f(0.6f, 1, 0.6f);

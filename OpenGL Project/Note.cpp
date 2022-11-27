@@ -2,7 +2,8 @@
 #include <iostream>
 
 void SwapLine(RoundScene* _roundScene, unsigned char _index01, unsigned char _index02);
-
+void HpUp(RoundScene* _roundScene);
+void ReinforceUp(RoundScene* _roundScene);
 int Note::GetHeight(unsigned int _frame)
 {
 	if (!IsActive(_frame)) return ROWS; // Non-active
@@ -39,6 +40,14 @@ void ItemNote::UseItem(RoundScene* _roundScene)
 		SwapLine(_roundScene, 0, 3);
 		SwapLine(_roundScene, 1, 2);
 	}
+	else if (itemType == HPUP) {
+		cout << "HPUP" << endl;
+		HpUp(_roundScene);
+	}
+	else if (itemType == REINFORCE) {
+		cout << "ReinforceUp" << endl;
+		ReinforceUp(_roundScene);
+	}
 }
 
 void SwapLine(RoundScene* _roundScene, unsigned char _index01, unsigned char _index02)
@@ -46,4 +55,15 @@ void SwapLine(RoundScene* _roundScene, unsigned char _index01, unsigned char _in
 	vector<Note*> tmp = *_roundScene->getNotes(_index01);
 	*(_roundScene->getNotes(_index01)) = *(_roundScene->getNotes(_index02));
 	*(_roundScene->getNotes(_index02)) = tmp;
+}
+
+void HpUp(RoundScene* _roundScene)
+{
+	_roundScene->gameInfo->HP += 30;
+	if (_roundScene->gameInfo->HP > 100)
+		_roundScene->gameInfo->HP = 100;
+}
+void ReinforceUp(RoundScene* _roundScene)
+{
+	_roundScene->reinforce += 1000;
 }
