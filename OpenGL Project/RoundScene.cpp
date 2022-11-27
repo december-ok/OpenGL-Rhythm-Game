@@ -1503,7 +1503,7 @@ void RoundScene::renderScoreAndInfo() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
 
-	x = 50;
+	x = 0;
 	y = 0;
 	content = "Music: " + this->artist + " - " + this->name;
 	glRasterPos2f(x, y);

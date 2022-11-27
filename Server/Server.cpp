@@ -75,9 +75,9 @@ void Dolt(SOCKET dosock) {
 	while (recv(dosock, msg, sizeof(msg), 0) > 0) {
 		printf("recv:%s\n", msg);
 		for (auto c : clientList) {
-			printf("send to clients\n");
 			send(c, msg, sizeof(msg), 0);
 		}
+		memset(msg, 0, MAX_MSG_LEN);
 	}
 	closesocket(dosock);
 }

@@ -570,7 +570,7 @@ void MultiScene::renderCombo() {
 	float y = 50;
 
 	string content = to_string(this->myGameInfo->combo) + " COMBO";
-	if (this->myGameInfo->combo) {
+	if (this->myGameInfo->combo > 0) {
 		glPushMatrix();
 		glTranslatef(x, y, 0);
 		glScalef(0.04, 0.06, 1);
@@ -613,7 +613,7 @@ void MultiScene::renderCombo() {
 		glPopMatrix();
 	}
 
-	if (this->opponentGameInfo->combo) {
+	if (this->opponentGameInfo->combo > 0) {
 		x = 85;
 
 		content = to_string(this->opponentGameInfo->combo) + " COMBO";
@@ -799,7 +799,7 @@ void MultiScene::renderJudgement()
 
 void MultiScene::renderScoreAndInfo()
 {
-	float x = 0;
+	float x = 30;
 	float y = 105;
 
 	string content = "Score: " + to_string(this->myGameInfo->score);
@@ -810,7 +810,7 @@ void MultiScene::renderScoreAndInfo()
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
 
-	x = 65;
+	x = 95;
 	content = "Score: " + to_string(this->opponentGameInfo->score);
 	glColor4f(1, 1, 1, 1);
 	glRasterPos2f(x, y);
@@ -1107,7 +1107,6 @@ void MultiScene::getNoteDelay(int line, unsigned int i_frame)
 			section_judgement[line] = judgeType;
 			section_delay[line] = n_delay;
 			section_input[line] = 1;
-
 		}
 		// 이외의 노트
 		else {
@@ -1195,6 +1194,8 @@ void MultiScene::receiveJudgement(int judge, Note* nott)
 
 	if (myGameInfo->HP > 100)
 		myGameInfo->HP = 100;
+
+	gameSocket->sendNote(judge, this->myGameInfo->score, this->myGameInfo->combo);
 
 	if (myGameInfo->HP <= 0) {
 		/*사망 조건 필수!!!!!!*/

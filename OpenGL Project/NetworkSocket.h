@@ -34,5 +34,5 @@ public:
 
 	void sendInput(int line);
 	void sendUnput(int line);
-	void sendNote(int line, int 판정, int score, int combo);
+	void sendNote(int 판정, int score, int combo);
 };

@@ -22,7 +22,7 @@ void Init()
 {
 	WSADATA wsadata;
 	WSAStartup(MAKEWORD(2, 2), &wsadata); // 윈속 초기화
-	char server_ip[40] = "192.168.56.1";
+	char server_ip[40] = "192.168.177.1";
 	SOCKET sock;
 	sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); // 소켓 생성
 	SOCKADDR_IN servaddr = { 0 }; // 서버 주소
@@ -63,10 +63,11 @@ void NetworkSocket::sendUnput(int line) {
 	}
 }
 
-void NetworkSocket::sendNote(int line, int 판정, int score, int combo)
+void NetworkSocket::sendNote(int 판정, int score, int combo)
 {
+	cout << "sendNote" << 판정 << " " << score << " " << combo << '\n';
 	if (pure_socket) {
-		string str = "note " + to_string(this->playerNum) + " " + to_string(line) + " " + to_string(판정) + " " + to_string(score) + " " + to_string(combo);
+		string str = "note " + to_string(this->playerNum) + " " + to_string(판정) + " " + to_string(score) + " " + to_string(combo);
 		char msg[MAX_MSG_LEN];
 		strcpy(msg, str.c_str());
 		send(pure_socket, msg, strlen(msg), 0);
@@ -90,7 +91,7 @@ void RecvData(SOCKET s) {
 		}
 		
 		
-		// FORMAT: note playernum line 판정 점수 콤보
+		// FORMAT: note playernum 판정 점수 콤보
 		if (strstr(msg, "note") != NULL) {
 			char* token = strtok(msg, " ");
 			token = strtok(NULL, " ");
@@ -98,13 +99,13 @@ void RecvData(SOCKET s) {
 
 			if (playerNum != globalSocket->playerNum) {
 				token = strtok(NULL, " ");
-				int line = atoi(token);
-				token = strtok(NULL, " ");
 				int 판정 = atoi(token);
 				token = strtok(NULL, " ");
 				int score = atoi(token);
 				token = strtok(NULL, " ");
 				int combo = atoi(token);
+
+				if (판정 == 6) 판정 = MISS;
 
 				globalScene->opponentGameInfo->recentJudgement = (JUDGEMENT)판정;
 				globalScene->opponentGameInfo->score = score;
