@@ -4,7 +4,7 @@
 #define MAX_MSG_LEN	256
 
 SOCKET SetTCPServer(short pnum, int blog);
-void Dolt(SOCKET dosock);
+void Dolt(SOCKET , SOCKET);
 void AcceptLoop(SOCKET sock);
 
 
@@ -43,6 +43,9 @@ void AcceptLoop(SOCKET sock) {
 	SOCKADDR_IN cliaddr = { 0 };
 	int len = sizeof(cliaddr);
 	int playerId = 1;
+	
+	SOCKET p1 = NULL;
+	SOCKET p2 = NULL;
 	while (true) {
 		SOCKET dosock = accept(sock, (SOCKADDR*)&cliaddr, &len); // 연결 수락
 		if (dosock == -1) {
@@ -50,33 +53,44 @@ void AcceptLoop(SOCKET sock) {
 			break;
 		}
 		printf("%s:%d의 연결 요청 수락\n", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
-		clientList.push_back(dosock);
 
-		thread* t = new thread(Dolt, dosock);
-		threadList.push_back(t);
+		if (p1 == NULL) {
+			p1 = dosock;
+		}
+		else if (p2 == NULL) {
+			p2 = dosock;
+			
+			char msg[MAX_MSG_LEN];
+			string str1 = "start " + to_string(playerId++);
+			string str2 = "start " + to_string(playerId++);
 
-		
-		if (clientList.size() == 2) {
-			for (auto c : clientList) {
-				string str = "start " + to_string(playerId++);
-				char msg[MAX_MSG_LEN];
-				strcpy(msg, str.c_str());
-				send(c, msg, sizeof(msg), 0);
-			}
+			strcpy(msg, str1.c_str());
+			send(p1, msg, sizeof(msg), 0);
+			memset(msg, 0, MAX_MSG_LEN);
+
+			strcpy(msg, str2.c_str());
+			send(p2, msg, sizeof(msg), 0);
+
+			thread* t1 = new thread(Dolt, p1, p2);
+			thread* t2 = new thread(Dolt, p2, p1);
+			threadList.push_back(t1);
+			threadList.push_back(t2);
+
+			p1 = NULL;
+			p2 = NULL;
 		}
 	}
+	
 	for (auto t : threadList) {
 		t->join();
 	}
 }
 
-void Dolt(SOCKET dosock) {
+void Dolt(SOCKET dosock, SOCKET target) {
 	char msg[MAX_MSG_LEN] = "";
 	while (recv(dosock, msg, sizeof(msg), 0) > 0) {
 		printf("recv:%s\n", msg);
-		for (auto c : clientList) {
-			send(c, msg, sizeof(msg), 0);
-		}
+		send(target, msg, sizeof(msg), 0);	
 		memset(msg, 0, MAX_MSG_LEN);
 	}
 	closesocket(dosock);

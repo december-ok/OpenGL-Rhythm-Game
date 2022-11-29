@@ -2,6 +2,7 @@
 
 MultiScene* globalScene;
 NetworkSocket* globalSocket;
+thread* globalThread;
 
 SOCKET pure_socket;
 
@@ -38,6 +39,7 @@ void Init()
 	globalScene->state = FINDING_PLAYER;
 
 	thread* recvT = new thread(RecvData, sock);
+	globalThread = recvT;
 
 	recvT->join();
 
